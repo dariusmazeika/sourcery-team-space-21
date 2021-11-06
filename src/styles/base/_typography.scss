@@ -1,0 +1,70 @@
+$font-roboto: 'Roboto', sans-serif;
+
+$font-base: 16px;
+$rem2-25: 2.25rem; // 36px
+$rem2: 2rem; // 32px
+$rem1-5: 1.5rem; // 24px
+$rem1-25: 1.25rem; // 20px
+$rem1-125: 1.125rem; // 18px
+$rem0-875: 0.875rem; // 14px
+$rem0-625: 0.625rem; // 10px
+
+body {
+    color: $color-mirage;
+    font-family: $font-roboto;
+    font-size: $font-base;
+}
+
+h1 {
+    font-size: $rem2-25;
+    line-height: 42px;
+}
+
+h2 {
+    font-size: $rem2;
+    line-height: 37px;
+}
+
+.h2-alt {
+    font-size: $rem1-5;
+    line-height: 32px;
+}
+
+h3 {
+    font-size: $rem1-5;
+    line-height: 28px;
+}
+
+.h3-alt {
+    font-size: $rem1-25;
+    line-height: 24px;
+}
+
+h4 {
+    font-size: $rem1-25;
+    line-height: 24px;
+}
+
+.h4-alt {
+    font-size: $font-base;
+    line-height: 24px;
+}
+
+h5 {
+    font-size: $rem1-125;
+    line-height: 21px;
+}
+
+p {
+    line-height: 24px;
+}
+
+caption {
+    font-size: $rem0-875;
+    line-height: 16px;
+}
+
+small {
+    font-size: $rem0-625;
+    line-height: 15px;
+}
