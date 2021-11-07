@@ -1,0 +1,59 @@
+@import './src/styles/base/base';
+
+header {
+    align-items: center;
+    background-color: $color-violet-primary;
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    padding: 0 3rem;
+
+    .navigationMeta {
+        align-items: center;
+        display: flex;
+
+        &Logo {
+            display: flex;
+            justify-content: center;
+
+            img {
+                height: $rem3;
+                width: $rem3;
+            }
+        }
+
+        &Team {
+            color: $color-white;
+            margin-left: 0.625rem;
+        }
+    }
+}
+
+main {
+    background-color: $color-gray-light;
+    bottom: 4.5rem;
+    overflow-y: scroll;
+    padding: $rem3;
+    position: fixed;
+    top: 5rem;
+    width: 100%;
+    //  For future components nested inside remove
+    //  :first-child {margin-top:0px;},
+    //  :last-child{margin-bottom: 0px;}
+}
+
+footer {
+    background-color: $color-white;
+    bottom: 0;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+    height: 4.5rem;
+    position: fixed;
+    width: 100%;
+
+    div {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        padding: $rem2 $rem3;
+    }
+}
