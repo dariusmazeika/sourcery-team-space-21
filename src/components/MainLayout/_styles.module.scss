@@ -1,6 +1,6 @@
 @import './src/styles/base/base';
 
-header {
+.header {
     align-items: center;
     background-color: $color-violet-primary;
     display: flex;
@@ -29,7 +29,7 @@ header {
     }
 }
 
-main {
+.main {
     background-color: $color-gray-light;
     bottom: 4.5rem;
     overflow-y: scroll;
@@ -42,7 +42,7 @@ main {
     //  :last-child{margin-bottom: 0px;}
 }
 
-footer {
+.footer {
     background-color: $color-white;
     bottom: 0;
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
@@ -50,10 +50,11 @@ footer {
     position: fixed;
     width: 100%;
 
-    div {
+    &Text {
         align-items: center;
         display: flex;
         justify-content: flex-end;
         padding: $rem2 $rem3;
+        text-transform: uppercase;
     }
 }

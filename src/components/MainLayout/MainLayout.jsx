@@ -8,7 +8,7 @@ export const MainLayout = (props) => {
 
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <div className={styles.navigationMeta}>
           <div className={styles.navigationMetaLogo}>
             <img src={logoDark} alt="logotype" />
@@ -22,10 +22,10 @@ export const MainLayout = (props) => {
         {/*<div>{ bell icon & user menu }</div>*/}
       </header>
 
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
 
-      <footer>
-        <div>COPYRIGHT &copy; 2021 DEVBRIDGE</div>
+      <footer className={styles.footer}>
+        <div className={styles.footerText}>copyright &copy; 2021 devbridge</div>
       </footer>
     </>
   );
