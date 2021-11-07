@@ -1,14 +1,21 @@
 /* stylelint-disable */
 
+$field-error-color: #ff6e75;
+$field-background-color: #ffffff;
+$field-border-color: #cacfd5;
+$field-focused-border-color: #3e5067;
+$field-disabled-color: #dcdfe3;
+$label-color: #9ea7b3;
+
 .container {
     font-family: Roboto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    width: 343px;
-    height: 72px;
-    background: #ffffff;
+    // width: 343px;
+    // height: 72px;
+    background: $field-background-color;
 }
 
 .field {
@@ -17,54 +24,85 @@
     align-items: flex-start;
     padding: 13px 16px;
     position: static;
-    width: 341px;
-    height: 48px;
-    left: 0px;
-    top: 24px;
-    /* #FFFFFF */
-    background: #ffffff;
-    /* #CACFD5 */
-    border: 1px solid #cacfd5;
+    // width: 300px;
+    // height: 48px;
+    // left: 0px;
+    // top: 24px;
+    background: $field-background-color;
+    border: 1px solid $field-border-color;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
 .field::placeholder {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem; //14px
+    line-height: 22px;
     position: static;
     width: 74px;
     height: 22px;
     left: 16px;
     top: 13px;
-    /* Body Small */
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 22px;
-    /* identical to box height, or 157% */
 }
 
 .field:focus {
-    border: 1px solid #3e5067;
+    border-color: $field-focused-border-color;
     outline: none; // with outline color change does nothing at 1px
 }
 
 .fieldError {
     composes: field;
-    border: 1px solid #ff6e75;
+    border-color: $field-error-color;
+}
+
+//if field entry invalid - only shows when field is focused
+.field:not(:focus):not(:placeholder-shown):invalid {
+    border-color: $field-error-color;
+}
+// preliminary error message styling - not implemented yet
+//.field:not(:focus):not(:placeholder-shown):invalid ~ .errorMessage
+// should probably wrap the text at certain char lenght ?
+.errorMessage {
+    color: $field-error-color;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.625rem; //10px
+    line-height: 150%; //or 15px
+    text-transform: uppercase;
+    padding-top: 8px;
 }
 
 .field:disabled {
-    color: #dcdfe3;
-    border: 1px solid #dcdfe3;
+    border-color: $field-disabled-color;
+    color: $field-disabled-color;
+}
+
+// Changes disabled field placeholder color
+.field:disabled::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: $field-disabled-color;
+}
+.field:disabled:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: $field-disabled-color;
+}
+.field:disabled::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: $field-disabled-color;
+}
+.field:disabled:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: $field-disabled-color;
 }
 
 .label {
-    color: #9ea7b3;
+    color: $label-color;
     position: static;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 0.875rem; //14px
     line-height: 16px;
     /* identical to box height, or 114% */
     height: 16px;
@@ -81,23 +119,5 @@
 
 .labelDisabled {
     composes: label;
-    color: #dcdfe3;
-}
-
-// Changes disabled field placeholder color
-.field:disabled::-webkit-input-placeholder {
-    /* WebKit browsers */
-    color: #dcdfe3;
-}
-.field:disabled:-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #dcdfe3;
-}
-.field:disabled::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #dcdfe3;
-}
-.field:disabled:-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    color: #dcdfe3;
+    color: $field-disabled-color;
 }

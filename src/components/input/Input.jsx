@@ -16,28 +16,39 @@ const Input = (props) => {
         id={props.id}
         className={props.isError ? styles.fieldError : styles.field} // check if error
         type={props.type}
-        placeholder={props.disabled ? "Disabled" : props.value} // if disabled change placeholder
+        placeholder={props.disabled ? "Disabled" : props.placeHolder} // if disabled change placeholder
         disabled={props.disabled}
+        onChange={props.onChange}
+        value={props.value}
       />
+      {props.isError ? (
+        <div className={styles.errorMessage}>{props.errorMsg}</div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
 
 Input.defaultProps = {
   type: "text",
-  value: "Placeholder", //probably should change value --> placeHolder
-  labelText: "LABEL", //and keep value for value prop ?
+  placeHolder: "Placeholder",
+  labelText: "LABEL",
   isError: false,
   disabled: false,
+  errorMsg: "error",
 };
 
 Input.propTypes = {
   id: PropTypes.string.isRequired,
   type: PropTypes.string,
-  value: PropTypes.string,
+  placeHolder: PropTypes.string,
   labelText: PropTypes.string,
   isError: PropTypes.bool,
   disabled: PropTypes.bool,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  errorMsg: PropTypes.string,
 };
 
 export default Input;
