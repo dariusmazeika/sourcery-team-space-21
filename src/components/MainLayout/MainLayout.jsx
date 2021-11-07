@@ -11,7 +11,11 @@ export const MainLayout = (props) => {
       <header className={styles.header}>
         <div className={styles.navigationMeta}>
           <div className={styles.navigationMetaLogo}>
-            <img src={logoDark} alt="logotype" />
+            <img
+              src={logoDark}
+              alt="logotype"
+              className={styles.navigationMetaLogoImg}
+            />
           </div>
           <div className={styles.navigationMetaTeam}>
             <div>Team</div>
