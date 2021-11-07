@@ -2,16 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./input.module.scss";
 
-//props {id, type, placeHolder, labelText, isError, isLocked}
-
 const Input = (props) => {
+  //maybe I should de-structure props
   return (
     <div className={styles.container}>
-      <label>{props.labelText}</label>
+      <label
+        className={props.disabled ? styles.labelDisabled : styles.label} //check if field disabled
+        htmlFor={props.id}
+      >
+        {props.labelText}
+      </label>
       <input
-        className={styles.field}
+        id={props.id}
+        className={props.isError ? styles.fieldError : styles.field} // check if error
         type={props.type}
-        placeholder={props.placeHolder}
+        placeholder={props.disabled ? "Disabled" : props.value} // if disabled change placeholder
+        disabled={props.disabled}
       />
     </div>
   );
@@ -19,18 +25,19 @@ const Input = (props) => {
 
 Input.defaultProps = {
   type: "text",
-  placeHolder: "Placeholder",
-  labelText: "LABEL",
+  value: "Placeholder", //probably should change value --> placeHolder
+  labelText: "LABEL", //and keep value for value prop ?
   isError: false,
-  isLocked: false,
+  disabled: false,
 };
+
 Input.propTypes = {
   id: PropTypes.string.isRequired,
   type: PropTypes.string,
-  placeHolder: PropTypes.string,
+  value: PropTypes.string,
   labelText: PropTypes.string,
   isError: PropTypes.bool,
-  isLocked: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 export default Input;

@@ -1,7 +1,7 @@
 /* stylelint-disable */
 
 .container {
-    font-family: inherit;
+    font-family: Roboto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -44,24 +44,60 @@
     /* identical to box height, or 157% */
 }
 
-.container label {
+.field:focus {
+    border: 1px solid #3e5067;
+    outline: none; // with outline color change does nothing at 1px
+}
+
+.fieldError {
+    composes: field;
+    border: 1px solid #ff6e75;
+}
+
+.field:disabled {
+    color: #dcdfe3;
+    border: 1px solid #dcdfe3;
+}
+
+.label {
+    color: #9ea7b3;
     position: static;
-    height: 16px;
-    left: 0%;
-    right: 87.76%;
-    top: 0px;
-    /* Caption 1 */
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
     /* identical to box height, or 114% */
+    height: 16px;
+    left: 0%;
+    right: 87.76%;
+    top: 0px;
     text-transform: uppercase;
-    /* #9EA7B3 */
-    color: #9ea7b3;
     /* Inside Auto Layout */
     flex: none;
-    order: 0;
     flex-grow: 0;
+    order: 0;
     margin: 8px 0px;
+}
+
+.labelDisabled {
+    composes: label;
+    color: #dcdfe3;
+}
+
+// Changes disabled field placeholder color
+.field:disabled::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #dcdfe3;
+}
+.field:disabled:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #dcdfe3;
+}
+.field:disabled::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #dcdfe3;
+}
+.field:disabled:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #dcdfe3;
 }
