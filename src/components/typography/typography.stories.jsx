@@ -1,6 +1,14 @@
 import React from "react";
 
-import { Typography } from "./typography";
+import PropTypes from "prop-types";
+
+const Typography = (props) => {
+  return <div>{props.children}</div>;
+};
+
+Typography.propTypes = {
+  children: PropTypes.any,
+};
 
 export default {
   title: "Typography",
