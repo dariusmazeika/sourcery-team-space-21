@@ -7,7 +7,7 @@ export const MainLayout = (props) => {
   const { children } = props;
 
   return (
-    <div>
+    <>
       <header>
         <div className={styles.navigationMeta}>
           <div className={styles.navigationMetaLogo}>
@@ -27,7 +27,7 @@ export const MainLayout = (props) => {
       <footer>
         <div>COPYRIGHT &copy; 2021 DEVBRIDGE</div>
       </footer>
-    </div>
+    </>
   );
 };
 
