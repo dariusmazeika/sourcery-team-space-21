@@ -1,14 +1,7 @@
-$font-roboto: 'Roboto', sans-serif;
+/* stylelint-disable sh-waqar/declaration-use-variable */
 
-/* Font sizes. */
+$font-roboto: 'Roboto', sans-serif;
 $font-size-base: 62.5%;
-$font-size-sm: 1.4rem;
-$font-size-md: 1.6rem;
-$font-size-lg: 1.8rem;
-$font-size-xl: 2rem;
-$font-size-2xl: 2.4rem;
-$font-size-3xl: 3.2rem;
-$font-size-4xl: 3.6rem;
 
 html {
     color: $default-font-color;
@@ -16,60 +9,76 @@ html {
     font-size: $font-size-base;
 }
 
-h1 {
-    font-size: $font-size-4xl;
+h1,
+.heading1 {
+    font-size: 3.6rem;
 }
 
-h2 {
-    font-size: $font-size-3xl;
+h2,
+.heading2 {
+    font-size: 3.2rem;
 }
 
-.h2-alt {
-    font-size: $font-size-2xl;
+.heading2-alt {
+    font-size: 2.4rem;
 }
 
-h3 {
-    font-size: $font-size-2xl;
+h3,
+.heading3 {
+    font-size: 2.4rem;
 }
 
-.h3-alt {
-    font-size: $font-size-xl;
+.heading3-alt {
+    font-size: 2rem;
 }
 
-h4 {
-    font-size: $font-size-xl;
+h4,
+.heading4 {
+    font-size: 2rem;
 }
 
-.h4-alt {
-    font-size: $font-size-md;
+.heading4-alt {
+    font-size: 1.6rem;
 }
 
-h5 {
-    font-size: $font-size-lg;
+h5,
+.heading5 {
+    font-size: 1.8rem;
 }
 
-p {
-    font-size: $font-size-md;
+p,
+.paragraph {
+    font-size: 1.6rem;
 }
 
-caption {
-    font-size: $font-size-sm;
+caption,
+.caption {
+    font-size: 1.4rem;
 }
 
-small {
+small,
+.small {
     font-size: $font-size-base;
 }
 
 h1,
+.heading1,
 h2,
-.h2-alt,
+.heading2,
+.heading2-alt,
 h3,
-.h3-alt,
+.heading3,
+.heading3-alt,
 h4,
-.h4-alt,
+.heading4,
+.heading4-alt,
 h5,
+.heading5,
 p,
+.paragraph,
 caption,
-small {
+.caption,
+small,
+.small {
     line-height: 1.6;
 }
