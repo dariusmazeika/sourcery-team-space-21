@@ -1,13 +1,13 @@
 import React from "react";
 import { withKnobs } from "@storybook/addon-knobs";
 
-import Icons from "./Icons";
+import Icon from "./icon";
 
 export default {
-  title: "Components / Icons",
+  title: "Components / Icon",
   decorators: [withKnobs],
 };
 
-export const Player = () => {
-  return <Icons />;
+export const Icons = () => {
+  return <Icon />;
 };

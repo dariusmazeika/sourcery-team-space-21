@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function Icons() {
-  return (
+export default function Icon() {
+  const Icons = (
     <svg
       width="25"
       height="24"
@@ -32,4 +32,6 @@ export default function Icons() {
       />
     </svg>
   );
+
+  return Icons;
 }
