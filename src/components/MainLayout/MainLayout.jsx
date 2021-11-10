@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./_styles.module.scss";
 import PropTypes from "prop-types";
-import logoDark from "../../assets/logo-dark.png";
+import logoDark from "assets/logo-dark-outline.png";
 
 export const MainLayout = (props) => {
   const { children } = props;
@@ -17,13 +17,10 @@ export const MainLayout = (props) => {
               className={styles.navigationMetaLogoImg}
             />
           </div>
-          <div className={styles.navigationMetaTeam}>
-            <div>Team</div>
-            <div>Inbif</div>
+          <div className={`${styles.navigationMetaTeam} heading5`}>
+            <div>Team Inbif</div>
           </div>
         </div>
-        {/*<nav>{ navigation links }</nav>*/}
-        {/*<div>{ bell icon & user menu }</div>*/}
       </header>
 
       <main className={styles.main}>{children}</main>
