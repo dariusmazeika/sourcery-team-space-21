@@ -10,6 +10,7 @@
     "react-dom": "^17.0.1",
     "react-scripts": "3.4.4"
   },
+  "module": "src/components/icon/dist/index.esm.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -27,7 +28,8 @@
     "lint:stylelint:fix": "npm run -s lint:stylelint \"src/**/*.scss\" --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "svgr": "svgr --icon --title-prop --replace-attr-values #25282B=currentColor -d src/components/icon/library src/assets/Icons"
+    "svgr": "svgr --icon --title-prop --replace-attr-values #25282B=currentColor -d src/components/icon/library src/assets/Icons",
+    "rollup": "rollup -c"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,scss,md}": "prettier --write",
