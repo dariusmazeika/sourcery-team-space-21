@@ -6,7 +6,8 @@ const config = {
     file: 'src/components/icon/dist/index.esm.js',
     format: 'esm'
   },
-  plugins: [babel({ babelHelpers: 'bundled' })]
+  external: [/@babel\/runtime/],
+  plugins: [babel({ babelHelpers: 'runtime', plugins: ['@babel/plugin-transform-runtime'] })]
 };
 
 export default config;
