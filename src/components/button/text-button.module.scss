@@ -1,0 +1,26 @@
+$txt-btn-default-text-slate-gray: #6a7889;
+$txt-btn-hover-focus-text-fiord: #3e5067;
+$txt-btn-active-text-midnight: #001836;
+$txt-btn-disabled-text-tiara: #c5d1d4;
+$txt-btn-background-color-inherit: inherit;
+
+.txtBtn {
+    background-color: $txt-btn-background-color-inherit;
+    border: 0;
+    color: $txtBtn-default-text-slate-gray;
+    cursor: pointer;
+    line-height: 1.125rem;
+
+    &:hover,
+    &:focus {
+        color: $txt-btn-hover-focus-text-fiord;
+    }
+
+    &:active {
+        color: $txt-btn-active-text-midnight;
+    }
+
+    &:disabled {
+        color: $txt-btn-disabled-text-tiara;
+    }
+}
