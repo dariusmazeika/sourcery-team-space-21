@@ -8,6 +8,6 @@ export default {
   decorators: [withKnobs],
 };
 
-export const Icons = () => {
+export const Default = () => {
   return <Icon />;
 };
