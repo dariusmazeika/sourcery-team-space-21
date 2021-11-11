@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgPause(props) {
+function SvgIconPause(props) {
   return (
     <svg
       width="1em"
@@ -21,4 +21,4 @@ function SvgPause(props) {
   );
 }
 
-export default SvgPause;
+export default SvgIconPause;

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgPlay(props) {
+function SvgIconPlay(props) {
   return (
     <svg
       width="1em"
@@ -28,4 +28,4 @@ function SvgPlay(props) {
   );
 }
 
-export default SvgPlay;
+export default SvgIconPlay;

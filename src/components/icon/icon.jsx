@@ -1,12 +1,12 @@
 import React from "react";
-import { Pause, Play, Stop } from "./library/index";
+import { IconPause, IconPlay, IconStop } from "./library/index";
 
 export default function Icon() {
   const Icons = (
     <div>
-      <Pause />
-      <Play />
-      <Stop />
+      <IconPause />
+      <IconPlay />
+      <IconStop />
     </div>
   );
 

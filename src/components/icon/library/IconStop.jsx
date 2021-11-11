@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgStop(props) {
+function SvgIconStop(props) {
   return (
     <svg
       width="1em"
@@ -28,4 +28,4 @@ function SvgStop(props) {
   );
 }
 
-export default SvgStop;
+export default SvgIconStop;
