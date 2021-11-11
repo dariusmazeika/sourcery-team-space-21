@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./_styles.module.scss";
 import PropTypes from "prop-types";
-import logoDark from "assets/logo-dark-outline.png";
+import logoDarkOutline from "assets/logo-dark-outline.png";
 
 export const MainLayout = (props) => {
   const { children } = props;
@@ -12,7 +12,7 @@ export const MainLayout = (props) => {
         <div className={styles.navigationMeta}>
           <div className={styles.navigationMetaLogo}>
             <img
-              src={logoDark}
+              src={logoDarkOutline}
               alt="logotype"
               className={styles.navigationMetaLogoImg}
             />
