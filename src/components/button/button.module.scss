@@ -1,41 +1,99 @@
-$button-main-background-color: #6e44ff;
-$button-main-font-color: #fff;
-$button-hover-background-color: #5836cc;
-$buttton-active-background-color: #462ca3;
-$button-disabled-background-color: #edeff1;
-$button-disabled-font-color: #9ea7b3;
-$button-large-font-size: 0.875rem;
-$button-medium-font-size: 0.75rem;
+$btn-primary-background-color: #6e44ff;
+$btn-primary-font-color: #fff;
+$btn-primary-hover-background-color: #5836cc;
+$btn-primary-active-background-color: #462ca3;
+$btn-primary-disabled-background-color: #edeff1;
+$btn-primary-disabled-font-color: #9ea7b3;
+$btn-primary-medium-font-size: 0.75rem;
+$btn-primary-large-font-size: 0.875rem;
+
+$btn-txt-default-text-slate-gray: #6a7889;
+$btn-txt-hover-focus-text-fiord: #3e5067;
+$btn-txt-active-text-midnight: #001836;
+$btn-txt-disabled-text-tiara: #c5d1d4;
+$btn-txt-background-color-inherit: inherit;
+
+$btn-action-primary-background-color: #050504;
+$btn-action-secondary-background-color: #1f2d3d;
+$btn-action-duo-color-background-color: #e5e9f2;
+$btn-action-dark-text-light: #fff;
+$btn-action-light-text-dark: #050504;
+
+@mixin btn-styles {
+    border: 0;
+    cursor: pointer;
+    font-size: $btn-primary-medium-font-size;
+    font-weight: 500;
+}
 
 .btn {
-    background: $button-main-background-color;
-    border: 0;
+    @include btn-styles;
+}
+
+.primary {
+    background: $btn-primary-background-color;
     border-radius: 65px;
-    color: $button-main-font-color;
-    cursor: pointer;
+    color: $btn-primary-font-color;
     font-weight: 500;
+    padding: 0.563rem 0.625rem;
 
-    &.Large {
-        font-size: $button-large-font-size;
+    &.large {
+        font-size: $btn-primary-large-font-size;
         padding: 0.875rem 1.25rem;
-    }
-
-    &.Medium {
-        font-size: $button-medium-font-size;
-        padding: 0.563rem 0.625rem;
     }
 
     &:hover,
     &:focus {
-        background: $button-hover-background-color;
+        background: $btn-primary-hover-background-color;
     }
 
     &:active {
-        background: $buttton-active-background-color;
+        background: $btn-primary-active-background-color;
     }
 
     &:disabled {
-        background: $button-disabled-background-color;
-        color: $button-disabled-font-color;
+        background: $btn-primary-disabled-background-color;
+        color: $btn-primary-disabled-font-color;
+    }
+}
+
+.text {
+    background-color: $btn-txt-background-color-inherit;
+    border: 0;
+    color: $btn-txt-default-text-slate-gray;
+    cursor: pointer;
+    line-height: 1.125rem;
+
+    &:hover,
+    &:focus {
+        color: $btn-txt-hover-focus-text-fiord;
+    }
+
+    &:active {
+        color: $btn-txt-active-text-midnight;
+    }
+
+    &:disabled {
+        color: $btn-txt-disabled-text-tiara;
+    }
+}
+
+.action {
+    background: $btn-action-primary-background-color;
+    border-radius: 12px;
+    color: $btn-action-dark-text-light;
+    padding: 0.5rem;
+
+    &.large {
+        padding: 0.625rem;
+    }
+
+    &.secondary {
+        background: $btn-action-secondary-background-color;
+    }
+
+    &.reverse {
+        background: $btn-action-duo-color-background-color;
+        color: $btn-action-light-text-dark;
     }
 }
