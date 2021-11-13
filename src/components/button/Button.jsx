@@ -19,7 +19,7 @@ const Color = {
   DUOCOLOR: "reverse",
 };
 
-export const Button1 = ({ children, type, size, color }) => {
+export const Button = ({ children, type, size, color }) => {
   return (
     <button
       className={cx(styles.btn, {
@@ -36,7 +36,7 @@ export const Button1 = ({ children, type, size, color }) => {
   );
 };
 
-Button1.propTypes = {
+Button.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
