@@ -1,12 +1,12 @@
 @import '../../styles/base/typography';
 @import '../../styles/base/button';
 
+$btn-primary-large-font-size: 1.4rem;
+
 @mixin btn-styles {
+    align-items: center;
     border: 0;
     cursor: pointer;
-    font-family: $font-roboto;
-    font-size: $btn-primary-medium-font-size;
-    font-weight: $font-weight-medium;
 }
 
 .btn {
@@ -17,11 +17,11 @@
     background: $btn-primary-background-color;
     border-radius: 65px;
     color: $btn-primary-font-color;
-    padding: 0.563rem 0.625rem;
+    padding: 0.9rem 1rem;
 
     &.large {
         font-size: $btn-primary-large-font-size;
-        padding: 0.875rem 1.25rem;
+        padding: 1.4rem 2;
     }
 
     &:hover,
