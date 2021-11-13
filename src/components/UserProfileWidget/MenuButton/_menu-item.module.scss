@@ -1,0 +1,57 @@
+@import './src/styles/base/base';
+
+.button {
+    border: 0;
+    color: $color-fiord;
+    display: block;
+    height: 4.9rem;
+    width: 100%;
+
+    &Top {
+        background: $color-white;
+        border: 0;
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+
+        &:hover {
+            background: $color-iron;
+        }
+
+        &:active {
+            background: $color-ghost;
+        }
+
+        &::before {
+            border-bottom: 0.6rem solid $color-white;
+            border-left: 0.8rem solid transparent;
+            border-right: 0.8rem solid transparent;
+            content: '';
+            position: absolute;
+            right: 1.1rem;
+            top: -0.6rem;
+        }
+
+        &:hover::before {
+            border-bottom: 0.6rem solid $color-iron;
+        }
+
+        &:active::before {
+            border-bottom: 0.6rem solid $color-ghost;
+        }
+    }
+
+    &Bottom {
+        background: $color-porcelain-dark;
+        border: 0;
+        border-bottom-left-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+
+        &:hover {
+            background: $color-iron;
+        }
+
+        &:active {
+            background: $color-ghost;
+        }
+    }
+}
