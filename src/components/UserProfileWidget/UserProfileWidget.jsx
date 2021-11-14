@@ -26,7 +26,7 @@ export const UserProfileWidget = () => {
     if (showMenu) {
       document.body.addEventListener("click", toggleMenuOnWindowClick);
     }
-    return function cleanup() {
+    return () => {
       window.removeEventListener("click", toggleMenuOnWindowClick);
     };
   });
