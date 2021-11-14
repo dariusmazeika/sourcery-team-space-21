@@ -3,14 +3,10 @@
 
 $btn-primary-large-font-size: 1.4rem;
 
-@mixin btn-styles {
+.btn {
     align-items: center;
     border: 0;
     cursor: pointer;
-}
-
-.btn {
-    @include btn-styles;
 }
 
 .primary {
