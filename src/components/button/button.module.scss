@@ -1,5 +1,5 @@
-@import '../../styles/base/typography';
-@import '../../styles/base/button';
+@import './src/styles/base/typography';
+@import './src/styles/base/colors';
 
 $btn-primary-large-font-size: 1.4rem;
 
@@ -10,55 +10,54 @@ $btn-primary-large-font-size: 1.4rem;
 }
 
 .primary {
-    background: $btn-primary-background-color;
+    background: $color-electric-violet;
     border-radius: 65px;
-    color: $btn-primary-font-color;
+    color: $color-white;
     padding: 0.9rem 1rem;
 
     &.large {
         font-size: $btn-primary-large-font-size;
-        padding: 1.4rem 2;
+        padding: 1.4rem 2rem;
     }
 
     &:hover,
     &:focus {
-        background: $btn-primary-hover-background-color;
+        background: $color-purple-heart;
     }
 
     &:active {
-        background: $btn-primary-active-background-color;
+        background: $color-daisy-bush;
     }
 
     &:disabled {
-        background: $btn-primary-disabled-background-color;
-        color: $btn-primary-disabled-font-color;
+        background: $color-porcelain-dark;
+        color: $color-gray-chateau;
     }
 }
 
 .text {
-    background-color: $btn-txt-background-color-inherit;
+    background-color: $color-inherit;
     border: 0;
-    color: $btn-txt-default-text-color;
-    line-height: 1.125rem;
+    color: $color-slate-gray;
 
     &:hover,
     &:focus {
-        color: $btn-txt-hover-focus-text-color;
+        color: $color-fiord;
     }
 
     &:active {
-        color: $btn-txt-active-text-color;
+        color: $color-midnight;
     }
 
     &:disabled {
-        color: $btn-txt-disabled-text-color;
+        color: $color-tiara;
     }
 }
 
 .action {
-    background: $btn-action-primary-background-color;
+    background: $color-rangoon-green;
     border-radius: 12px;
-    color: $btn-action-dark-text-light;
+    color: $color-white;
     padding: 0.5rem;
 
     &.large {
@@ -66,11 +65,11 @@ $btn-primary-large-font-size: 1.4rem;
     }
 
     &.secondary {
-        background: $btn-action-secondary-background-color;
+        background: $color-mirage;
     }
 
     &.reverse {
-        background: $btn-action-duo-color-background-color;
-        color: $btn-action-light-text-dark;
+        background: $color-catskill-white;
+        color: $color-rangoon-green;
     }
 }

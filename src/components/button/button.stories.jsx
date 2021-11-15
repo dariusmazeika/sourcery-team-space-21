@@ -9,28 +9,28 @@ export default {
 };
 
 export const Primary = () => {
-  return <Button type="primary">{text("Label", "DEFAULT")}</Button>;
+  return <Button kind="primary">{text("Label", "DEFAULT")}</Button>;
 };
 
 export const Primary_large = () => {
   return (
-    <Button type="primary" size="large">
+    <Button kind="primary" size="large">
       {text("Label", "DEFAULT")}
     </Button>
   );
 };
 
 export const Text = () => {
-  return <Button type="text">{text("Label", "DEFAULT")}</Button>;
+  return <Button kind="text">{text("Label", "DEFAULT")}</Button>;
 };
 
 export const Action = () => {
-  return <Button type="action">{text("Label", "X")}</Button>;
+  return <Button kind="action">{text("Label", "X")}</Button>;
 };
 
 export const Action_large = () => {
   return (
-    <Button type="action" size="large">
+    <Button kind="action" size="large">
       {text("Label", "X")}
     </Button>
   );

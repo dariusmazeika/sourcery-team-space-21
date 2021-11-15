@@ -4,7 +4,7 @@ import cx from "classnames";
 
 import styles from "./button.module.scss";
 
-const Type = {
+const Kind = {
   PRIMARY: "primary",
   TEXT: "text",
   ACTION: "action",
@@ -19,16 +19,17 @@ const Color = {
   DUOCOLOR: "reverse",
 };
 
-export const Button = ({ children, type, size, color }) => {
+export const Button = ({ children, kind, size, color }) => {
   return (
     <button
+      type="button"
       className={cx(styles.btn, {
-        [styles.large]: size === Size.LARGE,
-        [styles.primary]: type === Type.PRIMARY,
-        [styles.text]: type === Type.TEXT,
-        [styles.action]: type === Type.ACTION,
+        [styles.primary]: kind === Kind.PRIMARY,
+        [styles.text]: kind === Kind.TEXT,
+        [styles.action]: kind === Kind.ACTION,
         [styles.secondary]: color === Color.SECONDARY,
         [styles.reverse]: color === Color.DUOCOLOR,
+        [styles.large]: size === Size.LARGE,
       })}
     >
       {children}
@@ -41,7 +42,12 @@ Button.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
-  type: PropTypes.oneOf(Object.values(Type)).isRequired,
+  kind: PropTypes.oneOf(Object.values(Kind)).isRequired,
   size: PropTypes.oneOf(Object.values(Size)),
   color: PropTypes.oneOf(Object.values(Color)),
+};
+
+Button.defaultProps = {
+  children: "DEFAULT",
+  kind: "primary",
 };
