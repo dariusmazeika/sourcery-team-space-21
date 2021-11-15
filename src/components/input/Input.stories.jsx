@@ -13,7 +13,6 @@ const typeOptions = {
   Password: "password",
   Email: "email",
 };
-// const value = select(label, options, defaultValue, groupId); reminder for myself
 
 export const Default = () => {
   const isError = boolean("Error", false);
@@ -27,13 +26,12 @@ export const Default = () => {
       placeHolder={text("Placeholder", "Placeholder")}
       isError={isError}
       disabled={isDisabled}
-      errorMsg={text("Error Msg", "error")}
+      errorMessage={text("Error Msg", "error")}
     />
   );
 };
 
-// The following code seems to be valid only for newer
-// storybook version where "Controls" replace "Knobs" ?
+//Code for newer storybook version where "Controls" replace "Knobs":
 
 //const Template = (args) => <Input {...args} />;
 
