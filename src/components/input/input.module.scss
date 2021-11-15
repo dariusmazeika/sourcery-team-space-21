@@ -44,6 +44,7 @@ $label-font-size: $field-font-size;
 .errorMessage {
     color: $field-error-color;
     font-weight: $font-weight-medium;
+    line-height: 1.5;
     padding-top: 0.8rem;
     text-transform: uppercase;
 }
@@ -61,6 +62,7 @@ $label-font-size: $field-font-size;
     color: $label-color;
     font-size: $label-font-size;
     font-weight: $label-font-weight;
+    line-height: 1.6;
     padding-bottom: 0.8rem;
     text-transform: uppercase;
 }
