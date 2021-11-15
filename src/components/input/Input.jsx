@@ -17,16 +17,14 @@ const Input = ({
   return (
     <div className={styles.container}>
       <label
-        className={
-          disabled ? cx(styles.label, styles.labelIsDisabled) : styles.label
-        }
+        className={cx(styles.label, { [styles.labelIsDisabled]: disabled })}
         htmlFor={id}
       >
         {labelText}
       </label>
       <input
         id={id}
-        className={isError ? cx(styles.field, styles.fieldError) : styles.field}
+        className={cx(styles.field, { [styles.fieldError]: isError })}
         type={type}
         placeholder={placeHolder}
         disabled={disabled}

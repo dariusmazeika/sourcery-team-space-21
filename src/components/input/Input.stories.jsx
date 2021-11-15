@@ -30,21 +30,3 @@ export const Default = () => {
     />
   );
 };
-
-//Code for newer storybook version where "Controls" replace "Knobs":
-
-//const Template = (args) => <Input {...args} />;
-
-// export const Placeholder = () => {
-//   return <Input id="1" type="text" labelText="label" />;
-// };
-
-// export const Placeholder = Template.bind({});
-// Placeholder.args = {
-//   id: "1",
-//   type: "text",
-//   value: "Placeholder",
-//   labelText: "label",
-//   isError: false,
-//   disabled: false,
-// };
