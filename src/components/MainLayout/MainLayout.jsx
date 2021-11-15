@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import styles from "./_styles.module.scss";
+import styles from "./_main-layout.module.scss";
 import logoDarkOutline from "assets/logo-dark-outline.png";
 import { UserProfileWidget } from "components/UserProfileWidget";
 

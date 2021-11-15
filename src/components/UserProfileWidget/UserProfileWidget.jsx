@@ -6,24 +6,24 @@ import imageMark from "assets/image-mark.png";
 import { MenuItem } from "components/UserProfileWidget";
 
 export const UserProfileWidget = () => {
-  let [showMenu, setShowMenu] = useState(false);
+  let [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenu = () => {
-    setShowMenu((showMenuOld) => {
-      return (showMenu = !showMenuOld);
+    setIsMenuVisible((showMenuOld) => {
+      return (isMenuVisible = !showMenuOld);
     });
   };
 
   const toggleMenuOnWindowClick = () => {
-    if (showMenu) {
-      setShowMenu((showMenuOld) => {
-        return (showMenu = !showMenuOld);
+    if (isMenuVisible) {
+      setIsMenuVisible((showMenuOld) => {
+        return (isMenuVisible = !showMenuOld);
       });
     }
   };
 
   useEffect(() => {
-    if (showMenu) {
+    if (isMenuVisible) {
       document.body.addEventListener("click", toggleMenuOnWindowClick);
     }
     return () => {
@@ -35,12 +35,13 @@ export const UserProfileWidget = () => {
     <div className={styles.userProfileWidget}>
       <div>
         <button
+          type="button"
           onClick={toggleMenu}
           className={styles.userProfileWidgetMenuButton}
         >
           <img
             src={userImage}
-            alt="user"
+            alt=""
             className={styles.userProfileWidgetImage}
           />
           <img
@@ -51,7 +52,7 @@ export const UserProfileWidget = () => {
         </button>
         <div
           className={cx(styles.userProfileMenu, {
-            [styles.hideMenu]: showMenu === false,
+            isActive: isMenuVisible,
           })}
         >
           <span className={styles.userProfileMenuPointer}>{}</span>

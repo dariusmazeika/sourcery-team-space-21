@@ -6,14 +6,15 @@
     position: relative;
 
     &MenuButton {
-        border: 0;
-        border-radius: 50%;
+        border: $no-border;
+        border-radius: $border-radius-medium;
+        cursor: pointer;
         height: 4rem;
         width: 4rem;
     }
 
     &Image {
-        border-radius: 50%;
+        border-radius: $border-radius-medium;
         width: 100%;
     }
 
@@ -27,20 +28,21 @@
 
 .userProfileMenu {
     background-color: $color-white;
-    border: 0.1rem solid $color-ghost;
-    border-radius: 0.5rem;
+    border: $border-xs solid $color-ghost;
+    border-radius: $border-m;
     color: $color-porcelain;
+    display: none;
     height: 10rem;
     position: absolute;
     right: 0;
     top: 5.5rem;
     width: 19.7rem;
-    z-index: $z-index-small;
+    z-index: $z-dropdown-menu;
 
     &Pointer {
-        border-bottom: 0.6rem solid $color-ghost;
-        border-left: 0.8rem solid transparent;
-        border-right: 0.8rem solid transparent;
+        border-bottom: $border-l solid $color-ghost;
+        border-left: $border-xl solid transparent;
+        border-right: $border-xl solid transparent;
         display: inline-block;
         height: 1rem;
         position: relative;
@@ -49,9 +51,9 @@
         width: 1rem;
 
         &::before {
-            border-bottom: 0.6rem solid $color-white;
-            border-left: 0.8rem solid transparent;
-            border-right: 0.8rem solid transparent;
+            border-bottom: $border-l solid $color-white;
+            border-left: $border-xl solid transparent;
+            border-right: $border-xl solid transparent;
             content: '';
             position: absolute;
             right: -0.8rem;
@@ -60,15 +62,11 @@
     }
 
     &Buttons {
-        border-radius: 0.4rem;
+        border-radius: $border-s;
         color: $color-white;
         height: 9.8rem;
         position: relative;
         top: -1.25rem;
         width: 100%;
     }
-}
-
-.hideMenu {
-    display: none;
 }

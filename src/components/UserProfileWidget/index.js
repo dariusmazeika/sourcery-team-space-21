@@ -1,2 +1,2 @@
 export * from "components/UserProfileWidget/UserProfileWidget";
-export * from "components/UserProfileWidget/MenuButton/MenuItem";
+export * from "components/UserProfileWidget/MenuItem/MenuItem";
