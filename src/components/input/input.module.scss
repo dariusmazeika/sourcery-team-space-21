@@ -10,12 +10,13 @@ $placeholder-text-color: $color-ghost;
 $label-font-weight: 700;
 $field-font-size: 1.4rem;
 $label-font-size: $field-font-size;
+$container-font-family: $font-roboto;
 
 .container {
     background: $field-background-color;
     display: flex;
     flex-direction: column;
-    font-family: $font-roboto;
+    font-family: $container-font-family;
 }
 
 .field {
@@ -25,20 +26,29 @@ $label-font-size: $field-font-size;
     font-size: $field-font-size;
     height: 4.8rem;
     padding: 1.3rem 1.6rem;
-}
 
-.field::placeholder {
-    color: $placeholder-text-color;
-    text-transform: capitalize;
-}
+    &::placeholder {
+        color: $placeholder-text-color;
+        text-transform: capitalize;
+    }
 
-.field:focus {
-    border-color: $field-focused-border-color;
-    outline: none;
-}
+    &:focus {
+        border-color: $field-focused-border-color;
+        outline: none;
+    }
 
-.fieldError {
-    border-color: $field-error-color;
+    &:disabled {
+        border-color: $field-disabled-color;
+        color: $field-disabled-color;
+    }
+
+    &:disabled::placeholder {
+        color: $field-disabled-color;
+    }
+
+    &HasError {
+        border-color: $field-error-color;
+    }
 }
 
 .errorMessage {
@@ -49,15 +59,6 @@ $label-font-size: $field-font-size;
     text-transform: uppercase;
 }
 
-.field:disabled {
-    border-color: $field-disabled-color;
-    color: $field-disabled-color;
-}
-
-.field:disabled::placeholder {
-    color: $field-disabled-color;
-}
-
 .label {
     color: $label-color;
     font-size: $label-font-size;
@@ -65,8 +66,8 @@ $label-font-size: $field-font-size;
     line-height: 1.6;
     padding-bottom: 0.8rem;
     text-transform: uppercase;
-}
 
-.labelIsDisabled {
-    color: $field-disabled-color;
+    &IsDisabled {
+        color: $field-disabled-color;
+    }
 }

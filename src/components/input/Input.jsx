@@ -24,7 +24,7 @@ const Input = ({
       </label>
       <input
         id={id}
-        className={cx(styles.field, { [styles.fieldError]: isError })}
+        className={cx(styles.field, { [styles.fieldHasError]: isError })}
         type={type}
         placeholder={placeHolder}
         disabled={disabled}
