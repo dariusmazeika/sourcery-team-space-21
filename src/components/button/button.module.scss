@@ -2,6 +2,7 @@
 @import './src/styles/base/colors';
 
 $btn-primary-large-font-size: 1.4rem;
+$text-background-color: inherit;
 
 .btn {
     align-items: center;
@@ -36,7 +37,7 @@ $btn-primary-large-font-size: 1.4rem;
 }
 
 .text {
-    background-color: $color-inherit;
+    background-color: $text-background-color;
     border: 0;
     color: $color-slate-gray;
 

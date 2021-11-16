@@ -19,10 +19,22 @@ const Color = {
   DUOCOLOR: "reverse",
 };
 
-export const Button = ({ children, kind, size, color }) => {
+const Type = {
+  BUTTON: "button",
+  RESET: "reset",
+  SUBMIT: "submit",
+};
+
+export const Button = ({
+  children = "DEFAULT",
+  type = "button",
+  kind = "primary",
+  size,
+  color,
+}) => {
   return (
     <button
-      type="button"
+      type={type}
       className={cx(styles.btn, {
         [styles.primary]: kind === Kind.PRIMARY,
         [styles.text]: kind === Kind.TEXT,
@@ -42,12 +54,8 @@ Button.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
-  kind: PropTypes.oneOf(Object.values(Kind)).isRequired,
+  kind: PropTypes.oneOf(Object.values(Kind)),
   size: PropTypes.oneOf(Object.values(Size)),
   color: PropTypes.oneOf(Object.values(Color)),
-};
-
-Button.defaultProps = {
-  children: "DEFAULT",
-  kind: "primary",
+  type: PropTypes.oneOf(Object.values(Type)),
 };
