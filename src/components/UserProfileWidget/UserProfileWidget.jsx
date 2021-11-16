@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import cx from "classnames";
-import styles from "./_user-profile-widget.module.scss";
+import styles from "./user-profile-widget.module.scss";
 import userImage from "assets/user.png";
 import imageMark from "assets/image-mark.png";
 import { MenuItem } from "components/UserProfileWidget";

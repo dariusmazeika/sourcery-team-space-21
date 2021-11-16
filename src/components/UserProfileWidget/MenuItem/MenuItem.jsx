@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import styles from "./_menu-item.module.scss";
+import styles from "./menu-item.module.scss";
 
 export const MenuItem = ({ title, stylesClass }) => {
   return (

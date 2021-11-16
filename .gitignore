@@ -11,8 +11,8 @@ build/
 # Compiled Java class files
 *.class
 # Compiled CSS files
-src/styles/*.css
-src/styles/*.css.map
+src/*/*.css
+src/*/*.css.map
 
 # Compiled Python bytecode
 *.py[cod]

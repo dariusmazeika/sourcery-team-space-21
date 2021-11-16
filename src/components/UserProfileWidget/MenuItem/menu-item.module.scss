@@ -1,7 +1,7 @@
 @import './src/styles/base/base';
 
 .button {
-    border: $no-border;
+    border: 0;
     color: $color-fiord;
     cursor: pointer;
     display: block;
@@ -10,7 +10,7 @@
 
     &Top {
         background: $color-white;
-        border: $no-border;
+        border: 0;
         border-top-left-radius: $border-s;
         border-top-right-radius: $border-s;
 
@@ -43,7 +43,7 @@
 
     &Bottom {
         background: $color-porcelain-dark;
-        border: $no-border;
+        border: 0;
         border-bottom-left-radius: $border-s;
         border-bottom-right-radius: $border-s;
 
