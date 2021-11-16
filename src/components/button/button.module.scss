@@ -8,6 +8,9 @@ $text-background-color: inherit;
     align-items: center;
     border: 0;
     cursor: pointer;
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .primary {
