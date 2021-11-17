@@ -4,6 +4,7 @@ import cx from "classnames";
 import styles from "./main-layout.module.scss";
 import logoDarkOutline from "assets/logo-dark-outline.png";
 import { UserProfileWidget } from "components/UserProfileWidget";
+import { MainNavigation } from "components/MainNavigation";
 
 export const MainLayout = (props) => {
   const { children } = props;
@@ -23,6 +24,7 @@ export const MainLayout = (props) => {
             <div>Team Inbif</div>
           </div>
         </div>
+        <MainNavigation />
         <UserProfileWidget />
       </header>
 
