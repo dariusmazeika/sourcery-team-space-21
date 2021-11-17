@@ -1,0 +1,79 @@
+@import './src/styles/base/typography';
+@import './src/styles/base/colors';
+
+$btn-primary-large-font-size: 1.4rem;
+$text-background-color: inherit;
+
+.btn {
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.primary {
+    background: $color-electric-violet;
+    border-radius: 65px;
+    color: $color-white;
+    padding: 0.9rem 1rem;
+
+    &.large {
+        font-size: $btn-primary-large-font-size;
+        padding: 1.4rem 2rem;
+    }
+
+    &:hover,
+    &:focus {
+        background: $color-electric-violet-secondary;
+    }
+
+    &:active {
+        background: $color-electric-violet-active;
+    }
+
+    &:disabled {
+        background: $color-porcelain-dark;
+        color: $color-gray-chateau;
+    }
+}
+
+.text {
+    background-color: $text-background-color;
+    border: 0;
+    color: $color-slate-gray;
+
+    &:hover,
+    &:focus {
+        color: $color-fiord;
+    }
+
+    &:active {
+        color: $color-midnight;
+    }
+
+    &:disabled {
+        color: $color-tiara;
+    }
+}
+
+.action {
+    background: $color-rangoon-green;
+    border-radius: 12px;
+    color: $color-white;
+    padding: 0.5rem;
+
+    &.large {
+        padding: 0.625rem;
+    }
+
+    &.secondary {
+        background: $color-mirage;
+    }
+
+    &.reverse {
+        background: $color-catskill-white;
+        color: $color-rangoon-green;
+    }
+}
