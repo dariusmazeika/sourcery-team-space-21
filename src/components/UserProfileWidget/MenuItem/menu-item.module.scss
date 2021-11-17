@@ -1,0 +1,58 @@
+@import './src/styles/base/base';
+
+.button {
+    border: 0;
+    color: $color-fiord;
+    cursor: pointer;
+    display: block;
+    height: 4.9rem;
+    width: 100%;
+
+    &Top {
+        background: $color-white;
+        border: 0;
+        border-top-left-radius: $border-s;
+        border-top-right-radius: $border-s;
+
+        &:hover {
+            background: $color-iron;
+        }
+
+        &:active {
+            background: $color-ghost;
+        }
+
+        &::before {
+            border-bottom: $border-l solid $color-white;
+            border-left: $border-xl solid transparent;
+            border-right: $border-xl solid transparent;
+            content: '';
+            position: absolute;
+            right: 1.1rem;
+            top: -0.6rem;
+        }
+
+        &:hover::before {
+            border-bottom: $border-l solid $color-iron;
+        }
+
+        &:active::before {
+            border-bottom: $border-l solid $color-ghost;
+        }
+    }
+
+    &Bottom {
+        background: $color-porcelain-dark;
+        border: 0;
+        border-bottom-left-radius: $border-s;
+        border-bottom-right-radius: $border-s;
+
+        &:hover {
+            background: $color-iron;
+        }
+
+        &:active {
+            background: $color-ghost;
+        }
+    }
+}

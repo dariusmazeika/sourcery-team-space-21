@@ -10,6 +10,9 @@ build/
 
 # Compiled Java class files
 *.class
+# Compiled CSS files
+src/*/*.css
+src/*/*.css.map
 
 # Compiled Python bytecode
 *.py[cod]

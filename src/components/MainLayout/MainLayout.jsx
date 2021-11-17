@@ -1,7 +1,10 @@
 import React from "react";
-import styles from "./_styles.module.scss";
 import PropTypes from "prop-types";
+import cx from "classnames";
+import styles from "./main-layout.module.scss";
 import logoDarkOutline from "assets/logo-dark-outline.png";
+import { UserProfileWidget } from "components/UserProfileWidget";
+import { MainNavigation } from "components/MainNavigation";
 
 export const MainLayout = (props) => {
   const { children } = props;
@@ -17,10 +20,12 @@ export const MainLayout = (props) => {
               className={styles.navigationMetaLogoImg}
             />
           </div>
-          <div className={`${styles.navigationMetaTeam} heading5`}>
+          <div className={cx(styles.navigationMetaTeam, "heading5")}>
             <div>Team Inbif</div>
           </div>
         </div>
+        <MainNavigation />
+        <UserProfileWidget />
       </header>
 
       <main className={styles.main}>{children}</main>

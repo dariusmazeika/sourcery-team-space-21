@@ -1,6 +1,8 @@
 @import 'colors';
 @import 'typography';
 @import 'config';
+@import 'z-index';
+@import 'borders';
 
 html {
     color: $default-font-color;
