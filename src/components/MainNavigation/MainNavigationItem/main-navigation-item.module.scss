@@ -1,0 +1,19 @@
+@import './src/styles/base/base';
+
+.navigationButton {
+    background-color: $color-electric-violet;
+    border: 0;
+    color: $color-porcelain;
+    height: 8rem;
+    min-width: 16.4rem;
+
+    &:hover {
+        background-color: $color-electric-violet-secondary;
+        transition: 0.2s ease-in;
+    }
+
+    &:active {
+        background-color: $color-electric-violet-active;
+        transition: 0.2s ease-out;
+    }
+}
