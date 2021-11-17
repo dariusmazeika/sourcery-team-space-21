@@ -1,0 +1,56 @@
+@import './src/styles/base/base';
+
+$container-background-color: $color-white;
+$container-font-family: $font-roboto;
+$regular-font-size: 1.6rem;
+
+.container {
+    align-items: flex-start;
+    background-color: $container-background-color;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    color: $color-fiord;
+    display: flex;
+    flex-direction: column;
+    font-family: $container-font-family;
+    padding: 4rem 3.2rem;
+    width: 54.6rem;
+
+    &Header {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+
+        &Title {
+            font-weight: $font-weight-bold;
+            line-height: 1.33;
+            text-transform: capitalize;
+        }
+
+        &Subtitle {
+            font-size: $regular-font-size;
+            line-height: 1.5;
+            margin: 0.8rem 0;
+
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    &Body {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        margin: 3.2rem 0;
+    }
+
+    &Footer {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: $regular-font-size;
+        justify-content: space-between;
+        line-height: 1.5;
+    }
+}
