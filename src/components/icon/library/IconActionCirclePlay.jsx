@@ -1,6 +1,6 @@
 import * as React from "react";
 /* eslint react/prop-types: 0 */
-function SvgIconPause(props) {
+function SvgIconActionCirclePlay(props) {
   return (
     <svg
       width={props.size}
@@ -11,7 +11,14 @@ function SvgIconPause(props) {
       {...props}
     >
       <path
-        d="M12.59 22c5.524 0 10-4.477 10-10s-4.476-10-10-10c-5.522 0-10 4.477-10 10s4.478 10 10 10zM10.59 15V9M14.59 15V9"
+        d="M12.59 22c5.524 0 10-4.477 10-10s-4.476-10-10-10c-5.522 0-10 4.477-10 10s4.478 10 10 10z"
+        stroke={props.currentColor}
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.59 8l6 4-6 4V8z"
         stroke={props.currentColor}
         strokeWidth={2}
         strokeLinecap="round"
@@ -21,4 +28,4 @@ function SvgIconPause(props) {
   );
 }
 
-export default SvgIconPause;
+export default SvgIconActionCirclePlay;

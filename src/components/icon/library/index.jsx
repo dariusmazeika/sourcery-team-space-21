@@ -1,3 +1,10 @@
-export { default as IconPause } from "./IconPause";
-export { default as IconPlay } from "./IconPlay";
-export { default as IconStop } from "./IconStop";
+export { default as IconActionCirclePause } from "./IconActionCirclePause";
+export { default as IconActionCirclePlay } from "./IconActionCirclePlay";
+export { default as IconActionCircleStop } from "./IconActionCircleStop";
+export { default as IconBookBookmark } from "./IconBookBookmark";
+export { default as IconChevronSingledown } from "./IconChevronSingledown";
+export { default as IconLocationCompass } from "./IconLocationCompass";
+export { default as IconLocationHome } from "./IconLocationHome";
+export { default as IconLogOut } from "./IconLogOut";
+export { default as IconMainSettings } from "./IconMainSettings";
+export { default as IconNotificationBell } from "./IconNotificationBell";
