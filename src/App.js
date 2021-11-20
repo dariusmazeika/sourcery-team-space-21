@@ -10,7 +10,9 @@ function App() {
     <Router>
       <MainLayout className="app">
         <Routes>
-          <Route exact path="/dashboard" element={<DashboardPage />} />
+          <Route exact path="/" element={<DashboardPage />}>
+            <Route path="dashboard" element={<DashboardPage />} />
+          </Route>
           <Route exact path="/reservations" element={<ReservationsPage />} />
           <Route exact path="/eat-out" element={<EatOutPage />} />
         </Routes>
