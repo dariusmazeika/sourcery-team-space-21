@@ -5,8 +5,10 @@ import cx from "classnames";
 import styles from "./main-navigation-item.module.scss";
 
 export const MainNavigationItem = ({ title }) => {
+  const path = title.toLowerCase();
+
   return (
-    <Link to={title}>
+    <Link to={path}>
       <button type="button" className={cx(styles.navigationButton, "heading4")}>
         {title}
       </button>
