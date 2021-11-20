@@ -26,7 +26,7 @@ const Type = {
 };
 
 export const Button = ({
-  children = "DEFAULT",
+  children,
   type = "button",
   kind = "primary",
   size,
@@ -44,7 +44,8 @@ export const Button = ({
         [styles.large]: size === Size.LARGE,
       })}
     >
-      {children}
+      <span></span>
+      <span>{children}</span>
     </button>
   );
 };
