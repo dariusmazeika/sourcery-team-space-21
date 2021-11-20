@@ -13,8 +13,8 @@ function App() {
           <Route exact path="/" element={<DashboardPage />}>
             <Route path="dashboard" element={<DashboardPage />} />
           </Route>
-          <Route exact path="/reservations" element={<ReservationsPage />} />
-          <Route exact path="/eat-out" element={<EatOutPage />} />
+          <Route path="/reservations" element={<ReservationsPage />} />
+          <Route path="/eat-out" element={<EatOutPage />} />
         </Routes>
       </MainLayout>
     </Router>
