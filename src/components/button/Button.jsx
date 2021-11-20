@@ -44,8 +44,7 @@ export const Button = ({
         [styles.large]: size === Size.LARGE,
       })}
     >
-      <span></span>
-      <span>{children}</span>
+      {children}
     </button>
   );
 };
@@ -53,7 +52,7 @@ export const Button = ({
 Button.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
+    PropTypes.node.isRequired,
   ]),
   kind: PropTypes.oneOf(Object.values(Kind)),
   size: PropTypes.oneOf(Object.values(Size)),
