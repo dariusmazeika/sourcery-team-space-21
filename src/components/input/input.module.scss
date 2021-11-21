@@ -1,10 +1,10 @@
 @import './src/styles/base/base';
 
 $field-error-color: $color-wild-watermelon;
-$field-background-color: $color-white;
 $field-border-color: $color-ghost;
 $field-focused-border-color: $color-fiord;
 $field-disabled-color: $color-iron;
+$field-disabled-background-color: transparent;
 $label-color: $color-gray-chateau;
 $placeholder-text-color: $color-ghost;
 $label-font-weight: 700;
@@ -13,14 +13,12 @@ $label-font-size: $field-font-size;
 $container-font-family: $font-roboto;
 
 .container {
-    background: $field-background-color;
     display: flex;
     flex-direction: column;
     font-family: $container-font-family;
 }
 
 .field {
-    background: $field-background-color;
     border: 1px solid $field-border-color;
     border-radius: 5px;
     font-size: $field-font-size;
@@ -38,8 +36,8 @@ $container-font-family: $font-roboto;
     }
 
     &:disabled {
+        background-color: $field-disabled-background-color;
         border-color: $field-disabled-color;
-        color: $field-disabled-color;
     }
 
     &:disabled::placeholder {

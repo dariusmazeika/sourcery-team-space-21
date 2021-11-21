@@ -1,5 +1,4 @@
-@import './src/styles/base/typography';
-@import './src/styles/base/colors';
+@import './src/styles/base/base';
 
 $btn-primary-large-font-size: 1.4rem;
 $text-background-color: inherit;
@@ -8,7 +7,10 @@ $text-background-color: inherit;
     align-items: center;
     border: 0;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
+    font-family: $font-roboto;
+    font-weight: $font-weight-medium;
+    justify-content: center;
     text-align: center;
     text-transform: uppercase;
 }
@@ -17,16 +19,25 @@ $text-background-color: inherit;
     background: $color-electric-violet;
     border-radius: 65px;
     color: $color-white;
-    padding: 0.9rem 1rem;
+    height: 3.2rem;
+    padding: 0.9rem 1.4rem;
 
     &.large {
         font-size: $btn-primary-large-font-size;
-        padding: 1.4rem 2rem;
+        height: 4rem;
+        padding: 1.2rem 2.9rem;
+
+        &:hover,
+        &:focus {
+            background: $color-electric-violet-secondary;
+            padding: 1.2rem 2.9rem;
+        }
     }
 
     &:hover,
     &:focus {
         background: $color-electric-violet-secondary;
+        padding: 0.9rem 1.6rem;
     }
 
     &:active {
@@ -62,10 +73,14 @@ $text-background-color: inherit;
     background: $color-rangoon-green;
     border-radius: 12px;
     color: $color-white;
-    padding: 0.5rem;
+    height: 3.2rem;
+    padding: 0.8rem;
+    width: 3.2rem;
 
     &.large {
-        padding: 0.625rem;
+        height: 4rem;
+        padding: 1rem;
+        width: 4rem;
     }
 
     &.secondary {

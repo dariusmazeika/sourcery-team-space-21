@@ -26,7 +26,7 @@ const Type = {
 };
 
 export const Button = ({
-  children = "DEFAULT",
+  children,
   type = "button",
   kind = "primary",
   size,
@@ -52,7 +52,7 @@ export const Button = ({
 Button.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
+    PropTypes.node.isRequired,
   ]),
   kind: PropTypes.oneOf(Object.values(Kind)),
   size: PropTypes.oneOf(Object.values(Size)),
