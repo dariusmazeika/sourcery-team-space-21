@@ -3,11 +3,55 @@
 $container-background-color: $color-white;
 $container-font-family: $font-roboto;
 $regular-font-size: 1.6rem;
+$body-background-color: $color-iron;
+$team-logo-text-color: $color-mine-shaft;
+$team-logo-font-size: 2.5rem;
 
-.container {
+.main {
+    align-items: center;
+    background-color: $body-background-color;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    overflow: scroll;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &Box {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: -11.7rem;
+    }
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7.2rem;
+    width: 16.2rem;
+
+    &Img {
+        height: 6.8rem;
+        width: 6.8rem;
+    }
+
+    &Text {
+        color: $team-logo-text-color;
+        font-size: $team-logo-font-size;
+        font-weight: $font-weight-bold;
+        line-height: 1.2;
+        margin-left: 1.4rem;
+    }
+}
+
+.formContainer {
     align-items: flex-start;
     background-color: $container-background-color;
-    border-radius: 8px;
+    border-radius: $border-xl;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     color: $color-fiord;
     display: flex;
@@ -45,7 +89,7 @@ $regular-font-size: 1.6rem;
         margin: 3.2rem 0;
     }
 
-    &Footer {
+    &ActionsBlock {
         align-items: center;
         display: flex;
         flex-direction: row;
