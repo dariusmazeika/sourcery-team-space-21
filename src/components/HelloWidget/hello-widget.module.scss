@@ -1,0 +1,23 @@
+@import './src/styles/base/base';
+
+$clock-font-size: 10rem;
+$text-font-size: 3.6rem;
+
+@mixin text-styles {
+    color: $color-fiord;
+    font-family: $font-roboto;
+    font-weight: 700;
+}
+
+.clock {
+    @include text-styles;
+    display: inline;
+    font-size: $clock-font-size;
+    height: 11.7rem;
+    width: 27.4rem;
+}
+
+.text {
+    @include text-styles;
+    font-size: $text-font-size;
+}
