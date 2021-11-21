@@ -8,3 +8,4 @@ export { default as IconLocationHome } from "./IconLocationHome";
 export { default as IconLogOut } from "./IconLogOut";
 export { default as IconMainSettings } from "./IconMainSettings";
 export { default as IconNotificationBell } from "./IconNotificationBell";
+export { default as IconSymbolX } from "./IconSymbolX";
