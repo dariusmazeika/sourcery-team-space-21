@@ -1,8 +1,6 @@
 @import './src/styles/base/base';
 
 $container-background-color: $color-white;
-$container-font-family: $font-roboto;
-$regular-font-size: 1.6rem;
 $body-background-color: $color-iron;
 $team-logo-text-color: $color-mine-shaft;
 $team-logo-font-size: 2.5rem;
@@ -10,20 +8,15 @@ $team-logo-font-size: 2.5rem;
 .main {
     align-items: center;
     background-color: $body-background-color;
-    bottom: 0;
     display: flex;
     justify-content: center;
-    left: 0;
-    overflow: scroll;
-    position: absolute;
-    right: 0;
-    top: 0;
+    min-height: 100vh;
+    min-width: 100vw;
 
     &Box {
         align-items: center;
         display: flex;
         flex-direction: column;
-        margin-top: -11.7rem;
     }
 }
 
@@ -32,6 +25,7 @@ $team-logo-font-size: 2.5rem;
     display: flex;
     flex-direction: row;
     margin-bottom: 7.2rem;
+    margin-top: 2rem;
     width: 16.2rem;
 
     &Img {
@@ -56,45 +50,7 @@ $team-logo-font-size: 2.5rem;
     color: $color-fiord;
     display: flex;
     flex-direction: column;
-    font-family: $container-font-family;
+    margin-bottom: 13.7rem; //to keep form container vertically centered
     padding: 4rem 3.2rem;
     width: 54.6rem;
-
-    &Header {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-
-        &Title {
-            font-weight: $font-weight-bold;
-            line-height: 1.33;
-            text-transform: capitalize;
-        }
-
-        &Subtitle {
-            font-size: $regular-font-size;
-            line-height: 1.5;
-            margin: 0.8rem 0;
-
-            &::first-letter {
-                text-transform: capitalize;
-            }
-        }
-    }
-
-    &Body {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        margin: 3.2rem 0;
-    }
-
-    &ActionsBlock {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        font-size: $regular-font-size;
-        justify-content: space-between;
-        line-height: 1.5;
-    }
 }

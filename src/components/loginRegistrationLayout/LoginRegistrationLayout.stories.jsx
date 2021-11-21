@@ -1,5 +1,6 @@
 import React from "react";
 import LoginRegistrationLayout from "./LoginRegistrationLayout";
+import FormHeader from "./FormHeader";
 import { text, withKnobs } from "@storybook/addon-knobs";
 
 export default {
@@ -10,9 +11,13 @@ export default {
 
 export const Default = () => {
   return (
-    <LoginRegistrationLayout
-      formTitle={text("Form Title", "register")}
-      formSubtitle={text("Subtitle", "lets get you on board")}
-    />
+    <LoginRegistrationLayout>
+      {
+        <FormHeader
+          title={text("Form Title", "register")}
+          subtitle={text("Subtitle", "lets get you on board")}
+        />
+      }
+    </LoginRegistrationLayout>
   );
 };
