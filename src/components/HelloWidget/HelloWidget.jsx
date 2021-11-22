@@ -2,13 +2,6 @@ import React, { useEffect, useState } from "react";
 import propTypes from "prop-types";
 import styles from "components/HelloWidget/hello-widget.module.scss";
 
-// PartOfDay = {
-//   MORNING: "morning",
-//   AFTERNOON: "afternoon",
-//   EVENING: "evening",
-//   NIGHT: "night",
-// };
-
 export const HelloWidget = ({ name = "Jonas", partofday }) => {
   const [clockState, setClockState] = useState();
 
