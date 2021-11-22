@@ -18,8 +18,10 @@ export const HelloWidget = ({ name = "Jonas" }) => {
   }, []);
   return (
     <>
-      <div className={styles.clock}>{clockState}</div>
-      <div className={styles.text}>Good afternoon, {name}!</div>
+      <div className={styles.container}>
+        <div className={styles.clock}>{clockState}</div>
+        <div className={styles.text}>Good afternoon, {name}!</div>
+      </div>
     </>
   );
 };
