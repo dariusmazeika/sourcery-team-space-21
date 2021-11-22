@@ -8,11 +8,11 @@ export const MainNavigationItem = ({ title }) => {
   const path = title.toLowerCase();
 
   return (
-    <Link to={path}>
-      <button type="button" className={cx(styles.navigationButton, "heading4")}>
+    <>
+      <Link to={path} className={cx(styles.navigationLink, "heading4")}>
         {title}
-      </button>
-    </Link>
+      </Link>
+    </>
   );
 };
 
