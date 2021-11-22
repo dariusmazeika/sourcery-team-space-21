@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import propTypes from "prop-types";
 import styles from "components/HelloWidget/hello-widget.module.scss";
 
-export const HelloWidget = ({ name = "Jonas", partofday }) => {
+export const HelloWidget = ({ username = "Jonas", partofday }) => {
   const [clockState, setClockState] = useState();
 
   const date = new Date();
   const curHr = date.getHours();
   if (curHr < 5 || curHr >= 21) {
-    partofday = "night";
+    partofday = "evening";
   } else if (curHr < 12) {
     partofday = "morning";
   } else if (curHr < 17) {
@@ -33,7 +33,7 @@ export const HelloWidget = ({ name = "Jonas", partofday }) => {
       <div className={styles.container}>
         <div className={styles.clock}>{clockState}</div>
         <div className={styles.text}>
-          Good {partofday}, {name}!
+          Good {partofday}, {username}!
         </div>
       </div>
     </>
@@ -41,6 +41,6 @@ export const HelloWidget = ({ name = "Jonas", partofday }) => {
 };
 
 HelloWidget.propTypes = {
-  name: propTypes.string,
+  username: propTypes.string,
   partofday: propTypes.string,
 };
