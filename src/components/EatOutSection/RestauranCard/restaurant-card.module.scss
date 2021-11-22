@@ -53,12 +53,12 @@ $font-small: 0.625rem;
     }
 
     .title {
+        color: $color-midnight;
         font-size: $font-big;
         font-weight: $font-weight-medium;
         letter-spacing: 0.03rem;
         max-width: 19.6rem;
         overflow: hidden;
-        padding: 0.25rem 0;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
