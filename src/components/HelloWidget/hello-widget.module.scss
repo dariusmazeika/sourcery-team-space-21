@@ -2,6 +2,7 @@
 
 $clock-font-size: 10rem;
 $text-font-size: 3.6rem;
+$text-font-family: $font-roboto;
 
 .container {
     display: inline-block;
@@ -10,15 +11,14 @@ $text-font-size: 3.6rem;
 
 @mixin text-styles {
     color: $color-fiord;
-    font-family: $font-roboto;
-    font-weight: 700;
+    font-family: $text-font-family;
+    font-weight: $font-weight-semibold;
 }
 
 .clock {
     @include text-styles;
-    display: inline;
+    display: inline-block;
     font-size: $clock-font-size;
-    max-height: 11.7rem;
     max-width: 27.4rem;
 }
 
