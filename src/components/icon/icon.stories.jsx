@@ -22,16 +22,16 @@ export default {
 export const Default = () => {
   return (
     <div>
-      <IconActionCirclePause currentColor={"#000"} size={"2em"} />
-      <IconActionCirclePlay currentColor={"#000"} size={"1.5em"} />
-      <IconActionCircleStop currentColor={"#000"} size={"1em"} />
-      <IconBookBookmark currentColor={"#000"} size={"2em"} />
-      <IconChevronSingledown currentColor={"#000"} size={"1.5em"} />
-      <IconLocationCompass currentColor={"#000"} size={"1em"} />
-      <IconLocationHome currentColor={"#000"} size={"2em"} />
-      <IconLogOut currentColor={"#000"} size={"1.5em"} />
-      <IconMainSettings currentColor={"#000"} size={"1em"} />
-      <IconNotificationBell currentColor={"#000"} size={"1em"} />
+      <IconActionCirclePause currentColor={"#000"} size={"5em"} />
+      <IconActionCirclePlay currentColor={"#000"} size={"5em"} />
+      <IconActionCircleStop currentColor={"#000"} size={"5em"} />
+      <IconBookBookmark currentColor={"#000"} size={"5em"} />
+      <IconChevronSingledown currentColor={"#000"} size={"5em"} />
+      <IconLocationCompass currentColor={"#000"} size={"5em"} />
+      <IconLocationHome currentColor={"#000"} size={"5em"} />
+      <IconLogOut currentColor={"#000"} size={"5em"} />
+      <IconMainSettings currentColor={"#000"} size={"5em"} />
+      <IconNotificationBell currentColor={"#000"} size={"5em"} />
     </div>
   );
 };
