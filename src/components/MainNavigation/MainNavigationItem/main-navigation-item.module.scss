@@ -1,0 +1,23 @@
+@import './src/styles/base/base';
+
+.navigationLink {
+    align-items: center;
+    background-color: $color-electric-violet;
+    border: 0;
+    color: $color-porcelain;
+    display: flex;
+    height: 8rem;
+    justify-content: center;
+    min-width: 16.4rem;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $color-electric-violet-secondary;
+        transition: 0.2s ease-in;
+    }
+
+    &:active {
+        background-color: $color-electric-violet-active;
+        transition: 0.2s ease-out;
+    }
+}

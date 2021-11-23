@@ -1,41 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { ReactComponent as SourceryLogo } from "assets/logo.svg";
-import { GetStartedList } from "features/getStarted/components/GetStartedList";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { MainLayout } from "components/MainLayout";
+import { DashboardPage } from "pages/Dashboard";
+import { ReservationsPage } from "pages/Reservations";
+import { EatOutPage } from "pages/EatOut";
 
 function App() {
-  const [instructions, setInstructions] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3008/instructions")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setInstructions(result);
-        },
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
-
   return (
-    <div className="app">
-      <header className="App-header">
-        <SourceryLogo />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <GetStartedList key={instructions.length} instructions={instructions} />
-    </div>
+    <Router>
+      <MainLayout className="app">
+        <Routes>
+          <Route exact path="/" element={<DashboardPage />}>
+            <Route path="dashboard" element={<DashboardPage />} />
+          </Route>
+          <Route path="/reservations" element={<ReservationsPage />} />
+          <Route path="/eat-out" element={<EatOutPage />} />
+        </Routes>
+      </MainLayout>
+    </Router>
   );
 }
 
