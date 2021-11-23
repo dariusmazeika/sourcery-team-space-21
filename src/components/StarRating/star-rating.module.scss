@@ -1,0 +1,10 @@
+@import './src/styles/base/base';
+
+.wrapper {
+    align-items: center;
+    background: $color-energy-yellow;
+    display: flex;
+    justify-content: space-around;
+    max-height: 2rem;
+    max-width: 4.28rem;
+}
