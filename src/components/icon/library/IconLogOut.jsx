@@ -1,5 +1,5 @@
 import * as React from "react";
-/* eslint react/prop-types: 0 */
+
 function SvgIconLogOut(props) {
   return (
     <svg
