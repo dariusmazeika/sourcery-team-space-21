@@ -40,6 +40,10 @@ Runs all linters and prettier and shows any warnings/errors in console.
 
 Runs storybook for development.
 
+### `npm run svgr`
+
+Runs SVG to React component converter.
+
 ## Learn More
 
 To learn React, check out the [React documentation](https://reactjs.org/).
