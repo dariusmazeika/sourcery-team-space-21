@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./restaurant-card.module.scss";
 
 import placeholderPhoto from "assets/restaurant-card-placeholder.jpg";
@@ -30,8 +29,4 @@ export const RestaurantCard = (props) => {
       <div className={styles.wishlist}></div>
     </section>
   );
-};
-
-RestaurantCard.propTypes = {
-  children: PropTypes.any,
 };
