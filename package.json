@@ -11,6 +11,7 @@
     "react-router-dom": "6.0.2",
     "react-scripts": "3.4.4"
   },
+  "module": "src/components/icon/dist/index.esm.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -27,7 +28,8 @@
     "lint:stylelint:check": "npm run -s lint:stylelint \"src/**/*.scss\"",
     "lint:stylelint:fix": "npm run -s lint:stylelint \"src/**/*.scss\" --fix",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "svgr": "svgr --ext jsx --icon --replace-attr-values #25282B={props.currentColor} --replace-attr-values 1em={props.size} -d src/components/icon/library src/assets/Icons"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,scss,md}": "prettier --write",
@@ -55,6 +57,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@sambego/storybook-state": "^2.0.1",
     "@storybook/addon-actions": "^6.0.27",
     "@storybook/addon-backgrounds": "^6.0.27",
@@ -63,6 +68,7 @@
     "@storybook/addon-notes": "^5.3.21",
     "@storybook/addons": "^6.0.27",
     "@storybook/react": "^6.0.27",
+    "@svgr/cli": "^5.5.0",
     "@svgr/webpack": "^5.4.0",
     "css-loader": "^5.0.0",
     "eslint": "6.6.0",
@@ -76,6 +82,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "^4.0.4",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "style-loader": "^2.0.0",
     "stylelint": "^13.7.2",
     "stylelint-config-prettier": "^8.0.2",
