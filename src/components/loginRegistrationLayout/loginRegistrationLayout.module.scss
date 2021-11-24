@@ -50,7 +50,8 @@ $team-logo-font-size: 2.5rem;
     color: $color-fiord;
     display: flex;
     flex-direction: column;
-    margin-bottom: 13.7rem; //to keep form container vertically centered
+    margin-bottom: 13.7rem;
+    max-width: 54rem;
+    min-width: 32rem;
     padding: 4rem 3.2rem;
-    width: 54.6rem;
 }

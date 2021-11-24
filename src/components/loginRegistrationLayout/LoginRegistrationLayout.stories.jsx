@@ -14,8 +14,8 @@ export const Default = () => {
     <LoginRegistrationLayout>
       {
         <FormHeader
-          title={text("Form Title", "register")}
-          subtitle={text("Subtitle", "lets get you on board")}
+          title={text("Form Title", "login")}
+          subtitle={text("Subtitle", "welcome back, please login.")}
         />
       }
     </LoginRegistrationLayout>

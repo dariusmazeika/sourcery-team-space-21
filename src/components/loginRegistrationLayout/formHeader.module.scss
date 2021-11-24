@@ -1,7 +1,5 @@
 @import './src/styles/base/base';
 
-$regular-font-size: 1.6rem;
-
 .headerBox {
     align-items: flex-start;
     display: flex;
@@ -14,9 +12,9 @@ $regular-font-size: 1.6rem;
     }
 
     &Subtitle {
-        font-size: $regular-font-size;
         line-height: 1.5;
         margin: 0.8rem 0;
+        overflow-wrap: normal;
 
         &::first-letter {
             text-transform: capitalize;
