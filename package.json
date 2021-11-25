@@ -5,6 +5,7 @@
   "dependencies": {
     "caniuse-lite": "^1.0.30001278",
     "classnames": "^2.2.6",
+    "miragejs": "^0.1.42",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -73,7 +74,6 @@
     "eslint-plugin-react-hooks": "4.1.2",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
-    "miragejs": "^0.1.42",
     "node-sass": "^4.14.1",
     "postcss-loader": "^4.0.4",
     "prettier": "^2.1.2",
