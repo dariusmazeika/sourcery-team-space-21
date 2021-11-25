@@ -1,21 +1,31 @@
-const endpoints = [
-  "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json",
-  "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/weather.json",
-  "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json",
-  "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/stories.json",
-];
-
-const fetchData = async () => {
-  const requestData = await Promise.all(
-    endpoints.map((url) => fetch(url).then((response) => response.json()))
-  );
-  return formatData(requestData);
+const endpoints = {
+  userData:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json",
+  categories:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/categories.json",
+  devices:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/devices.json",
+  books:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/books.json",
+  rooms:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/rooms.json",
+  weather:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/weather.json",
+  restaurants:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json",
+  stories:
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/stories.json",
 };
 
-const formatData = (apiData) => {
-  const formattedData = {};
-  apiData.forEach((e) => Object.assign(formattedData, e));
-  return formattedData;
-};
+function fetchData(endpointNames) {
+  const apiData = {};
+  endpointNames.forEach(async (e) => {
+    const returnedData = await fetch(endpoints[e]).then((response) =>
+      response.json()
+    );
+    Object.assign(apiData, returnedData);
+  });
+  return apiData;
+}
 
 export default fetchData;
