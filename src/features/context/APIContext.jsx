@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 import PropTypes from "prop-types";
 import fetchData from "features/fetchData";
 
@@ -7,15 +7,17 @@ const APIContext = createContext();
 export const APIContextProvider = ({ children }) => {
   const [apiData, setApiData] = useState({});
 
-  useEffect(() => {
-    async function loadData() {
-      const data = await fetchData();
-      setApiData(data);
-    }
-    loadData();
-  }, []);
+  async function fetchDataToState() {
+    const args = Array.from(arguments);
+    const data = await fetchData(args);
+    setApiData(data);
+  }
 
-  return <APIContext.Provider value={apiData}>{children}</APIContext.Provider>;
+  return (
+    <APIContext.Provider value={[apiData, fetchDataToState]}>
+      {children}
+    </APIContext.Provider>
+  );
 };
 
 export const useAPI = () => {
