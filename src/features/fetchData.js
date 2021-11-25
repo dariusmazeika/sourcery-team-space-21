@@ -20,9 +20,8 @@ const endpoints = {
 function fetchData(endpointNames) {
   const apiData = {};
   endpointNames.forEach(async (e) => {
-    const returnedData = await fetch(endpoints[e]).then((response) =>
-      response.json()
-    );
+    const response = await fetch(endpoints[e]);
+    const returnedData = await response.json();
     Object.assign(apiData, returnedData);
   });
   return apiData;
