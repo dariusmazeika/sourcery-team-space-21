@@ -1,11 +1,22 @@
 @import './src/styles/base/base';
 
+$font-size-count: 1.4rem;
+
 .wrapper {
     align-items: center;
     background: $color-pickled-bluewood;
     border-radius: $border-xl;
-    display: inline-block;
+    color: $color-energy-yellow;
+    display: inline-flex;
     max-height: 3.2rem;
     max-width: 5.582rem;
     padding: 0.8rem 1.2rem;
+}
+
+.count {
+    display: inline-block;
+    font-size: $font-size-count;
+    font-weight: $font-weight-semibold;
+    line-height: 1.15;
+    padding-left: 0.9rem;
 }
