@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import styles from "components/HelloWidget/hello-widget.module.scss";
 
 export const HelloWidget = ({ username = "Jonas", partofday }) => {
-  const [clockState, setClockState] = useState("00:00");
+  const [clockState, setClockState] = useState();
 
   const date = new Date();
   const curHr = date.getHours();
@@ -17,15 +17,20 @@ export const HelloWidget = ({ username = "Jonas", partofday }) => {
     partofday = "evening";
   }
 
+  function Time() {
+    const date = new Date();
+    setClockState(
+      date.toLocaleTimeString(["en-GB"], {
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    );
+  }
+
   useEffect(() => {
+    Time();
     setInterval(() => {
-      const date = new Date();
-      setClockState(
-        date.toLocaleTimeString(["en-GB"], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })
-      );
+      Time();
     }, 1000);
   }, []);
   return (
