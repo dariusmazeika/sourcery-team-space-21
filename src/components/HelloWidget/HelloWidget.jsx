@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import styles from "components/HelloWidget/hello-widget.module.scss";
 
 export const HelloWidget = ({ username = "Jonas", partofday }) => {
-  const [clockState, setClockState] = useState();
+  const [clockState, setClockState] = useState("00:00");
 
   const date = new Date();
   const curHr = date.getHours();
