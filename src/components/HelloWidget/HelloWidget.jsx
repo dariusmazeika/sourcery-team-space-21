@@ -17,7 +17,7 @@ export const HelloWidget = ({ username = "Jonas", partofday }) => {
     partofday = "evening";
   }
 
-  function Time() {
+  function updateTime() {
     const date = new Date();
     setClockState(
       date.toLocaleTimeString(["en-GB"], {
@@ -28,9 +28,9 @@ export const HelloWidget = ({ username = "Jonas", partofday }) => {
   }
 
   useEffect(() => {
-    Time();
+    updateTime();
     setInterval(() => {
-      Time();
+      updateTime();
     }, 1000);
   }, []);
   return (
