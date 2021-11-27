@@ -11,15 +11,6 @@ $border-radius: 0.625rem;
     height: 14.4rem;
     width: 26rem;
 
-    .placeholderPhoto {
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
-        max-height: inherit;
-        object-fit: cover;
-        position: absolute;
-        width: inherit;
-    }
-
     .details {
         display: flex;
         flex-direction: column;
