@@ -9,9 +9,12 @@ $font-size-small: 1.4rem;
     display: flex;
     height: 3.2rem;
     justify-content: space-evenly;
-    max-width: 7rem;
 
-    .icon {
+    .oneStar {
+        display: flex;
+    }
+
+    .allStars {
         display: flex;
     }
 
