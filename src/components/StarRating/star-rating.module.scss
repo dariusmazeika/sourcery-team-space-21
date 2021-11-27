@@ -1,10 +1,23 @@
 @import './src/styles/base/base';
 
+$font-size-small: 1.4rem;
+
 .wrapper {
     align-items: center;
     background: $color-energy-yellow;
+    border-radius: $border-l;
     display: flex;
-    justify-content: space-around;
-    max-height: 2rem;
-    max-width: 4.28rem;
+    height: 3.2rem;
+    justify-content: space-evenly;
+    max-width: 7rem;
+
+    .icon {
+        display: flex;
+    }
+
+    .rating {
+        color: $color-pickled-bluewood;
+        font-size: $font-size-small;
+        font-weight: $font-weight-semibold;
+    }
 }
