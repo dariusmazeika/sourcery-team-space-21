@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import propTypes from "prop-types";
 import styles from "components/HelloWidget/hello-widget.module.scss";
 
@@ -17,22 +17,22 @@ export const HelloWidget = ({ username = "Jonas", partofday }) => {
     partofday = "evening";
   }
 
-  function updateTime() {
+  const updateTime = useCallback(() => {
     const date = new Date();
-    setClockState(
-      date.toLocaleTimeString(["en-GB"], {
-        hour: "2-digit",
-        minute: "2-digit",
-      })
-    );
-  }
+    const formatedDate = date.toLocaleTimeString(["en-GB"], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    if (date !== clockState) setClockState(formatedDate);
+  }, [clockState]);
 
   useEffect(() => {
     updateTime();
-    setInterval(() => {
+    const interval = setInterval(() => {
       updateTime();
     }, 1000);
-  }, []);
+    return () => clearInterval(interval);
+  }, [updateTime]);
   return (
     <>
       <div className={styles.container}>
