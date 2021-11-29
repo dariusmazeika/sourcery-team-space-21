@@ -23,7 +23,7 @@ export const HelloWidget = ({ username = "Jonas", partofday }) => {
       hour: "2-digit",
       minute: "2-digit",
     });
-    if (date !== clockState) setClockState(formatedDate);
+    if (formatedDate !== clockState) setClockState(formatedDate);
   }, [clockState]);
 
   useEffect(() => {
