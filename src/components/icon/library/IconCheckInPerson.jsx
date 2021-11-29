@@ -18,4 +18,8 @@ function SvgIconCheckInPerson(props) {
   );
 }
 
+SvgIconCheckInPerson.defaultProps = {
+  size: "1.2rem",
+};
+
 export default SvgIconCheckInPerson;

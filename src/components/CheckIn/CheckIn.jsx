@@ -5,10 +5,10 @@ import SvgIconCheckInPerson from "components/icon/library/IconCheckInPerson";
 
 import styles from "./check-in.module.scss";
 
-export const CheckIn = ({ count = 6 }) => {
+export const CheckIn = ({ count = 0 }) => {
   return (
     <div className={styles.wrapper}>
-      <SvgIconCheckInPerson size="1.2rem" />
+      <SvgIconCheckInPerson />
       <div className={cx(styles.count, styles.caption)}>{count}</div>
     </div>
   );
