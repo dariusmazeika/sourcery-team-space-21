@@ -30,5 +30,3 @@ export const RestaurantCardComponent = () => {
     />
   );
 };
-
-// const value = select(label, options, defaultValue, groupId);
