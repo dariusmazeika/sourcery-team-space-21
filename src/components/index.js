@@ -4,3 +4,4 @@ export * from "./button";
 export * from "./HelloWidget";
 export * from "./favoriteButton";
 export * from "./MainNavigation";
+export * from "./CheckIn";
