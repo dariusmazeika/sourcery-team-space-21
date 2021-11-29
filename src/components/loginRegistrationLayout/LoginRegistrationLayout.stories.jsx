@@ -2,6 +2,7 @@ import React from "react";
 import LoginRegistrationLayout from "./LoginRegistrationLayout";
 import FormHeader from "./FormHeader";
 import { text, withKnobs } from "@storybook/addon-knobs";
+import Input from "components/input/Input";
 
 export default {
   title: "Components / LoginRegistrationLayout",
@@ -18,6 +19,9 @@ export const Default = () => {
           subtitle={text("Subtitle", "welcome back, please login.")}
         />
       }
+      <div style={{ width: "100%" }}>
+        <Input />
+      </div>
     </LoginRegistrationLayout>
   );
 };

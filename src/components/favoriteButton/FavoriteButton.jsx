@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { IconHeart } from "components/icon/library/index";
 import styles from "./favoriteButton.module.scss";
 
-const FavoriteButton = (props) => {
-  const [isFavorite, setFavorite] = useState(false);
-  const onClick = () => setFavorite(!isFavorite);
-
+export const FavoriteButton = ({ isFavorite, onClick }) => {
   return (
     <div>
       <IconHeart
@@ -19,7 +16,6 @@ const FavoriteButton = (props) => {
 };
 
 FavoriteButton.propTypes = {
-  props: PropTypes.any,
+  isFavorite: PropTypes.bool,
+  onClick: PropTypes.func,
 };
-
-export default FavoriteButton;

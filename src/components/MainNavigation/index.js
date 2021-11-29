@@ -1,2 +1,2 @@
-export * from "components/MainNavigation/MainNavigation";
-export * from "components/MainNavigation/MainNavigationItem/MainNavigationItem";
+export * from "./MainNavigation";
+export * from "./MainNavigationItem/MainNavigationItem";

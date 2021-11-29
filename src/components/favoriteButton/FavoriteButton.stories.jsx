@@ -1,6 +1,6 @@
 import React from "react";
-import FavoriteButton from "./FavoriteButton";
-import { withKnobs } from "@storybook/addon-knobs";
+import { FavoriteButton } from "./FavoriteButton";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 
 export default {
   title: "Components / FavoriteButton",
@@ -9,5 +9,6 @@ export default {
 };
 
 export const Default = () => {
-  return <FavoriteButton />;
+  const isFavorite = boolean("Is Favorite", false);
+  return <FavoriteButton isFavorite={isFavorite} />;
 };
