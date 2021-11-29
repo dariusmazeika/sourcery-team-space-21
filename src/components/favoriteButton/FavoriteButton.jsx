@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import { IconHeart } from "components/icon/library/index";
+import { IconHeart } from "components/icon";
 import styles from "./favoriteButton.module.scss";
 
 export const FavoriteButton = ({ isFavorite, onClick }) => {
