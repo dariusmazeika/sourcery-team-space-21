@@ -9,7 +9,7 @@ export const BrowseCard = () => {
         View all your favourite lunch spots and more
       </h3>
       <Button size={"small"} kind={"primary"}>
-        browse list
+        Browse List
       </Button>
     </section>
   );
