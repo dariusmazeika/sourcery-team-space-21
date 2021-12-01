@@ -25,19 +25,16 @@ export const UserContextProvider = (props) => {
   };
 
   const [userData, setUserData] = useState(defaultUserData);
-  const [setIsLoggedIn] = useState(userData.isLoggedIn);
 
   const logInUser = (data) => {
     const newUserData = data[0];
     setUserData((prevData) => {
       return { ...prevData, ...newUserData, isLoggedIn: true };
     });
-    setIsLoggedIn(true);
   };
 
   const logOutUser = () => {
-    setUserData({});
-    setIsLoggedIn(false);
+    setUserData(defaultUserData);
   };
 
   return (

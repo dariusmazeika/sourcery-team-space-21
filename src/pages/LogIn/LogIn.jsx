@@ -59,9 +59,9 @@ export const LogIn = () => {
             type={"email"}
             labelText="email"
             placeHolder={"Enter your email"}
-            register={register}
             onChange={resetError}
-            required
+            register={register}
+            required={true}
           />
         </div>
         <div className={styles.passwordInputWrapper}>
@@ -73,7 +73,7 @@ export const LogIn = () => {
             placeHolder={"Enter your password"}
             register={register}
             onChange={resetError}
-            required
+            required={true}
           />
         </div>
         {userExists && (
