@@ -9,17 +9,17 @@ const items = {
   rooms: {
     title: "meeting rooms",
     img: doorImage,
-    alt: "meeting rooms reservation logo",
+    alt: "meeting rooms reservation",
   },
   devices: {
     title: "devices",
     img: deviceImage,
-    alt: "device reservation logo",
+    alt: "device reservation",
   },
   books: {
     title: "books",
     img: bookImage,
-    alt: "books reservation logo",
+    alt: "books reservation",
   },
 };
 
