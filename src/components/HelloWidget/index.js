@@ -1,1 +1,1 @@
-export * from "components/HelloWidget/HelloWidget";
+export * from "./HelloWidget";
