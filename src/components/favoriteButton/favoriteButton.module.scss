@@ -1,0 +1,10 @@
+@import './src/styles/base/base';
+
+.heart {
+    stroke: $color-wild-watermelon;
+    width: 2rem;
+
+    &IsFilled {
+        fill: $color-wild-watermelon;
+    }
+}
