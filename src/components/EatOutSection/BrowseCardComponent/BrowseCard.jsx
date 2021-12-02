@@ -1,5 +1,5 @@
-import { Button } from "components/button/Button";
 import React from "react";
+import { Button } from "components/button";
 import styles from "./browse-card.module.scss";
 
 export const BrowseCard = () => {
