@@ -6,12 +6,10 @@ import styles from "./favoriteButton.module.scss";
 
 export const FavoriteButton = ({ isFavorite, onClick }) => {
   return (
-    <div>
-      <IconHeart
-        onClick={onClick}
-        className={cx(styles.heart, { [styles.heartIsFilled]: isFavorite })}
-      />
-    </div>
+    <IconHeart
+      onClick={onClick}
+      className={cx(styles.heart, { [styles.heartIsFilled]: isFavorite })}
+    />
   );
 };
 
