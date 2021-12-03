@@ -11,6 +11,11 @@
     min-width: 16.4rem;
     text-decoration: none;
 
+    &IconBox {
+        display: inline-flex;
+        padding-right: 1.5rem;
+    }
+
     &:hover {
         background-color: $color-electric-violet-secondary;
         transition: 0.2s ease-in;

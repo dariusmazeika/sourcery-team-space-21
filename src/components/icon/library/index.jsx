@@ -2,6 +2,7 @@ export { default as IconActionCirclePause } from "./IconActionCirclePause";
 export { default as IconActionCirclePlay } from "./IconActionCirclePlay";
 export { default as IconActionCircleStop } from "./IconActionCircleStop";
 export { default as IconBookBookmark } from "./IconBookBookmark";
+export { default as IconBookmark } from "./IconBookmark";
 export { default as IconCheckInPerson } from "./IconCheckInPerson";
 export { default as IconChevronSingledown } from "./IconChevronSingledown";
 export { default as IconLocationCompass } from "./IconLocationCompass";
