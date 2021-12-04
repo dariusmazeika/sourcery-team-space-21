@@ -1,18 +1,21 @@
 @import './src/styles/base/base';
 
-.wrapper {
-    height: 20rem;
-
+.widget {
     &Header {
         color: $color-fiord;
         font-weight: $font-weight-bold;
         line-height: 1.33;
     }
 
-    &ItemsBox {
-        column-gap: 5%;
+    &ListBox {
+        column-gap: $flex-column-gap;
         display: flex;
         justify-content: space-between;
+        list-style-type: none;
         margin-top: 2.4rem;
+
+        &Item {
+            flex: 1;
+        }
     }
 }
