@@ -1,10 +1,12 @@
 import React from "react";
 import { withKnobs, number, select } from "@storybook/addon-knobs";
-import { ReservationItem } from "./ReservationItem";
+import { ReservationsItem } from "./reservationsItem/ReservationsItem";
+import { ReservationsWidget } from "./ReservationsWidget";
 
 export default {
   title: "Components / ReservationsWidget",
-  component: ReservationItem,
+  component: ReservationsWidget,
+  subcomponents: { ReservationsItem },
   decorators: [withKnobs],
 };
 
@@ -14,9 +16,13 @@ const typeOptions = {
   Books: "books",
 };
 
+export const Widget = () => {
+  return <ReservationsWidget />;
+};
+
 export const Item = () => {
   return (
-    <ReservationItem
+    <ReservationsItem
       itemName={select("Item", typeOptions, "rooms")}
       numberReserved={number("No. Reserved", 0)}
     />

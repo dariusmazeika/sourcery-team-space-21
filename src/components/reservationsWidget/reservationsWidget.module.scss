@@ -1,0 +1,18 @@
+@import './src/styles/base/base';
+
+.wrapper {
+    height: 20rem;
+
+    &Header {
+        color: $color-fiord;
+        font-weight: $font-weight-bold;
+        line-height: 1.33;
+    }
+
+    &ItemsBox {
+        column-gap: 5%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.4rem;
+    }
+}

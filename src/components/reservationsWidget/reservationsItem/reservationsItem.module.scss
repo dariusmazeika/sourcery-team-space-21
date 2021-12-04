@@ -7,8 +7,9 @@ $card-subtitle-color: $pale-sky;
 $card-subtitle-font-size: 1.2rem;
 
 .card {
+    flex: 1;
     min-width: 36rem;
-    padding: 2.3rem 0;
+    padding: 2rem 0;
     position: relative;
 
     &Img {
@@ -16,23 +17,18 @@ $card-subtitle-font-size: 1.2rem;
         position: absolute;
         right: 3.2rem;
         top: 0;
-        width: auto;
     }
 
     &TextBox {
         background-color: $color-white;
         border-radius: $border-xl;
         box-shadow: $box-shadow-large;
-        padding: 2.4rem 1.6rem;
+        padding: 2.2rem 1.6rem;
 
         &Title {
             color: $card-title-color;
             font-weight: $card-title-font-weight;
             line-height: 1.33;
-
-            &::first-letter {
-                text-transform: capitalize;
-            }
         }
 
         &Subtitle {

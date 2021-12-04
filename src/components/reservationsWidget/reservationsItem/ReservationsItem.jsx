@@ -1,29 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./reservationItem.module.scss";
+import styles from "./reservationsItem.module.scss";
 import bookImage from "assets/book.png";
 import deviceImage from "assets/device.png";
 import doorImage from "assets/door.png";
 
 const items = {
   rooms: {
-    title: "meeting rooms",
+    title: "Meeting rooms",
     img: doorImage,
     alt: "meeting rooms reservation",
   },
   devices: {
-    title: "devices",
+    title: "Devices",
     img: deviceImage,
     alt: "device reservation",
   },
   books: {
-    title: "books",
+    title: "Books",
     img: bookImage,
     alt: "books reservation",
   },
 };
 
-export const ReservationItem = ({ itemName, numberReserved = 0 }) => {
+export const ReservationsItem = ({ itemName, numberReserved = 0 }) => {
   return (
     <div className={styles.card}>
       <div className={styles.cardTextBox}>
@@ -39,7 +39,7 @@ export const ReservationItem = ({ itemName, numberReserved = 0 }) => {
   );
 };
 
-ReservationItem.propTypes = {
+ReservationsItem.propTypes = {
   itemName: PropTypes.oneOf(Object.keys(items)).isRequired,
   numberReserved: PropTypes.number,
 };
