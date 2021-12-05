@@ -11,7 +11,13 @@ import cx from "classnames";
 
 export const LogIn = () => {
   const { logInUser } = useContext(UserContext);
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    clearErrors,
+    formState: { errors },
+  } = useForm();
   const [users, setUsers] = useState([]);
   const [userExists, setUserExists] = useState(false);
 
@@ -44,8 +50,17 @@ export const LogIn = () => {
     }
   };
 
-  const resetError = () => {
+  const resetError = (e) => {
     setUserExists(false);
+    switch (e.target.name) {
+      case "email":
+        clearErrors("email");
+        break;
+      case "password":
+        clearErrors("password");
+        break;
+      default:
+    }
   };
 
   return (
@@ -62,6 +77,7 @@ export const LogIn = () => {
             onChange={resetError}
             register={register}
             required={true}
+            errorMessage={errors.email?.type}
           />
         </div>
         <div className={styles.passwordInputWrapper}>
@@ -74,6 +90,7 @@ export const LogIn = () => {
             register={register}
             onChange={resetError}
             required={true}
+            errorMessage={errors.password?.type}
           />
         </div>
         {userExists && (

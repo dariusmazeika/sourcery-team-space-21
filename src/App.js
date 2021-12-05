@@ -11,8 +11,9 @@ function App() {
 
   return (
     <APIContextProvider>
-      {userData.isLoggedIn && <Home />}
-      {!userData.isLoggedIn && (
+      {userData.isLoggedIn ? (
+        <Home />
+      ) : (
         <Routes>
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />

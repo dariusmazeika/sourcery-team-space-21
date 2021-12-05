@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import styles from "./menu-item.module.scss";
 
-export const MenuItem = ({ title, stylesClass, onClick }) => {
+export const MenuItem = ({ title, stylesClass, linkTo = "#", onClick }) => {
   return (
     <button
       type="button"
@@ -13,7 +14,9 @@ export const MenuItem = ({ title, stylesClass, onClick }) => {
         [styles.buttonBottom]: stylesClass === "bottomButton",
       })}
     >
-      {title}
+      <Link to={linkTo} className={styles.buttonLink}>
+        {title}
+      </Link>
     </button>
   );
 };
@@ -21,5 +24,6 @@ export const MenuItem = ({ title, stylesClass, onClick }) => {
 MenuItem.propTypes = {
   title: PropTypes.string.isRequired,
   stylesClass: PropTypes.string.isRequired,
+  linkTo: PropTypes.string,
   onClick: PropTypes.func,
 };

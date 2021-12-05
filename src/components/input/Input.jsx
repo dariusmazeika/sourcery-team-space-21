@@ -36,6 +36,9 @@ export const Input = ({
         {...register(labelText, { required })}
         onChange={onChange}
       />
+      {errorMessage === "required" && (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      )}
       {isError && !disabled && (
         <div className={styles.errorMessage}>{errorMessage}</div>
       )}
