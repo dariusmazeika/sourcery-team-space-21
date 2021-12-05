@@ -12,6 +12,7 @@ import {
   IconLogOut,
   IconMainSettings,
   IconNotificationBell,
+  IconCheckInPerson,
 } from "./library/index";
 
 export default {
@@ -32,6 +33,7 @@ export const Default = () => {
       <IconLogOut currentColor={"#000"} size={"5em"} />
       <IconMainSettings currentColor={"#000"} size={"5em"} />
       <IconNotificationBell currentColor={"#000"} size={"5em"} />
+      <IconCheckInPerson currentColor={"#000"} size={"5em"} />
     </div>
   );
 };
