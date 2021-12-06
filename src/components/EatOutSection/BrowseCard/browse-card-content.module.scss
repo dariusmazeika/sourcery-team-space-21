@@ -1,0 +1,11 @@
+@import './src/styles/base/base';
+
+.Heading {
+    color: $color-black;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    opacity: 0.7;
+    padding-bottom: 1.3rem;
+    text-align: center;
+    width: 75%; //max text width in card
+}
