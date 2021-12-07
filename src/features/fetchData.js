@@ -1,4 +1,4 @@
-const endpoints = {
+export const endpoints = {
   userData:
     "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json",
   categories:
@@ -17,13 +17,13 @@ const endpoints = {
     "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/stories.json",
 };
 
-function fetchData(endpointNames) {
+async function fetchData(endpointNames) {
   const apiData = {};
-  endpointNames.forEach(async (e) => {
+  for (let e of endpointNames) {
     const response = await fetch(endpoints[e]);
     const returnedData = await response.json();
     Object.assign(apiData, returnedData);
-  });
+  }
   return apiData;
 }
 

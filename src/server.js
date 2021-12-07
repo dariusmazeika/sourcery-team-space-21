@@ -1,8 +1,13 @@
 import { Server } from "miragejs";
+import { endpoints } from "features";
 
 export const makeServer = () => {
   let server = new Server({
     routes() {
+      Object.values(endpoints).forEach((endpoint) => {
+        this.passthrough(endpoint);
+      });
+
       this.get("api/users", {
         users: [
           {
