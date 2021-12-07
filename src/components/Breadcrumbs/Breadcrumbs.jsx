@@ -1,17 +1,19 @@
 import React from "react";
-import styles from "./bread-crumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import styles from "./bread-crumbs.module.scss";
 
-export const BreadCrumbs = () => {
+export const BreadCrumbs = ({ breadCrumbs }) => {
   const history = useLocation();
-  const breadCrumbs = history.pathname.split("/").slice(1);
+  const lastCrumbName = history.pathname.split("/").pop();
   return (
     <nav aria-label="navigation" className={styles.breadCrumbsNavigation}>
       <ul className={styles.breadCrumbsNavigationList}>
-        {breadCrumbs.map((breadcrumb) => (
+        {breadCrumbs.map((breadcrumb, index) => (
           <li className={styles.breadCrumbsNavigationListItem} key={breadcrumb}>
             <Link
-              to={breadcrumb}
+              to={`/${breadcrumb}`}
               className={styles.breadCrumbsNavigationLinks}
               key={breadcrumb}
             >
@@ -19,7 +21,23 @@ export const BreadCrumbs = () => {
             </Link>
           </li>
         ))}
+        <li>
+          <Link
+            to={history.pathname}
+            className={cx(
+              styles.breadCrumbsNavigationLinks,
+              styles.breadCrumbsNavigationLinksActive
+            )}
+            key={lastCrumbName}
+          >
+            {lastCrumbName}
+          </Link>
+        </li>
       </ul>
     </nav>
   );
+};
+
+BreadCrumbs.propTypes = {
+  breadCrumbs: PropTypes.array,
 };

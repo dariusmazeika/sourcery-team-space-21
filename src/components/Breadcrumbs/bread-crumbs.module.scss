@@ -21,6 +21,10 @@
         text-decoration: none;
         text-transform: uppercase;
 
+        &Active {
+            color: $color-slate-gray;
+        }
+
         &:hover {
             color: $color-slate-gray;
         }
