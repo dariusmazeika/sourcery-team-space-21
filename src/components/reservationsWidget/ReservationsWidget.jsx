@@ -32,8 +32,11 @@ export const ReservationsWidget = (props) => {
     <>
       <h3 className={styles.widgetHeader}>Reservations</h3>
       <ul className={styles.widgetListBox}>
-        {items.map((item) => (
-          <li key={item.title} className={styles.widgetListBoxItem}>
+        {items.map((item, index) => (
+          <li
+            key={`${item.title}-${index}`}
+            className={styles.widgetListBoxItem}
+          >
             <ReservationsItem item={item} />
           </li>
         ))}
