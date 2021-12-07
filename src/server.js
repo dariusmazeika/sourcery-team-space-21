@@ -3,6 +3,9 @@ import { Server } from "miragejs";
 export const makeServer = () => {
   let server = new Server({
     routes() {
+      this.passthrough(
+        "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/**"
+      );
       this.get("api/users", {
         users: [
           {
