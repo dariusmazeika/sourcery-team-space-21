@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "features/context";
 import cx from "classnames";
 import styles from "./user-profile-widget.module.scss";
-import userImage from "assets/user.png";
 import imageMark from "assets/image-mark.png";
 import { MenuItem } from "components/UserProfileWidget";
 
 export const UserProfileWidget = () => {
   let [isMenuVisible, setIsMenuVisible] = useState(false);
+  const { userData, logOutUser } = useContext(UserContext);
+  let userImgSrc = userData.userImage ? userData.userImage : "";
 
   const toggleMenu = () => {
     setIsMenuVisible((showMenuOld) => {
@@ -40,7 +42,7 @@ export const UserProfileWidget = () => {
           className={styles.userProfileWidgetMenuButton}
         >
           <img
-            src={userImage}
+            src={userImgSrc}
             alt=""
             className={styles.userProfileWidgetImage}
           />
@@ -58,7 +60,11 @@ export const UserProfileWidget = () => {
           <span className={styles.userProfileMenuPointer}>{}</span>
           <div className={styles.userProfileMenuButtons}>
             <MenuItem title="Settings" stylesClass="topButton" />
-            <MenuItem title="Log out" stylesClass="bottomButton" />
+            <MenuItem
+              title="Log out"
+              stylesClass="bottomButton"
+              onClick={logOutUser}
+            />
           </div>
         </div>
       </div>

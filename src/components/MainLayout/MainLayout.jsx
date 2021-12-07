@@ -38,5 +38,5 @@ export const MainLayout = (props) => {
 };
 
 MainLayout.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.node,
 };

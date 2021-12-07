@@ -29,5 +29,5 @@ export const useAPI = () => {
 };
 
 APIContextProvider.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
