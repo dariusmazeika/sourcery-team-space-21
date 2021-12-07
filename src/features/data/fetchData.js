@@ -1,9 +1,10 @@
 import { endpoints } from "./endpoints";
 
-export async function fetchData() {
-  const args = Array.from(arguments);
+async function fetchData(endpointNames) {
   const requestData = await Promise.all(
-    args.map((e) => fetch(endpoints[e]).then((response) => response.json()))
+    endpointNames.map((e) =>
+      fetch(endpoints[e]).then((response) => response.json())
+    )
   );
   const formattedData = {};
   requestData.forEach((i) => {
