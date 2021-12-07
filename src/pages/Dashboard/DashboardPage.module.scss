@@ -1,0 +1,6 @@
+@import './src/styles/base/base';
+@import './src/styles/mixins/mixins';
+
+.dashboardSection {
+    @include layout-section-base;
+}

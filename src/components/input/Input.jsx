@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import styles from "./input.module.scss";
 
-const Input = ({
+export const Input = ({
   id,
   type,
   placeHolder,
@@ -13,6 +13,9 @@ const Input = ({
   value,
   onChange,
   errorMessage,
+  name,
+  register,
+  required,
 }) => {
   return (
     <div className={styles.container}>
@@ -24,13 +27,18 @@ const Input = ({
       </label>
       <input
         id={id}
+        name={name}
         className={cx(styles.field, { [styles.fieldHasError]: isError })}
         type={type}
         placeholder={placeHolder}
         disabled={disabled}
-        onChange={onChange}
         value={value}
+        {...register(labelText, { required })}
+        onChange={onChange}
       />
+      {errorMessage === "required" && (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      )}
       {isError && !disabled && (
         <div className={styles.errorMessage}>{errorMessage}</div>
       )}
@@ -48,6 +56,7 @@ Input.defaultProps = {
 
 Input.propTypes = {
   id: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.oneOf(["text", "email", "password"]),
   placeHolder: PropTypes.string,
   labelText: PropTypes.string,
@@ -56,6 +65,6 @@ Input.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   errorMessage: PropTypes.string,
+  register: PropTypes.func,
+  required: PropTypes.bool,
 };
-
-export default Input;

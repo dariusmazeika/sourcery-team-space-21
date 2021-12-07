@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./formHeader.module.scss";
 
-const FormHeader = ({ title, subtitle }) => {
+export const FormHeader = ({ title, subtitle }) => {
   return (
     <div>
       <div className={styles.headerBox}>
@@ -17,4 +17,3 @@ FormHeader.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
 };
-export default FormHeader;

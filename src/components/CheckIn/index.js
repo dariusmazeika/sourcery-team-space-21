@@ -1,1 +1,1 @@
-export * from "components/CheckIn/CheckIn";
+export * from "./CheckIn";
