@@ -1,20 +1,19 @@
 import React from "react";
 import icons from "./icons.svg";
 import PropTypes from "prop-types";
-import styles from "./icon.module.scss";
 
 export const Icon = ({
-  name = "icon-check-in-person",
+  name = "icon-action-circle-pause",
   color = "#fff",
-  size = "2.4rem",
-  fillColor = "#fff",
-  strokeWidth = "0",
+  width = "2.4rem",
+  height = "2.4rem",
+  fillColor = "none",
+  strokeWidth = 2,
 }) => {
   return (
     <svg
-      className={styles.stroke}
-      width={size}
-      height={size}
+      width={width}
+      height={height}
       stroke={color}
       fill={fillColor}
       strokeWidth={strokeWidth}
@@ -27,7 +26,8 @@ export const Icon = ({
 Icon.propTypes = {
   name: PropTypes.string,
   color: PropTypes.string,
-  size: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
   fillColor: PropTypes.string,
   strokeWidth: PropTypes.number,
 };

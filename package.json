@@ -10,7 +10,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "6.0.2",
-    "react-scripts": "3.4.4"
+    "react-scripts": "3.4.4",
+    "svg-sprite": "1.5.3",
+    "svgo": "2.8.0"
   },
   "module": "src/components/icon/dist/index.esm.js",
   "scripts": {
@@ -91,8 +93,6 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-declaration-use-variable": "^1.7.2",
-    "stylelint-prettier": "^1.1.2",
-    "svg-sprite": "1.5.3",
-    "svgo": "2.8.0"
+    "stylelint-prettier": "^1.1.2"
   }
 }
