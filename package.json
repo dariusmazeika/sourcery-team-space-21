@@ -30,7 +30,9 @@
     "lint:stylelint:fix": "npm run -s lint:stylelint \"src/**/*.scss\" --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "svgr": "svgr --ext jsx --icon --replace-attr-values #25282B={props.currentColor} --replace-attr-values 1em={props.size} -d src/components/icon/library src/assets/Icons"
+    "svgr": "svgr --ext jsx --icon --replace-attr-values #25282B={props.currentColor} --replace-attr-values 1em={props.size} -d src/components/icon/library src/assets/Icons",
+    "svgo": "svgo -f src/assets/Icons",
+    "update-sprite": "svg-sprite -s --symbol-dest src/components/iconSprite --symbol-sprite icons.svg src/assets/Icons/*.svg"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,scss,md}": "prettier --write",
@@ -89,6 +91,8 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-declaration-use-variable": "^1.7.2",
-    "stylelint-prettier": "^1.1.2"
+    "stylelint-prettier": "^1.1.2",
+    "svg-sprite": "1.5.3",
+    "svgo": "2.8.0"
   }
 }
