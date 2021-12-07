@@ -17,7 +17,7 @@ export const UserContext = createContext({
 export const UserContextProvider = (props) => {
   const defaultUserData = {
     id: "",
-    isLoggedIn: true,
+    isLoggedIn: false,
     userName: "",
     email: "",
     userImage: "",
