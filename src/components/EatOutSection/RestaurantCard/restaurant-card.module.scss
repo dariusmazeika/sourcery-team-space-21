@@ -13,6 +13,19 @@ $border-radius: 0.8rem;
     min-height: 22.9rem;
     width: 41.6rem;
 
+    .lowerWrapper {
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 5%,
+            rgba(255, 255, 255, 0.7903362028405112) 35%,
+            rgba(255, 255, 255, 1) 56%
+        );
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        height: 15rem;
+        min-width: 100%;
+    }
+
     .details {
         display: flex;
         flex-direction: column;
@@ -26,22 +39,28 @@ $border-radius: 0.8rem;
         align-items: center;
         color: $color-slate-gray;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         max-width: 22rem;
         min-width: 4rem;
         text-transform: uppercase;
-
-        .ellipse {
-            background: $color-slate-gray;
-            border-radius: $border-radius-medium;
-            height: 0.31rem;
-            width: 0.31rem;
-        }
 
         .topText {
             font-size: $font-small;
             font-weight: $font-weight-medium;
             line-height: 1.5;
+            padding-right: 3rem;
+            position: relative;
+
+            &:not(:last-child)::after {
+                background: $color-slate-gray;
+                border-radius: $border-radius-medium;
+                content: '';
+                display: inline-block;
+                padding: 0.31rem;
+                position: absolute;
+                right: 1.2rem;
+                top: 0.4rem;
+            }
         }
     }
 
