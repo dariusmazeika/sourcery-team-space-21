@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./restaurant-card.module.scss";
 import PropTypes from "prop-types";
 
-export const TestSection = () => {
+export const RestaurantCardSection = () => {
   const mockedData = [
     {
       name: "Grill London (Kaunas, PLC Mega)",
@@ -75,6 +75,18 @@ export const TestSection = () => {
 
 export const RestaurantCard = ({ data }) => {
   const { categories, image, name, openingHours } = data;
+  const currentDate = new Date().getDay();
+
+  const WorkingWeekDays = openingHours.map((item, i) => (
+    <p key={`${i}`} className={styles.bottomText}>
+      {item.days === "Monday - Friday" ? item.hours : ""}
+    </p>
+  ));
+  const WorkingWeekendDays = openingHours.map((item, i) => (
+    <p key={`${i}`} className={styles.bottomText}>
+      {item.days === "Saturday - Sunday" ? item.hours : ""}
+    </p>
+  ));
 
   return (
     <div
@@ -99,7 +111,11 @@ export const RestaurantCard = ({ data }) => {
             ))}
           </div>
           <h3 className={styles.title}>{name}</h3>
-          <p className={styles.bottomText}>{openingHours.days}</p>
+          <div>
+            {currentDate === 0 || currentDate === 6
+              ? WorkingWeekendDays
+              : WorkingWeekDays}
+          </div>
         </div>
         <div className={styles.wishlist}></div>
       </div>
