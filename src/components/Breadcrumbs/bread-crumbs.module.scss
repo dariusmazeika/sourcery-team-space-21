@@ -11,6 +11,11 @@
             content: '\003E';
             margin: 0 0.3rem;
         }
+
+        li:last-of-type a {
+            color: $color-slate-gray;
+            pointer-events: none;
+        }
     }
 
     &Links {
