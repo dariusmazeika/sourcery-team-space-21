@@ -2,14 +2,13 @@
 
 $font-big: 2.4rem;
 $font-small: 1rem;
-$border-radius: 0.8rem;
 
 .card {
     align-items: flex-end;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: $border-radius;
+    border-radius: $border-xl;
     display: flex;
     filter: drop-shadow(0 0.125rem 0.375rem rgba(0, 0, 0, 0.25));
     max-width: 45rem;
@@ -23,8 +22,8 @@ $border-radius: 0.8rem;
             rgba(255, 255, 255, 0.7903362028405112) 35%,
             rgba(255, 255, 255, 1) 56%
         );
-        border-bottom-left-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-xl;
+        border-bottom-right-radius: $border-xl;
         height: 15rem;
         min-width: 100%;
     }
