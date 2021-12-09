@@ -5,4 +5,4 @@ export * from "./HelloWidget";
 export * from "./favoriteButton";
 export * from "./MainNavigation";
 export * from "./CheckIn";
-export * from "./iconSprite";
+export * from "./IconSprite";
