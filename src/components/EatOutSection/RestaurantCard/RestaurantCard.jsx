@@ -6,16 +6,12 @@ export const RestaurantCard = ({ data }) => {
   const { categories, image, name, openingHours } = data;
   const currentDate = new Date().getDay();
 
-  const WorkingWeekDays = openingHours.map((item, i) => (
-    <p key={`${i}`} className={styles.bottomText}>
-      {item.days === "Monday - Friday" ? item.hours : ""}
-    </p>
-  ));
-  const WorkingWeekendDays = openingHours.map((item, i) => (
-    <p key={`${i}`} className={styles.bottomText}>
-      {item.days === "Saturday - Sunday" ? item.hours : ""}
-    </p>
-  ));
+  const WorkingWeekDays = openingHours.map((item, i) =>
+    item.days === "Monday - Friday" ? item.hours : ""
+  );
+  const WorkingWeekendDays = openingHours.map((item, i) =>
+    item.days === "Saturday - Sunday" ? item.hours : ""
+  );
 
   return (
     <div className={styles.card} style={{ backgroundImage: `url(${image})` }}>
@@ -31,11 +27,11 @@ export const RestaurantCard = ({ data }) => {
             ))}
           </div>
           <h3 className={styles.title}>{name}</h3>
-          <div>
+          <p className={styles.bottomText}>
             {currentDate === 0 || currentDate === 6
               ? WorkingWeekendDays
               : WorkingWeekDays}
-          </div>
+          </p>
         </div>
         <div className={styles.wishlist}></div>
       </div>
