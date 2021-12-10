@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export const UserContext = createContext({
@@ -15,6 +16,7 @@ export const UserContext = createContext({
 });
 
 export const UserContextProvider = (props) => {
+  const navigate = useNavigate();
   const defaultUserData = {
     id: "",
     isLoggedIn: true,
@@ -35,6 +37,7 @@ export const UserContextProvider = (props) => {
 
   const logOutUser = () => {
     setUserData(defaultUserData);
+    navigate("/login");
   };
 
   return (

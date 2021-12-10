@@ -1,13 +1,11 @@
 import { Server } from "miragejs";
-import { endpoints } from "features";
 
 export const makeServer = () => {
   let server = new Server({
     routes() {
-      Object.values(endpoints).forEach((endpoint) => {
-        this.passthrough(endpoint);
-      });
-
+      this.passthrough(
+        "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/**"
+      );
       this.get("api/users", {
         users: [
           {

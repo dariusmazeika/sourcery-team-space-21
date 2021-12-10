@@ -11,7 +11,9 @@
     "react-dom": "17.0.1",
     "react-hook-form": "7.20.4",
     "react-router-dom": "6.0.2",
-    "react-scripts": "3.4.4"
+    "react-scripts": "3.4.4",
+    "svg-sprite": "1.5.3",
+    "svgo": "2.8.0"
   },
   "module": "src/components/icon/dist/index.esm.js",
   "scripts": {
@@ -31,7 +33,8 @@
     "lint:stylelint:fix": "npm run -s lint:stylelint \"src/**/*.scss\" --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "svgr": "svgr --ext jsx --icon --replace-attr-values #25282B={props.currentColor} --replace-attr-values 1em={props.size} -d src/components/icon/library src/assets/Icons"
+    "svgo": "svgo -f src/assets/Icons -o src/assets/Icons/Svgo",
+    "update-sprite": "svg-sprite -s --symbol-dest src/components/iconSprite --symbol-sprite icons.svg src/assets/Icons/Svgo/*.svg"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,scss,md}": "prettier --write",
