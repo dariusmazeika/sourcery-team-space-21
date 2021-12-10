@@ -41,6 +41,7 @@ Icon.propTypes = {
     "icon-main-settings",
     "icon-notification-bell",
     "icon-symbol-x",
+    "icon-notification",
   ]),
   size: PropTypes.oneOf(Object.values(Size)),
   className: PropTypes.string,
