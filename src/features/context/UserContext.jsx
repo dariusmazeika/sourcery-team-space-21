@@ -19,7 +19,7 @@ export const UserContextProvider = (props) => {
   const navigate = useNavigate();
   const defaultUserData = {
     id: "",
-    isLoggedIn: false,
+    isLoggedIn: true,
     userName: "",
     email: "",
     userImage: "",
