@@ -11,14 +11,14 @@ export const MainNavigation = () => {
   return (
     <nav>
       <ul className={styles.mainNavigationList}>
-        <li className={styles.mainNavigationListItem}>
-          {navigationLinks.map((navigationLink) => (
-            <MainNavigationItem
-              key={navigationLink.title}
-              title={navigationLink.title}
-            />
-          ))}
-        </li>
+        {navigationLinks.map((navigationLink) => (
+          <li
+            className={styles.mainNavigationListItem}
+            key={navigationLink.title}
+          >
+            <MainNavigationItem title={navigationLink.title} />
+          </li>
+        ))}
       </ul>
     </nav>
   );
