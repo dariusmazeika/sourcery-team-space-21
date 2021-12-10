@@ -80,14 +80,17 @@ $font-small: 1rem;
     .workingDaysWrapper {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         max-width: 80%;
+    }
 
-        .workingDays {
-            color: $color-slate-gray;
-            font-size: $font-small;
-            font-weight: $font-weight-medium;
-            line-height: 1.5;
+    .workingDays {
+        color: $color-slate-gray;
+        font-size: $font-small;
+        font-weight: $font-weight-medium;
+        line-height: 1.5;
+
+        &:not(:first-child) {
+            padding-left: 1rem;
         }
     }
 }
