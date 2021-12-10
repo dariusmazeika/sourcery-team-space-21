@@ -1,0 +1,37 @@
+@import './src/styles/base/base';
+
+.breadCrumbsNavigation {
+    &List {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+
+        &Item:not(:last-child)::after {
+            color: $color-gray-chateau;
+            content: '\003E';
+            margin: 0 0.3rem;
+        }
+
+        li:last-of-type a {
+            color: $color-slate-gray;
+            pointer-events: none;
+        }
+    }
+
+    &Links {
+        color: $color-gray-chateau;
+        font-weight: $font-weight-medium;
+        line-height: 1.5;
+        padding: 0.3rem 0.2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &Active {
+            color: $color-slate-gray;
+        }
+
+        &:hover {
+            color: $color-slate-gray;
+        }
+    }
+}
