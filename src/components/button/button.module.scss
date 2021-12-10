@@ -1,6 +1,7 @@
 @import './src/styles/base/base';
 
 $btn-primary-large-font-size: 1.4rem;
+$btn-primary-small-font-size: 1.2rem;
 $text-background-color: inherit;
 
 .btn {
@@ -32,6 +33,10 @@ $text-background-color: inherit;
             background: $color-electric-violet-secondary;
             padding: 1.2rem 2.9rem;
         }
+    }
+
+    &.small {
+        font-size: $btn-primary-small-font-size;
     }
 
     &:hover,

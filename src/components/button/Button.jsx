@@ -12,6 +12,7 @@ const Kind = {
 
 const Size = {
   LARGE: "large",
+  SMALL: "small",
 };
 
 const Color = {
@@ -42,6 +43,7 @@ export const Button = ({
         [styles.secondary]: color === Color.SECONDARY,
         [styles.reverse]: color === Color.DUOCOLOR,
         [styles.large]: size === Size.LARGE,
+        [styles.small]: size === Size.SMALL,
       })}
     >
       {children}
