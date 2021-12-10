@@ -6,3 +6,5 @@ export * from "./favoriteButton";
 export * from "./MainNavigation";
 export * from "./CheckIn";
 export * from "./IconSprite";
+export * from "./reservationsWidget";
+export * from "./Breadcrumbs";
