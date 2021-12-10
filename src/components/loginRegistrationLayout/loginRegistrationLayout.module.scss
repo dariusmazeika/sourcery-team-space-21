@@ -14,19 +14,18 @@ $team-logo-font-size: 2.5rem;
     min-width: 100vw;
 
     &Box {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
+        margin: 2rem;
+        max-width: 54.4rem;
+        width: 100%;
     }
 }
 
 .logo {
     align-items: center;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     margin-bottom: 7.2rem;
     margin-top: 2rem;
-    width: 16.2rem;
 
     &Img {
         height: 6.8rem;
@@ -39,19 +38,15 @@ $team-logo-font-size: 2.5rem;
         font-weight: $font-weight-bold;
         line-height: 1.2;
         margin-left: 1.4rem;
+        max-width: 8rem;
     }
 }
 
 .formContainer {
-    align-items: flex-start;
     background-color: $container-background-color;
     border-radius: $border-xl;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     color: $color-fiord;
-    display: flex;
-    flex-direction: column;
     margin-bottom: 13.7rem;
-    max-width: 54rem;
-    min-width: 32rem;
     padding: 4rem 3.2rem;
 }
