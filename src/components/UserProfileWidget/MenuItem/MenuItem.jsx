@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import styles from "./menu-item.module.scss";
+import { Icon } from "components/iconSprite/Icon";
 
 export const MenuItem = ({ title, stylesClass, linkTo = "#", onClick }) => {
   return (
@@ -14,6 +15,12 @@ export const MenuItem = ({ title, stylesClass, linkTo = "#", onClick }) => {
         [styles.buttonBottom]: stylesClass === "bottomButton",
       })}
     >
+      {stylesClass === "topButton" && (
+        <Icon name="icon-main-settings" size="medium" />
+      )}
+      {stylesClass === "bottomButton" && (
+        <Icon name="icon-log-out" size="medium" />
+      )}
       <Link to={linkTo} className={styles.buttonLink}>
         {title}
       </Link>
