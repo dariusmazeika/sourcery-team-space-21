@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "features/context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginRegistrationLayout } from "components/loginRegistrationLayout";
 import { FormHeader } from "components/loginRegistrationLayout";
 import { Input } from "components/input";
@@ -10,6 +10,7 @@ import styles from "./login.module.scss";
 import cx from "classnames";
 
 export const LogIn = () => {
+  const navigate = useNavigate();
   const { logInUser } = useContext(UserContext);
   const {
     register,
@@ -32,6 +33,7 @@ export const LogIn = () => {
   const onSubmit = (data) => {
     if (authenticateUser(data)) {
       reset();
+      navigate("/");
     }
   };
 
