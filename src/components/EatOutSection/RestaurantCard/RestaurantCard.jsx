@@ -4,14 +4,13 @@ import PropTypes from "prop-types";
 
 export const RestaurantCard = ({ data }) => {
   const { categories, image, name, openingHours } = data;
-  const currentDate = new Date().getDay();
 
-  const WorkingWeekDays = openingHours.map((item, i) =>
-    item.days === "Monday - Friday" ? item.hours : ""
-  );
-  const WorkingWeekendDays = openingHours.map((item, i) =>
-    item.days === "Saturday - Sunday" ? item.hours : ""
-  );
+  const WorkingDays = openingHours.map((item, i) => (
+    <p
+      key={i}
+      className={styles.workingDays}
+    >{`${item.days}: ${item.hours}`}</p>
+  ));
 
   return (
     <div className={styles.card} style={{ backgroundImage: `url(${image})` }}>
@@ -27,11 +26,7 @@ export const RestaurantCard = ({ data }) => {
             ))}
           </div>
           <h3 className={styles.title}>{name}</h3>
-          <p className={styles.bottomText}>
-            {currentDate === 0 || currentDate === 6
-              ? WorkingWeekendDays
-              : WorkingWeekDays}
-          </p>
+          <div className={styles.workingDaysWrapper}>{WorkingDays}</div>
         </div>
         <div className={styles.wishlist}></div>
       </div>
