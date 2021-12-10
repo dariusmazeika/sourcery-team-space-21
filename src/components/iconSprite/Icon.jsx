@@ -31,7 +31,7 @@ Icon.propTypes = {
     "icon-action-circle-pause",
     "icon-action-circle-play",
     "icon-action-circle-stop",
-    "icon-book-bookmark",
+    "icon-location-bookmark",
     "icon-check-in-person",
     "icon-chevron-singledown",
     "icon-heart",

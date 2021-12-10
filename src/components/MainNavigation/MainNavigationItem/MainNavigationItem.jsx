@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import cx from "classnames";
 import styles from "./main-navigation-item.module.scss";
-import { IconLocationCompass } from "components/icon/library";
-import { IconLocationHome } from "components/icon/library";
-import { IconBookmark } from "components/icon/library";
+import { Icon } from "components/iconSprite/Icon";
 
 export const MainNavigationItem = ({ title }) => {
   const path = title.toLowerCase();
@@ -15,13 +13,13 @@ export const MainNavigationItem = ({ title }) => {
       <Link to={path} className={cx(styles.navigationLink, "heading4")}>
         <div className={styles.navigationLinkIconBox}>
           {title === "Dashboard" && (
-            <IconLocationHome currentColor={"#fff"} size={"2.4rem"} />
+            <Icon name="icon-location-home" size="large" />
           )}
           {title === "Reservations" && (
-            <IconBookmark currentColor={"#fff"} size={"2.4rem"} />
+            <Icon name="icon-location-bookmark" size="large" />
           )}
           {title === "Eat-Out" && (
-            <IconLocationCompass currentColor={"#fff"} size={"2.4rem"} />
+            <Icon name="icon-location-compass" size="large" />
           )}
         </div>
         {title}
