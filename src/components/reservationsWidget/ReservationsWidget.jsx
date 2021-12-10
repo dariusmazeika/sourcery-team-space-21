@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useAPI } from "features/context/APIContext";
+import { useAPI } from "features/context";
 import PropTypes from "prop-types";
 import styles from "./reservationsWidget.module.scss";
 import bookImage from "assets/book.png";
@@ -37,7 +37,7 @@ const itemsConfig = [
 export const ReservationsWidget = (props) => {
   const [data, getData] = useAPI();
 
-  //add useEffect dependency when reservations function is implemented
+  //TODO: add useEffect dependency when reservations function is implemented
   useEffect(() => {
     getData("userData");
   }, []); // eslint-disable-line
