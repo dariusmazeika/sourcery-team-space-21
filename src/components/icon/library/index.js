@@ -5,6 +5,7 @@ export { default as IconBookBookmark } from "./IconBookBookmark";
 export { default as IconBookmark } from "./IconBookmark";
 export { default as IconCheckInPerson } from "./IconCheckInPerson";
 export { default as IconChevronSingledown } from "./IconChevronSingledown";
+export { default as IconHeart } from "./IconHeart";
 export { default as IconLocationCompass } from "./IconLocationCompass";
 export { default as IconLocationHome } from "./IconLocationHome";
 export { default as IconLogOut } from "./IconLogOut";

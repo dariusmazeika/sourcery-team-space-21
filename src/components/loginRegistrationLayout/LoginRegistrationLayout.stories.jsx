@@ -1,6 +1,6 @@
 import React from "react";
-import LoginRegistrationLayout from "./LoginRegistrationLayout";
-import FormHeader from "./FormHeader";
+import { LoginRegistrationLayout } from "./LoginRegistrationLayout";
+import { FormHeader } from "./FormHeader";
 import { text, withKnobs } from "@storybook/addon-knobs";
 
 export default {

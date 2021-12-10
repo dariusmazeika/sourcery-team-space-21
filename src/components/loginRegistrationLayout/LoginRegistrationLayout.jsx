@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./loginRegistrationLayout.module.scss";
 import logoGradientBackground from "assets/logo-gradient-background.png";
 
-const LoginRegistrationLayout = ({ children }) => {
+export const LoginRegistrationLayout = ({ children }) => {
   return (
     <div className={styles.main}>
       <div className={styles.mainBox}>
@@ -24,5 +24,3 @@ const LoginRegistrationLayout = ({ children }) => {
 LoginRegistrationLayout.propTypes = {
   children: PropTypes.node,
 };
-
-export default LoginRegistrationLayout;
