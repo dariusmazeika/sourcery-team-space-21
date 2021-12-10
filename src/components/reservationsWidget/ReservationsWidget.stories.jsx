@@ -1,6 +1,7 @@
 import React from "react";
 import { withKnobs } from "@storybook/addon-knobs";
 import { ReservationsWidget } from "./ReservationsWidget";
+import { APIContextProvider } from "features/context/APIContext";
 
 export default {
   title: "Components / ReservationsWidget",
@@ -9,5 +10,11 @@ export default {
 };
 
 export const Widget = () => {
-  return <ReservationsWidget />;
+  return (
+    <>
+      <APIContextProvider>
+        <ReservationsWidget />
+      </APIContextProvider>
+    </>
+  );
 };
