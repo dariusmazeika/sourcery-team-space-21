@@ -1,14 +1,14 @@
 🚨 Be sure to update this file according to your team.
 
 ## Run the project
-* To run this project you will need [Node](https://nodejs.org/en/). We strongly recommend to use [nvm](https://github.com/nvm-sh/nvm) for installing node.
-* After installing nvm go to project directory and run:
-    * `nvm install [version in .nvmrc file]`
-    * `nvm use`
-    * `npm install`
-    * `npm run start-server` - runs server
-    * `npm start` - builds project for development
 
+- To run this project you will need [Node](https://nodejs.org/en/). We strongly recommend to use [nvm](https://github.com/nvm-sh/nvm) for installing node.
+- After installing nvm go to project directory and run:
+  - `nvm install [version in .nvmrc file]`
+  - `nvm use`
+  - `npm install`
+  - `npm run start-server` - runs server
+  - `npm start` - builds project for development
 
 ## Available Scripts
 
@@ -40,9 +40,13 @@ Runs all linters and prettier and shows any warnings/errors in console.
 
 Runs storybook for development.
 
-### `npm run svgr`
+### `npm run svgo`
 
-Runs SVG to React component converter.
+Replaces SVG stroke value to currentColor.
+
+### `npm run update-sprite`
+
+Optimizes and add SVG to one file (sprite).
 
 ## Learn More
 
