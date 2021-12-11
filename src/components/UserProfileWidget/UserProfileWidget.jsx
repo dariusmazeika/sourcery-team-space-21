@@ -32,7 +32,8 @@ export const UserProfileWidget = () => {
     return () => {
       window.removeEventListener("click", toggleMenuOnWindowClick);
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMenuVisible]);
 
   return (
     <div className={styles.userProfileWidget}>

@@ -15,6 +15,7 @@ module.exports = {
       components: resolve("../src/components"),
       pages: resolve("../src/pages"),
       utils: resolve("../src/utils"),
+      features: resolve("../src/features"),
     });
 
     config.module.rules.push({

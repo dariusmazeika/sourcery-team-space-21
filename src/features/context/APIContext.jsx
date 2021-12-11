@@ -5,7 +5,7 @@ import fetchData from "features/data/fetchData";
 const APIContext = createContext();
 
 export const APIContextProvider = ({ children }) => {
-  const [apiData, setApiData] = useState();
+  const [apiData, setApiData] = useState({});
 
   function fetchDataToState() {
     const args = Array.from(arguments);

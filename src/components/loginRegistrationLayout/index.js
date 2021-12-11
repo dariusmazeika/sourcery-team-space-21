@@ -1,2 +1,2 @@
-export * from "components/loginRegistrationLayout/LoginRegistrationLayout";
-export * from "components/loginRegistrationLayout/FormHeader";
+export * from "./LoginRegistrationLayout";
+export * from "./FormHeader";

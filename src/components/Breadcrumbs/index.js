@@ -1,1 +1,1 @@
-export * from "components/Breadcrumbs/Breadcrumbs";
+export * from "./Breadcrumbs";
