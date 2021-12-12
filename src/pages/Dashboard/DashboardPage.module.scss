@@ -2,5 +2,5 @@
 @import './src/styles/mixins/mixins';
 
 .dashboardSection {
-    @include layout-section-base;
+    margin-bottom: 7.2rem;
 }
