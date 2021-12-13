@@ -4,9 +4,9 @@ import { MainNavigationItem } from "components/MainNavigation";
 
 export const MainNavigation = () => {
   const navigationLinks = [
-    { title: "Dashboard" },
-    { title: "Reservations" },
-    { title: "Eat-Out" },
+    { title: "Dashboard", iconId: "icon-location-home" },
+    { title: "Reservations", iconId: "icon-location-bookmark" },
+    { title: "Eat-Out", iconId: "icon-location-compass" },
   ];
   return (
     <nav>
@@ -16,7 +16,10 @@ export const MainNavigation = () => {
             className={styles.mainNavigationListItem}
             key={navigationLink.title}
           >
-            <MainNavigationItem title={navigationLink.title} />
+            <MainNavigationItem
+              title={navigationLink.title}
+              iconId={navigationLink.iconId}
+            />
           </li>
         ))}
       </ul>

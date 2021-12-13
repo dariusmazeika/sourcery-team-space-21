@@ -8,7 +8,7 @@ import { Icon } from "components/iconSprite/Icon";
 export const CheckIn = ({ count = 0 }) => {
   return (
     <div className={styles.wrapper}>
-      <Icon name="icon-check-in-person" className={styles.svg} />
+      <Icon name="icon-check-in-person" className={styles.icon} />
       <div className={cx(styles.count, styles.caption)}>{count}</div>
     </div>
   );
