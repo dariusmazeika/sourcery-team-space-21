@@ -19,7 +19,7 @@ export const DashboardPage = () => {
         <HelloWidget />
       </section>
       <section className={styles.dashboardSection}>
-        <ReservationsWidget data={data} />
+        <ReservationsWidget data={{ userData: data.userData }} />
       </section>
       <section className={styles.dashboardSection}>
         <EatOutSection data={data} />
