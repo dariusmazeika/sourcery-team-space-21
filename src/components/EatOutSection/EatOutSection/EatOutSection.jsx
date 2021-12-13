@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./eatOutSection.module.scss";
 import { BrowseCard } from "components/EatOutSection";
-import { MockCard } from "./MockCard";
+import { RestaurantCard } from "components/EatOutSection";
 
 const getBestRated = (restaurants) => {
   restaurants.sort((a, b) => (a.rating < b.rating ? 1 : -1));
@@ -18,18 +18,11 @@ export const EatOutSection = ({ data }) => {
         <BrowseCard />
       </li>
       {bestRestaurants &&
-        bestRestaurants.map(
-          ({ id, name, checkIns, rating, categories }, index) => (
-            <li key={`${id}-${index}`} className={styles.widgetListBoxItem}>
-              <MockCard
-                name={name}
-                checkIns={checkIns}
-                rating={rating}
-                categories={categories} //TODO: pass in openingHours,
-              />
-            </li>
-          )
-        )}
+        bestRestaurants.map((data, index) => (
+          <li key={`${data.id}-${index}`} className={styles.widgetListBoxItem}>
+            <RestaurantCard data={data} />
+          </li>
+        ))}
     </ul>
   );
 };

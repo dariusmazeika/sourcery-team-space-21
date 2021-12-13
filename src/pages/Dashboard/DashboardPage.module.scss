@@ -1,6 +1,5 @@
 @import './src/styles/base/base';
-@import './src/styles/mixins/mixins';
 
 .dashboardSection {
-    margin-bottom: 7.2rem;
+    margin-bottom: $space-between-sections;
 }
