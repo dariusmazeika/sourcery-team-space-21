@@ -1,0 +1,19 @@
+@import './src/styles/base/base';
+
+.btn {
+    align-items: center;
+    background-color: $color-white;
+    border: 0.1rem solid $color-iron;
+    border-bottom-right-radius: $border-xxl;
+    border-top-right-radius: $border-xxl;
+    color: $color-fiord;
+    cursor: pointer;
+    display: inline-flex;
+    height: 2.4rem;
+    justify-content: center;
+    width: 2.4rem;
+}
+
+.left {
+    transform: rotate(180deg);
+}

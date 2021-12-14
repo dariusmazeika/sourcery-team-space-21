@@ -8,3 +8,4 @@ export * from "./CheckIn";
 export * from "./IconSprite";
 export * from "./reservationsWidget";
 export * from "./Breadcrumbs";
+export * from "./SliderNavigationButton";
