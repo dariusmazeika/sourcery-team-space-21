@@ -5,6 +5,7 @@ import { MeetingRooms } from "./MeetingRooms";
 import { Books } from "./Books";
 import { Devices } from "./Devices";
 import { EatOutPage } from "./EatOut";
+import { RestaurantPage } from "./RestaurantPage";
 import { NotFound } from "./NotFound";
 
 const reservationsBreadCrumbs = ["dashboard", "reservations"];
@@ -35,5 +36,6 @@ export const routes = [
     element: <Devices />,
   },
   { path: "/eat-out", element: <EatOutPage /> },
+  { path: "/eat-out/:restaurantId", element: <RestaurantPage /> },
   { path: "/*", element: <NotFound /> },
 ];
