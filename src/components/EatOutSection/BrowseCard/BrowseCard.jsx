@@ -1,6 +1,6 @@
 import React from "react";
-import BlankCard from "../BlankCard/BlankCard";
-import BrowseCardContent from "./BrowseCardContent";
+import { BlankCard } from "../BlankCard/BlankCard";
+import { BrowseCardContent } from "./BrowseCardContent";
 
 export const BrowseCard = () => {
   return (
@@ -9,5 +9,3 @@ export const BrowseCard = () => {
     </BlankCard>
   );
 };
-
-export default BrowseCard;

@@ -4,15 +4,13 @@ import styles from "./browse-card-content.module.scss";
 
 export const BrowseCardContent = () => {
   return (
-    <>
-      <h3 className={styles.Heading}>
+    <div className={styles.wrapper}>
+      <h3 className={styles.wrapperTitle}>
         View all your favourite lunch spots and more
       </h3>
       <Button size={"small"} kind={"primary"}>
         Browse List
       </Button>
-    </>
+    </div>
   );
 };
-
-export default BrowseCardContent;

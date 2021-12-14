@@ -4,6 +4,7 @@ import cx from "classnames";
 import styles from "./user-profile-widget.module.scss";
 import imageMark from "assets/image-mark.png";
 import { MenuItem } from "components/UserProfileWidget";
+import { Icon } from "components/iconSprite/Icon";
 
 export const UserProfileWidget = () => {
   let [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -36,6 +37,11 @@ export const UserProfileWidget = () => {
 
   return (
     <div className={styles.userProfileWidget}>
+      <Icon
+        name="icon-notification"
+        size="large"
+        className={styles.notificationIcon}
+      />
       <div>
         <button
           type="button"

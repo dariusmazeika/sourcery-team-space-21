@@ -9,5 +9,3 @@ export const BlankCard = ({ children }) => {
 BlankCard.propTypes = {
   children: PropTypes.node,
 };
-
-export default BlankCard;

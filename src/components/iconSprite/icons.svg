@@ -19,6 +19,10 @@
         xmlns="http://www.w3.org/2000/svg">
         <path d="M15.59 19l-7-5-7 5V3a2 2 0 012-2h10a2 2 0 012 2v16z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-bookmark"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.59 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 12 13" id="icon-check-in-person"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M6.31 6.777a2.98 2.98 0 002.978-2.978v-.496A2.98 2.98 0 006.31.326a2.98 2.98 0 00-2.977 2.977v.496A2.98 2.98 0 006.31 6.777zM9.943 8.256a13.854 13.854 0 00-7.267 0A2.493 2.493 0 00.85 10.65v1.586h10.917V10.65c0-1.112-.75-2.096-1.825-2.394z" fill="#FADB5E"/>
@@ -30,6 +34,10 @@
     <symbol fill="none" stroke="currentColor" viewBox="0 0 24 22" id="icon-heart"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M20.43 3.61a5.5 5.5 0 00-7.78 0l-1.06 1.06-1.06-1.06a5.501 5.501 0 10-7.78 7.78l1.06 1.06 7.78 7.78 7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78v0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-location-bookmark"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.59 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-location-compass"
         xmlns="http://www.w3.org/2000/svg">
@@ -47,15 +55,19 @@
     </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-main-settings"
         xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#kclip0_211_4923)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <g clip-path="url(#mclip0_211_4923)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12.59 15a3 3 0 100-6 3 3 0 000 6z"/>
             <path d="M19.99 15a1.65 1.65 0 00.33 1.82l.06.06a1.998 1.998 0 010 2.83 1.998 1.998 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1.08-1.51 1.65 1.65 0 00-1.82.33l-.06.06a1.998 1.998 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1h-.17a2 2 0 110-4h.09A1.65 1.65 0 005.19 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h.08a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1h.17a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1v0z"/>
         </g>
         <defs>
-            <clipPath id="kclip0_211_4923">
+            <clipPath id="mclip0_211_4923">
                 <path fill="#fff" transform="translate(.59)" d="M0 0h24v24H0z"/>
             </clipPath>
         </defs>
+    </symbol>
+    <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-notification"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.59 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9zM14.32 21a1.999 1.999 0 01-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-notification-bell"
         xmlns="http://www.w3.org/2000/svg">

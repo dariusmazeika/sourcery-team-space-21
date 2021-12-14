@@ -5,10 +5,3 @@
 @import 'borders';
 @import 'shadows';
 @import 'spacing';
-
-html {
-    color: $default-font-color;
-    font-family: $font-roboto;
-    font-size: $font-size-base;
-    font-weight: $font-weight-medium;
-}
