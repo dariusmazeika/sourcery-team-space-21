@@ -2,7 +2,7 @@
 
 $font-size-small: 1.4rem;
 
-.wrapper {
+.ratingWrapper {
     align-items: center;
     background: $color-energy-yellow;
     border-radius: $border-l;
@@ -10,15 +10,11 @@ $font-size-small: 1.4rem;
     height: 3.2rem;
     justify-content: space-evenly;
 
-    .oneStar {
+    .starsOne {
         display: flex;
     }
 
-    .allStars {
-        display: flex;
-    }
-
-    .rating {
+    .ratingNumber {
         color: $color-pickled-bluewood;
         font-size: $font-size-small;
         font-weight: $font-weight-semibold;
