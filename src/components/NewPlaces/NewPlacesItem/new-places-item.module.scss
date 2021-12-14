@@ -1,0 +1,25 @@
+@import './src/styles/base/base';
+
+.card {
+    background-color: $color-tiara;
+    display: inline-block;
+    margin-bottom: 5rem;
+    margin-right: 4.8rem;
+    min-height: 41.6rem;
+    min-width: 47.7rem;
+
+    &TopTextWrapper {
+        align-items: center;
+        color: $color-slate-gray;
+        display: flex;
+        justify-content: flex-start;
+        max-width: 22rem;
+        min-width: 4rem;
+        text-transform: uppercase;
+    }
+}
+
+.rating {
+    height: 3.2rem;
+    width: 6.5rem;
+}

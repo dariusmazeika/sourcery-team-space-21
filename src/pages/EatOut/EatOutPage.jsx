@@ -1,35 +1,19 @@
-import { PlaceholderCard } from "components/NewPlaces/PlaceholderCard/PlaceholderCard";
 import React from "react";
-// import { useAPI } from "features/context/APIContext";
+import styles from "./EatOutPage.module.scss";
+import { useAPI } from "features/context/APIContext";
+import { useEffect } from "react";
+import { NewPlaces } from "components/NewPlaces/NewPlaces";
 
 export const EatOutPage = () => {
-  // const [data, getData] = useAPI();
-  // useEffect(() => {
-  //   getData("userData", "restaurants");
-  // }, []); // eslint-disable-line
+  const [data, getData] = useAPI();
+
+  useEffect(() => {
+    getData("restaurants");
+  }, []); // eslint-disable-line
 
   return (
-    <div>
-      <PlaceholderCard />
+    <div className={styles.eatOutSection}>
+      <NewPlaces data={data} />
     </div>
   );
 };
-
-// return (
-
-//   <>
-
-//     <section className={styles.dashboardSection}>
-//       <HelloWidget />
-//     </section>
-//     <section>
-//       <ReservationsWidget />
-//     <section className={styles.dashboardSection}>
-//       <ReservationsWidget data={data} />
-//     </section>
-//     <section className={styles.dashboardSection}>
-//       <EatOutSection data={data} />
-//     </section>
-//   </>
-// );
-// };
