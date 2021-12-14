@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useAPI } from "features/context";
+import React from "react";
 import PropTypes from "prop-types";
 import styles from "./reservationsWidget.module.scss";
 import bookImage from "assets/book.png";
@@ -34,14 +33,7 @@ const itemsConfig = [
   },
 ];
 
-export const ReservationsWidget = (props) => {
-  const [data, getData] = useAPI();
-
-  //TODO: add useEffect dependency when reservations function is implemented
-  useEffect(() => {
-    getData("userData");
-  }, []); // eslint-disable-line
-
+export const ReservationsWidget = ({ data }) => {
   const items = itemsConfig.map(({ initData, dataKey }) => {
     return {
       ...initData,
@@ -68,4 +60,4 @@ export const ReservationsWidget = (props) => {
   );
 };
 
-ReservationsWidget.propTypes = { props: PropTypes.any };
+ReservationsWidget.propTypes = { data: PropTypes.object };
