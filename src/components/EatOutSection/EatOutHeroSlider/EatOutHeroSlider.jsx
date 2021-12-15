@@ -31,7 +31,7 @@ export const EatOutHeroSlider = ({ restaurant }) => {
               {restaurant.description}
             </p>
             <Link to={"#"} className={styles.cardInfoLink}>
-              read more
+              Read More
             </Link>
           </div>
         </div>
