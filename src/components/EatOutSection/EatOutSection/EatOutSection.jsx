@@ -19,7 +19,7 @@ export const EatOutSection = ({ data }) => {
       </li>
       {bestRestaurants &&
         bestRestaurants.map((data, index) => (
-          <li key={`${data.id}-${index}`} className={styles.widgetListBoxItem}>
+          <li key={data.id} className={styles.widgetListBoxItem}>
             <RestaurantCard data={data} />
           </li>
         ))}
