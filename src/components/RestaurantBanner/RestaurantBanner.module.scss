@@ -1,9 +1,9 @@
-@import 'styles';
+@import './src/styles/base/base';
 
 .banner {
     display: flex;
     flex-direction: column;
-    height: 47rem;
+    height: 57rem;
     justify-content: flex-end;
     position: relative;
 }
@@ -38,6 +38,6 @@
 
 .title {
     color: $color-midnight;
-    font-size: $font-size-xxxl;
+    font-size: $font-size-xxl;
     padding-bottom: 4.8rem;
 }

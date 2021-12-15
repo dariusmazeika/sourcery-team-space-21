@@ -30,7 +30,7 @@ export const EatOutHeroSlider = ({ restaurant }) => {
             <p className={styles.cardInfoDescription}>
               {restaurant.description}
             </p>
-            <Link to={"#"} className={styles.cardInfoLink}>
+            <Link to={restaurant.id} className={styles.cardInfoLink}>
               Read More
             </Link>
           </div>
