@@ -8,10 +8,7 @@ export const APIContextProvider = ({ children }) => {
   const [apiData, setApiData] = useState({});
 
   function fetchDataToState() {
-    const loadedKeys = Object.keys(apiData);
-    const args = Array.from(arguments).filter(
-      (key) => !loadedKeys.includes(key)
-    );
+    const args = Array.from(arguments);
     fetchData(args).then((data) => setApiData({ ...apiData, ...data }));
   }
 
