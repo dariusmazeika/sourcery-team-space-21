@@ -1,0 +1,101 @@
+@import '../../../styles/base/base';
+
+$font-small: 1rem;
+$title-font: 4.2rem;
+$margin-bottom: 7.2rem;
+
+.heroContainer {
+    margin-bottom: $margin-bottom;
+    margin-top: 0.8rem;
+    max-width: 134.4rem;
+
+    &Title {
+        font-size: $title-font;
+        margin-bottom: $margin-bottom;
+    }
+}
+
+.cardContainer {
+    display: flex;
+}
+
+.imageContainer {
+    max-height: 31.6rem;
+    max-width: 101.8rem;
+    position: relative;
+
+    &Image {
+        border-bottom-left-radius: $border-xl;
+        border-top-left-radius: $border-xl;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+
+        &Layer {
+            background: linear-gradient(
+                270deg,
+                #fff -0.71%,
+                rgba(255, 255, 255, 0) 99.41%
+            );
+            border-bottom-left-radius: $border-xl;
+            border-top-left-radius: $border-xl;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+}
+
+.cardInfo {
+    max-width: 32.6rem;
+    padding: 2.4rem;
+    width: 100%;
+
+    &Navigation {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    &Intro {
+        color: $color-wild-watermelon;
+        font-size: $font-small;
+        margin-top: 1.6rem;
+        text-transform: uppercase;
+    }
+
+    &Title {
+        font-weight: $font-weight-medium;
+        margin-bottom: 1.6rem;
+        margin-top: 0.2rem;
+    }
+
+    &Description {
+        /* stylelint-disable */
+        color: $color-slate-gray;
+        display: -webkit-box;
+        font-weight: $font-weight-regular;
+        margin-bottom: 1.6rem;
+        max-height: 10rem;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &Link {
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: $color-wild-watermelon;
+        color: $color-white;
+        text-decoration: none;
+        padding: 0.8rem 2.4rem;
+        border-radius: 6.5rem;
+        font-size: 1.4rem;
+
+        &:hover {
+            background-color: $color-wild-watermelon-secondary;
+        }
+    }
+}
