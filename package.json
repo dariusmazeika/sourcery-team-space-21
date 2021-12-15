@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "caniuse-lite": "^1.0.30001278",
-    "classnames": "^2.2.6",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "caniuse-lite": "1.0.30001278",
+    "classnames": "2.2.6",
+    "miragejs": "0.1.42",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-hook-form": "7.20.4",
     "react-router-dom": "6.0.2",
-    "react-scripts": "3.4.4"
+    "react-scripts": "3.4.4",
+    "svg-sprite": "1.5.3",
+    "svgo": "2.8.0"
   },
+  "module": "src/components/icon/dist/index.esm.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -27,7 +32,9 @@
     "lint:stylelint:check": "npm run -s lint:stylelint \"src/**/*.scss\"",
     "lint:stylelint:fix": "npm run -s lint:stylelint \"src/**/*.scss\" --fix",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "svgo": "svgo -f src/assets/Icons -o src/assets/Icons/Svgo",
+    "update-sprite": "svg-sprite -s --symbol-dest src/components/iconSprite --symbol-sprite icons.svg src/assets/Icons/Svgo/*.svg"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,scss,md}": "prettier --write",
@@ -55,6 +62,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@sambego/storybook-state": "^2.0.1",
     "@storybook/addon-actions": "^6.0.27",
     "@storybook/addon-backgrounds": "^6.0.27",
@@ -63,6 +73,7 @@
     "@storybook/addon-notes": "^5.3.21",
     "@storybook/addons": "^6.0.27",
     "@storybook/react": "^6.0.27",
+    "@svgr/cli": "^5.5.0",
     "@svgr/webpack": "^5.4.0",
     "css-loader": "^5.0.0",
     "eslint": "6.6.0",
@@ -76,6 +87,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "^4.0.4",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "style-loader": "^2.0.0",
     "stylelint": "^13.7.2",
     "stylelint-config-prettier": "^8.0.2",

@@ -1,0 +1,93 @@
+@import './src/styles/base/base';
+
+$font-big: 2.4rem;
+$font-small: 1rem;
+
+.card {
+    align-items: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $border-xl;
+    display: flex;
+    min-height: 22.9rem;
+
+    .lowerWrapper {
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 5%,
+            rgba(255, 255, 255, 0.7903362028405112) 35%,
+            rgba(255, 255, 255, 1) 56%
+        );
+        border-bottom-left-radius: $border-xl;
+        border-bottom-right-radius: $border-xl;
+        height: 15rem;
+        min-width: 100%;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-end;
+        padding-bottom: 2rem;
+        padding-left: 1.7rem;
+    }
+
+    .topTextWrapper {
+        align-items: center;
+        color: $color-slate-gray;
+        display: flex;
+        justify-content: flex-start;
+        max-width: 22rem;
+        min-width: 4rem;
+        text-transform: uppercase;
+
+        .topText {
+            font-size: $font-small;
+            font-weight: $font-weight-medium;
+            line-height: 1.5;
+            padding-right: 3rem;
+            position: relative;
+
+            &:not(:last-child)::after {
+                background: $color-slate-gray;
+                border-radius: $border-radius-medium;
+                content: '';
+                display: inline-block;
+                padding: 0.31rem;
+                position: absolute;
+                right: 1.2rem;
+                top: 0.4rem;
+            }
+        }
+    }
+
+    .title {
+        color: $color-midnight;
+        font-size: $font-big;
+        font-weight: $font-weight-medium;
+        letter-spacing: 0.05rem;
+        max-width: 33.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .workingDaysWrapper {
+        display: flex;
+        flex-direction: row;
+        max-width: 80%;
+    }
+
+    .workingDays {
+        color: $color-slate-gray;
+        font-size: $font-small;
+        font-weight: $font-weight-medium;
+        line-height: 1.5;
+
+        &:not(:first-child) {
+            padding-left: 1rem;
+        }
+    }
+}

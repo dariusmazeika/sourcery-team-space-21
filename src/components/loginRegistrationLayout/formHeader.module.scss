@@ -1,0 +1,23 @@
+@import './src/styles/base/base';
+
+.headerBox {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    &Title {
+        font-weight: $font-weight-bold;
+        line-height: 1.33;
+        text-transform: capitalize;
+    }
+
+    &Subtitle {
+        line-height: 1.5;
+        margin: 0.8rem 0;
+        overflow-wrap: normal;
+
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+}

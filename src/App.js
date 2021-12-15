@@ -1,23 +1,33 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { MainLayout } from "components/MainLayout";
-import { DashboardPage } from "pages/Dashboard";
-import { ReservationsPage } from "pages/Reservations";
-import { EatOutPage } from "pages/EatOut";
+import React, { useContext, useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { APIContextProvider } from "features/context/APIContext";
+import { UserContext } from "features/context";
+import { Home } from "pages/Home";
+import { LogIn } from "pages/LogIn";
+import { Register } from "pages/Register";
 
 function App() {
+  const { userData } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userData.isLoggedIn) {
+      navigate("/login");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userData.isLoggedIn]);
+
   return (
-    <Router>
-      <MainLayout className="app">
+    <APIContextProvider>
+      {userData.isLoggedIn ? (
+        <Home />
+      ) : (
         <Routes>
-          <Route exact path="/" element={<DashboardPage />}>
-            <Route path="dashboard" element={<DashboardPage />} />
-          </Route>
-          <Route path="/reservations" element={<ReservationsPage />} />
-          <Route path="/eat-out" element={<EatOutPage />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
-      </MainLayout>
-    </Router>
+      )}
+    </APIContextProvider>
   );
 }
 

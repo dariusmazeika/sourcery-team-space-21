@@ -11,3 +11,9 @@
         }
     }
 }
+
+@mixin layout-section-base {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7.2rem;
+}
