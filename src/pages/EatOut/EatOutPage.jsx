@@ -21,13 +21,13 @@ export const EatOutPage = () => {
   };
 
   return (
-    <div>
+    <>
       <BreadCrumbs />
       <Slider {...sliderSettings}>
         {data.restaurants?.map((restaurant, index) => (
           <EatOutHeroSlider key={restaurant.name} restaurant={restaurant} />
         ))}
       </Slider>
-    </div>
+    </>
   );
 };

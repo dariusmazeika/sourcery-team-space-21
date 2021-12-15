@@ -26,7 +26,7 @@ export const EatOutHeroSlider = ({ restaurant }) => {
               {/*<button onClick={sliderRef?.slickNext}>next</button>*/}
             </div>
             <p className={styles.cardInfoIntro}>{restaurant.slogan}</p>
-            <h5 className={styles.cardInfoTitle}>{restaurant.name}</h5>
+            <p className={styles.cardInfoTitle}>{restaurant.name}</p>
             <p className={styles.cardInfoDescription}>
               {restaurant.description}
             </p>

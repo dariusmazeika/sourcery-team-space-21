@@ -1,17 +1,13 @@
-@import '../../../styles/base/base';
-
-$font-small: 1rem;
-$title-font: 4.2rem;
-$margin-bottom: 7.2rem;
+@import './src/styles/base/base';
 
 .heroContainer {
-    margin-bottom: $margin-bottom;
+    margin-bottom: $margin-bottom-xxxl;
     margin-top: 0.8rem;
     max-width: 134.4rem;
 
     &Title {
-        font-size: $title-font;
-        margin-bottom: $margin-bottom;
+        font-size: $font-size-xl;
+        margin-bottom: $margin-bottom-xxxl;
     }
 }
 
@@ -61,38 +57,35 @@ $margin-bottom: 7.2rem;
 
     &Intro {
         color: $color-wild-watermelon;
-        font-size: $font-small;
-        margin-top: 1.6rem;
+        font-size: $font-size-small;
+        margin-top: $margin-top-m;
         text-transform: uppercase;
     }
 
     &Title {
-        font-weight: $font-weight-medium;
-        margin-bottom: 1.6rem;
+        font-weight: $font-size-m;
+        margin-bottom: $margin-bottom-m;
         margin-top: 0.2rem;
     }
 
     &Description {
-        /* stylelint-disable */
+        // todo add ellipsis
         color: $color-slate-gray;
-        display: -webkit-box;
         font-weight: $font-weight-regular;
-        margin-bottom: 1.6rem;
+        margin-bottom: $margin-bottom-m;
         max-height: 10rem;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
         overflow: hidden;
     }
 
     &Link {
-        display: inline-block;
-        text-transform: uppercase;
         background-color: $color-wild-watermelon;
-        color: $color-white;
-        text-decoration: none;
-        padding: 0.8rem 2.4rem;
         border-radius: 6.5rem;
-        font-size: 1.4rem;
+        color: $color-white;
+        display: inline-block;
+        font-size: $font-size-m;
+        padding: 0.8rem 2.4rem;
+        text-decoration: none;
+        text-transform: uppercase;
 
         &:hover {
             background-color: $color-wild-watermelon-secondary;
