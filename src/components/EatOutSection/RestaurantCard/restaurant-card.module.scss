@@ -4,13 +4,20 @@ $font-big: 2.4rem;
 $font-small: 1rem;
 
 .card {
-    align-items: flex-end;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: $border-xl;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-height: 22.9rem;
+
+    &TopWrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.6rem 1.7rem 0;
+    }
 
     .lowerWrapper {
         background: linear-gradient(
@@ -68,10 +75,16 @@ $font-small: 1rem;
         font-size: $font-big;
         font-weight: $font-weight-medium;
         letter-spacing: 0.05rem;
-        max-width: 33.2rem;
+        max-width: 26rem;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
+        &Wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 2.53rem;
+        }
     }
 
     .workingDaysWrapper {
