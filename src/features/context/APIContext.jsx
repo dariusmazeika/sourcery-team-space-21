@@ -9,7 +9,7 @@ export const APIContextProvider = ({ children }) => {
 
   function fetchDataToState() {
     const args = Array.from(arguments);
-    fetchData(args).then((data) => setApiData(data));
+    fetchData(args).then((data) => setApiData({ ...apiData, ...data }));
   }
 
   return (
