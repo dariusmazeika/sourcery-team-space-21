@@ -3,8 +3,8 @@ import styles from "./star-rating.module.scss";
 
 export const StarRating = () => {
   return (
-    <div className={styles.ratingWrapper} style={{ maxWidth: "6.5rem" }}>
-      <div className={styles.starsOne}>
+    <div className={styles.ratingWrapper}>
+      <div className={styles.ratingIconSingle}>
         <svg
           width="13"
           height="13"

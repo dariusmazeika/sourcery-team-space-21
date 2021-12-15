@@ -1,7 +1,5 @@
 @import './src/styles/base/base';
 
-$font-size-small: 1.4rem;
-
 .ratingWrapper {
     align-items: center;
     background: $color-energy-yellow;
@@ -9,14 +7,15 @@ $font-size-small: 1.4rem;
     display: flex;
     height: 3.2rem;
     justify-content: space-evenly;
+    max-width: 6.5rem;
 
-    .starsOne {
+    .ratingIconSingle {
         display: flex;
     }
 
     .ratingNumber {
         color: $color-pickled-bluewood;
-        font-size: $font-size-small;
+        font-size: $font-size-regular;
         font-weight: $font-weight-semibold;
     }
 }
