@@ -6,4 +6,4 @@ export default {
   component: StarRating,
 };
 
-export const StarRatingComponent = () => <StarRating />;
+export const StarRatingComponent = () => <StarRating rating={"2.2"} />;
