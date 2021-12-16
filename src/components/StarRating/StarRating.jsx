@@ -5,12 +5,9 @@ import PropTypes from "prop-types";
 
 export const StarRating = ({ rating = "1.0" }) => {
   return (
-    <div className={styles.ratingWrapper}>
-      <Icon
-        className={styles.ratingWrapperIcon}
-        name="icon-action-star-filled"
-      />
-      <p className={styles.ratingWrapperNumber}>{rating}</p>
+    <div className={styles.rating}>
+      <Icon className={styles.ratingIcon} name="icon-action-star-filled" />
+      <p className={styles.ratingNumber}>{rating}</p>
     </div>
   );
 };
