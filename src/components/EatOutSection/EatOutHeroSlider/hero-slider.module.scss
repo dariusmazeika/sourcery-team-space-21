@@ -1,0 +1,94 @@
+@import './src/styles/base/base';
+
+.heroContainer {
+    margin-bottom: $margin-bottom-xxxl;
+    margin-top: 0.8rem;
+    max-width: 134.4rem;
+
+    &Title {
+        font-size: $font-size-xl;
+        margin-bottom: $margin-bottom-xxxl;
+    }
+}
+
+.cardContainer {
+    display: flex;
+}
+
+.imageContainer {
+    max-height: 31.6rem;
+    max-width: 101.8rem;
+    position: relative;
+
+    &Image {
+        border-bottom-left-radius: $border-xl;
+        border-top-left-radius: $border-xl;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+
+        &Layer {
+            background: linear-gradient(
+                270deg,
+                #fff -0.71%,
+                rgba(255, 255, 255, 0) 99.41%
+            );
+            border-bottom-left-radius: $border-xl;
+            border-top-left-radius: $border-xl;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+}
+
+.cardInfo {
+    max-width: 32.6rem;
+    padding: 2.4rem;
+    width: 100%;
+
+    &Navigation {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    &Intro {
+        color: $color-wild-watermelon;
+        font-size: $font-size-small;
+        margin-top: $margin-top-m;
+        text-transform: uppercase;
+    }
+
+    &Title {
+        font-weight: $font-size-m;
+        margin-bottom: $margin-bottom-m;
+        margin-top: 0.2rem;
+    }
+
+    &Description {
+        // todo add ellipsis
+        color: $color-slate-gray;
+        font-weight: $font-weight-regular;
+        margin-bottom: $margin-bottom-m;
+        max-height: 10rem;
+        overflow: hidden;
+    }
+
+    &Link {
+        background-color: $color-wild-watermelon;
+        border-radius: 6.5rem;
+        color: $color-white;
+        display: inline-block;
+        font-size: $font-size-m;
+        padding: 0.8rem 2.4rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $color-wild-watermelon-secondary;
+        }
+    }
+}

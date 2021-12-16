@@ -9,6 +9,7 @@ import { RestaurantPage } from "./RestaurantPage";
 import { NotFound } from "./NotFound";
 
 const reservationsBreadCrumbs = ["dashboard", "reservations"];
+const eatOutBreadCrumbs = ["dashboard", "eat-out"];
 
 export const routes = [
   { path: "/", element: <DashboardPage /> },
@@ -35,7 +36,7 @@ export const routes = [
     name: [...reservationsBreadCrumbs, "devices"],
     element: <Devices />,
   },
-  { path: "/eat-out", element: <EatOutPage /> },
+  { path: "/eat-out", name: eatOutBreadCrumbs, element: <EatOutPage /> },
   { path: "/eat-out/:restaurantId", element: <RestaurantPage /> },
   { path: "/*", element: <NotFound /> },
 ];
