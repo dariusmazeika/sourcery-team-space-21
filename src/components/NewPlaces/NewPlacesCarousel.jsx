@@ -1,14 +1,11 @@
 // import React, { useState } from "react";
-// import PropTypes from "prop-types";
-// import { NewPlacesItem } from "./NewPlacesItem/NewPlacesItem";
-// import styles from "./new-places.module.scss";
+// import { NewPlaces } from "./NewPlaces";
 // import Slider from "react-slick";
 // import "~slick-carousel/slick/slick.css";
 // import "~slick-carousel/slick/slick-theme.css";
 
-// export const NewPlaces = ({ data }) => {
+// export const NewPlacesSlider = () => {
 //   const [sliderRef, setSliderRef] = useState(null);
-//   const restaurants = data.restaurants;
 
 //   const sliderSettings = {
 //     slidesToShow: 1,
@@ -23,13 +20,14 @@
 //         <button onClick={sliderRef?.slickPrev}>prev</button>
 //         <button onClick={sliderRef?.slickNext}>next</button>
 //       </div>
-//       <div className={styles.listBox}>
-//         {restaurants?.map((item, i) => (
-//           <NewPlacesItem key={`${item.name}-${i}`} item={item} />
+//       <Slider ref={setSliderRef} {...sliderSettings}>
+//         {restaurants?.map((item, index) => (
+//           <div key={item.name}>
+//             <div>{item.name}</div>
+//             <div>{item.image}</div>
+//           </div>
 //         ))}
-//       </div>
+//       </Slider>
 //     </div>
 //   );
 // };
-
-// NewPlaces.propTypes = { data: PropTypes.object, name: PropTypes.string };
