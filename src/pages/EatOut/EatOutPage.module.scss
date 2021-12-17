@@ -3,3 +3,23 @@
 .eatOutSection {
     margin-bottom: $space-between-sections;
 }
+
+.newPlaces {
+    margin-top: 50px;
+
+    &Title {
+        display: inline-block;
+    }
+}
+
+.headerWrapper {
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.newPlacesNavigation {
+    align-items: center;
+    display: inline-block;
+}
