@@ -1,5 +1,6 @@
 .mainNavigationList {
     display: flex;
+    justify-content: space-between;
 
     &Item {
         align-items: center;

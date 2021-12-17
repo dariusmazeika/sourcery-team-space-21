@@ -42,37 +42,35 @@ export const UserProfileWidget = () => {
         size="large"
         className={styles.notificationIcon}
       />
-      <div>
-        <button
-          type="button"
-          onClick={toggleMenu}
-          className={styles.userProfileWidgetMenuButton}
-        >
-          <img
-            src={userImgSrc}
-            alt=""
-            className={styles.userProfileWidgetImage}
+      <button
+        type="button"
+        onClick={toggleMenu}
+        className={styles.userProfileWidgetMenuButton}
+      >
+        <img
+          src={userImgSrc}
+          alt=""
+          className={styles.userProfileWidgetImage}
+        />
+        <img
+          src={imageMark}
+          alt="icon"
+          className={styles.userProfileWidgetMark}
+        />
+      </button>
+      <div
+        className={cx(styles.userProfileMenu, {
+          isActive: isMenuVisible,
+        })}
+      >
+        <span className={styles.userProfileMenuPointer}>{}</span>
+        <div className={styles.userProfileMenuButtons}>
+          <MenuItem title="Settings" stylesClass="topButton" />
+          <MenuItem
+            title="Log out"
+            stylesClass="bottomButton"
+            onClick={logOutUser}
           />
-          <img
-            src={imageMark}
-            alt="icon"
-            className={styles.userProfileWidgetMark}
-          />
-        </button>
-        <div
-          className={cx(styles.userProfileMenu, {
-            isActive: isMenuVisible,
-          })}
-        >
-          <span className={styles.userProfileMenuPointer}>{}</span>
-          <div className={styles.userProfileMenuButtons}>
-            <MenuItem title="Settings" stylesClass="topButton" />
-            <MenuItem
-              title="Log out"
-              stylesClass="bottomButton"
-              onClick={logOutUser}
-            />
-          </div>
         </div>
       </div>
     </div>

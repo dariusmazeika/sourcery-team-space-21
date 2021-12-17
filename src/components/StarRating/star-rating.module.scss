@@ -1,0 +1,21 @@
+@import './src/styles/base/base';
+
+.rating {
+    align-items: center;
+    background: $color-energy-yellow;
+    border-radius: $border-l;
+    display: flex;
+    height: 3.2rem;
+    justify-content: space-evenly;
+    max-width: 6.5rem;
+
+    &Icon {
+        color: $color-pickled-bluewood;
+    }
+
+    &Number {
+        color: $color-pickled-bluewood;
+        font-size: $font-size-m;
+        font-weight: $font-weight-semibold;
+    }
+}

@@ -9,3 +9,4 @@ export * from "./IconSprite";
 export * from "./reservationsWidget";
 export * from "./Breadcrumbs";
 export * from "./SliderNavigationButton";
+export * from "./RestaurantBanner";
