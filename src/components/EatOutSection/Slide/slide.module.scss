@@ -3,12 +3,6 @@
 .heroContainer {
     margin-bottom: $margin-bottom-xxxl;
     margin-top: 0.8rem;
-    max-width: 134.4rem;
-
-    &Title {
-        font-size: $font-size-xl;
-        margin-bottom: $margin-bottom-xxxl;
-    }
 }
 
 .cardContainer {
@@ -57,23 +51,27 @@
 
     &Intro {
         color: $color-wild-watermelon;
-        font-size: $font-size-small;
+        font-size: $font-size-s;
         margin-top: $margin-top-m;
         text-transform: uppercase;
     }
 
     &Title {
+        font-size: $font-size-l;
         font-weight: $font-size-m;
         margin-bottom: $margin-bottom-m;
         margin-top: 0.2rem;
+        max-height: 5.2rem;
+        overflow: hidden;
+        word-break: break-word;
     }
 
     &Description {
         // todo add ellipsis
         color: $color-slate-gray;
         font-weight: $font-weight-regular;
-        margin-bottom: $margin-bottom-m;
-        max-height: 10rem;
+        height: 10rem;
+        margin-bottom: 1.2rem;
         overflow: hidden;
     }
 

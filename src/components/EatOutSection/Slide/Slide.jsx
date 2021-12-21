@@ -1,15 +1,12 @@
 import React from "react";
 import { BlankCard } from "components/EatOutSection/index";
-import styles from "./hero-slider.module.scss";
+import styles from "./slide.module.scss";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const EatOutHeroSlider = ({ restaurant }) => {
+export const Slide = ({ restaurant, next, prev }) => {
   return (
     <div className={styles.heroContainer}>
-      <h1 className={styles.heroContainerTitle}>
-        Hungry? Find the best place!
-      </h1>
       <BlankCard>
         <div className={styles.cardContainer}>
           <div className={styles.imageContainer}>
@@ -22,8 +19,8 @@ export const EatOutHeroSlider = ({ restaurant }) => {
           </div>
           <div className={styles.cardInfo}>
             <div className={styles.cardInfoNavigation}>
-              {/*<button onClick={sliderRef?.slickPrev}>prev</button>*/}
-              {/*<button onClick={sliderRef?.slickNext}>next</button>*/}
+              <button onClick={prev}>prev</button>
+              <button onClick={next}>next</button>
             </div>
             <p className={styles.cardInfoIntro}>{restaurant.slogan}</p>
             <p className={styles.cardInfoTitle}>{restaurant.name}</p>
@@ -40,6 +37,8 @@ export const EatOutHeroSlider = ({ restaurant }) => {
   );
 };
 
-EatOutHeroSlider.propTypes = {
+Slide.propTypes = {
   restaurant: PropTypes.object,
+  prev: PropTypes.func,
+  next: PropTypes.func,
 };
