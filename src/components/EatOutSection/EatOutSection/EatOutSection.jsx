@@ -9,20 +9,32 @@ const getBestRated = (restaurants) => {
   return restaurants.slice(0, 2);
 };
 
+const addLiked = (restaurants, likedData = []) => {
+  const liked = new Set(likedData.map((restaurant) => restaurant.id));
+  return restaurants.map((restaurant) => ({
+    ...restaurant,
+    isLiked: liked.has(restaurant.id),
+  }));
+};
+
 export const EatOutSection = ({ data }) => {
-  const bestRestaurants = data.restaurants ? getBestRated(data.restaurants) : 0;
+  const bestRestaurants = data.restaurants
+    ? addLiked(
+        getBestRated(data.restaurants),
+        data.userData[0]?.liked.restaurants
+      )
+    : [];
 
   return (
     <ul className={styles.widgetListBox}>
       <li className={styles.widgetListBoxItem}>
         <BrowseCard />
       </li>
-      {bestRestaurants &&
-        bestRestaurants.map((data, index) => (
-          <li key={data.id} className={styles.widgetListBoxItem}>
-            <RestaurantCard data={data} />
-          </li>
-        ))}
+      {bestRestaurants.map((restaurantData, index) => (
+        <li key={restaurantData.id} className={styles.widgetListBoxItem}>
+          <RestaurantCard data={restaurantData} />
+        </li>
+      ))}
     </ul>
   );
 };

@@ -1,7 +1,7 @@
-import { Icon } from "components/iconSprite/Icon";
 import React from "react";
-import styles from "./star-rating.module.scss";
 import PropTypes from "prop-types";
+import styles from "./star-rating.module.scss";
+import { Icon } from "components/iconSprite/Icon";
 
 export const StarRating = ({ rating = "1.0" }) => {
   return (
@@ -13,5 +13,5 @@ export const StarRating = ({ rating = "1.0" }) => {
 };
 
 StarRating.propTypes = {
-  rating: PropTypes.any,
+  rating: PropTypes.number,
 };
