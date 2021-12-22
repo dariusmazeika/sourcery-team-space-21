@@ -10,6 +10,7 @@
     justify-content: space-between;
     margin-bottom: 2.4rem;
     margin-top: $space-between-sections;
+    width: 100%;
 
     &Title {
         display: inline-block;
@@ -17,5 +18,5 @@
 }
 
 .newPlacesSlidesContainer {
-    margin: 0 -24px;
+    margin: 0 -1.2rem;
 }

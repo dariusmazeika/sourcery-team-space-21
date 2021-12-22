@@ -37,6 +37,7 @@ export const EatOutPage = () => {
     slidesToScroll: 3,
     infinite: true,
     dots: false,
+    arrows: false,
   };
 
   return (
