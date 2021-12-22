@@ -59,6 +59,11 @@
         <path d="M12.59 22c5.524 0 10-4.477 10-10s-4.476-10-10-10c-5.522 0-10 4.477-10 10s4.478 10 10 10z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M16.83 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-location-globe"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.59 22c5.524 0 10-4.477 10-10s-4.476-10-10-10c-5.522 0-10 4.477-10 10s4.478 10 10 10zM2.59 12h20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.59 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10v0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-location-home"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M3.59 9l9-7 9 7v11a2 2 0 01-2 2h-14a2 2 0 01-2-2V9z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -67,6 +72,11 @@
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-log-out"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M9.59 21h-4a2 2 0 01-2-2V5a2 2 0 012-2h4M16.59 17l5-5-5-5M21.59 12h-12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-main-clock"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.59 22c5.524 0 10-4.477 10-10s-4.476-10-10-10c-5.522 0-10 4.477-10 10s4.478 10 10 10z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.59 6v6l4 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-main-settings"
         xmlns="http://www.w3.org/2000/svg">
@@ -80,6 +90,11 @@
             </clipPath>
         </defs>
     </symbol>
+    <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-map-pin"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.59 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.59 13a3 3 0 100-6 3 3 0 000 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-notification"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M18.59 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9zM14.32 21a1.999 1.999 0 01-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -87,6 +102,10 @@
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-notification-bell"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M18.59 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9zM14.32 21a1.999 1.999 0 01-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-other-phone"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.59 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.499 19.499 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.7 2h3a2 2 0 012 1.72c.128.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.68 9.91a15.999 15.999 0 006 6l1.27-1.27a2 2 0 012.11-.45c.908.339 1.85.573 2.81.7a2 2 0 011.72 2.03z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
     <symbol fill="none" stroke="currentColor" viewBox="0 0 25 24" id="icon-symbol-x"
         xmlns="http://www.w3.org/2000/svg">

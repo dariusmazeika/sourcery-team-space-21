@@ -1,0 +1,16 @@
+@import './src/styles/base/base';
+
+.locationContainer {
+    margin-top: $margin-top-m;
+
+    &Header {
+        font-weight: $font-weight-bold;
+        padding-bottom: 1rem;
+    }
+
+    &Map {
+        border-radius: $border-xl;
+        height: 41rem;
+        width: 100%;
+    }
+}
