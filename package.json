@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-google-maps/api": "2.7.0",
     "caniuse-lite": "1.0.30001278",
     "classnames": "2.2.6",
     "miragejs": "0.1.42",
