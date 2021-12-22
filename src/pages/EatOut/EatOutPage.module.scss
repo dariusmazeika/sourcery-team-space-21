@@ -4,22 +4,18 @@
     margin-bottom: $space-between-sections;
 }
 
-.newPlaces {
-    margin-top: 50px;
+.newPlacesTop {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+    margin-top: $space-between-sections;
 
     &Title {
         display: inline-block;
     }
 }
 
-.headerWrapper {
-    align-items: center;
-    display: inline-flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.newPlacesNavigation {
-    align-items: center;
-    display: inline-block;
+.newPlacesSlidesContainer {
+    margin: 0 -24px;
 }
