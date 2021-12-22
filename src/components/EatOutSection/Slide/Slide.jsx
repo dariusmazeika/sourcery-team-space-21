@@ -1,10 +1,19 @@
 import React from "react";
-import { BlankCard } from "components/EatOutSection/index";
+import { BlankCard } from "components/EatOutSection";
 import styles from "./slide.module.scss";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { SliderNavigationButtons } from "../../SliderArrows/SliderNavigationButtons";
 
 export const Slide = ({ restaurant, next, prev }) => {
+  let description;
+
+  if (restaurant.description.length > 100) {
+    description = restaurant.description.split(" ").splice(0, 19).join(" ");
+  } else {
+    description = restaurant.description.slice(0, -1);
+  }
+
   return (
     <div className={styles.heroContainer}>
       <BlankCard>
@@ -15,17 +24,17 @@ export const Slide = ({ restaurant, next, prev }) => {
               src={restaurant.image}
               alt=""
             />
-            <div className={styles.imageContainerImageLayer}></div>
+            <div className={styles.imageContainerImageLayer} />
           </div>
           <div className={styles.cardInfo}>
             <div className={styles.cardInfoNavigation}>
-              <button onClick={prev}>prev</button>
-              <button onClick={next}>next</button>
+              <SliderNavigationButtons next={next} prev={prev} />
             </div>
             <p className={styles.cardInfoIntro}>{restaurant.slogan}</p>
             <p className={styles.cardInfoTitle}>{restaurant.name}</p>
             <p className={styles.cardInfoDescription}>
-              {restaurant.description}
+              {description}
+              {description.length > 10 && <span className={styles.ellipsis} />}
             </p>
             <Link to={restaurant.id} className={styles.cardInfoLink}>
               Read More

@@ -51,28 +51,27 @@
 
     &Intro {
         color: $color-wild-watermelon;
-        font-size: $font-size-s;
-        margin-top: $margin-top-m;
+        font-size: $font-size-small;
+        margin-top: 1.2rem;
         text-transform: uppercase;
     }
 
     &Title {
         font-size: $font-size-l;
         font-weight: $font-size-m;
-        margin-bottom: $margin-bottom-m;
-        margin-top: 0.2rem;
+        margin-bottom: 1.2rem;
         max-height: 5.2rem;
         overflow: hidden;
         word-break: break-word;
     }
 
     &Description {
-        // todo add ellipsis
         color: $color-slate-gray;
         font-weight: $font-weight-regular;
         height: 10rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1.8rem;
         overflow: hidden;
+        word-break: break-word;
     }
 
     &Link {
@@ -89,4 +88,8 @@
             background-color: $color-wild-watermelon-secondary;
         }
     }
+}
+
+.ellipsis::before {
+    content: '\2026\0020';
 }
