@@ -64,9 +64,9 @@
 
 .bottomText {
     font-size: $font-size-xs;
-    height: 21rem;
     margin: 0 2.4rem;
-    padding-bottom: 2.4rem;
+    margin-bottom: 1rem;
+    min-height: 21rem;
 
     &Title {
         color: $color-midnight;
@@ -95,6 +95,9 @@
         justify-content: space-between;
         margin-bottom: 1rem;
         max-width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     &Website {
@@ -103,7 +106,10 @@
         display: flex;
         font-size: $font-size-s;
         margin-bottom: 0.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
         text-transform: uppercase;
+        white-space: nowrap;
     }
 
     &Location {
@@ -118,10 +124,22 @@
     &Description {
         color: $color-slate-gray;
         font-weight: $font-weight-regular;
-        height: 7.2rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: pre-wrap;
+        word-break: break-all;
+    }
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: end;
+
+    &Link {
+        color: $color-slate-gray;
+        display: inline-block;
+        font-size: $font-size-s;
+        font-weight: $font-weight-medium;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        text-decoration: none;
     }
 }
 

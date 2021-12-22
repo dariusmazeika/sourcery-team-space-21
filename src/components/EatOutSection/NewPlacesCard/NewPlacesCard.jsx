@@ -1,9 +1,10 @@
 import React from "react";
 import { BlankCard } from "../BlankCard/BlankCard";
-import styles from "./new-places.module.scss";
+import styles from "./new-places-card.module.scss";
 import PropTypes from "prop-types";
 import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
 import { Icon } from "components/iconSprite/Icon";
+import { Link } from "react-router-dom";
 
 export const NewPlacesCard = ({ restaurant }) => {
   const WorkingDays = restaurant.openingHours ? (
@@ -16,6 +17,19 @@ export const NewPlacesCard = ({ restaurant }) => {
   ) : (
     <br />
   );
+
+  let description = restaurant.description.split(" ").splice(0, 17).join(" ");
+  const lastCharacter = description.substr(description.length - 1);
+
+  if (
+    lastCharacter === "." ||
+    lastCharacter === "," ||
+    lastCharacter === "-" ||
+    lastCharacter === "?" ||
+    lastCharacter === "!"
+  ) {
+    description = restaurant.description.split(" ").splice(0, 17).join(" ");
+  }
 
   return (
     <div className={styles.cardContainer}>
@@ -64,8 +78,14 @@ export const NewPlacesCard = ({ restaurant }) => {
             {restaurant.location.address}
           </div>
           <p className={styles.bottomTextDescription}>
-            {restaurant.description}
+            {description}
+            {description.length > 150 && <span>&#8230;</span>}
           </p>
+          <div className={styles.linkContainer}>
+            <Link to={restaurant.id} className={styles.linkContainerLink}>
+              READ MORE
+            </Link>
+          </div>
         </div>
       </BlankCard>
     </div>
