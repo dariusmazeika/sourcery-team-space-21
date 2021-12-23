@@ -77,7 +77,7 @@ export const EatOutPage = () => {
       </div>
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
-          {data.restaurants?.map((restaurant, index) => (
+          {data.restaurants?.map((restaurant) => (
             <NewPlacesCard key={restaurant.name} restaurant={restaurant} />
           ))}
         </Slider>

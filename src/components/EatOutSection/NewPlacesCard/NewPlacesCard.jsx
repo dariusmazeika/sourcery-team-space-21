@@ -7,7 +7,7 @@ import { Icon } from "components/iconSprite/Icon";
 import { Link } from "react-router-dom";
 
 export const NewPlacesCard = ({ restaurant }) => {
-  const WorkingDays = restaurant.openingHours ? (
+  const workingDays = restaurant.openingHours ? (
     restaurant.openingHours.map((item, i) => (
       <div
         key={i}
@@ -47,7 +47,7 @@ export const NewPlacesCard = ({ restaurant }) => {
             <FavoriteButton />
           </div>
         </div>
-        <div className={styles.bottomTextWorkingDays}>{WorkingDays}</div>
+        <div className={styles.bottomTextWorkingDays}>{workingDays}</div>
         <div className={styles.bottomTextWebsite}>
           <Icon
             className={styles.icon}

@@ -12,7 +12,7 @@ export const RestaurantCard = ({ data }) => {
   const WorkingDays = openingHours ? (
     openingHours.map((item, i) => (
       <p
-        key={i}
+        key={`${item.days}${i}`}
         className={styles.workingDays}
       >{`${item.days}: ${item.hours}`}</p>
     ))
