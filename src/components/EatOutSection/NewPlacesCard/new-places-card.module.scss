@@ -18,7 +18,8 @@ $description-height: 8rem;
 }
 
 .imageContainer {
-    max-height: 20rem;
+    max-height: 18rem;
+    min-height: 18rem;
     position: relative;
 
     &Image {
@@ -52,7 +53,7 @@ $description-height: 8rem;
     text-transform: uppercase;
 
     .categories {
-        font-size: $font-size-xs;
+        font-size: $font-size-small;
         font-weight: $font-weight-medium;
         line-height: 1.5;
         padding-right: 3rem;
@@ -72,7 +73,7 @@ $description-height: 8rem;
 }
 
 .bottomText {
-    font-size: $font-size-xs;
+    font-size: $font-size-small;
     margin: 0 2.4rem;
     margin-bottom: 1rem;
     min-height: 21rem;

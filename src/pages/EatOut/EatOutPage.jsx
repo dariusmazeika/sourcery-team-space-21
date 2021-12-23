@@ -14,18 +14,27 @@ import { NewPlacesCard } from "components/EatOutSection/NewPlacesCard/NewPlacesC
 
 export const EatOutPage = () => {
   const [data, getData] = useAPI();
-  const [sliderRef, setSliderRef] = useState(null);
+  const [sliderHeroRef, setSliderHeroRef] = useState(null);
+  const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
 
   useEffect(() => {
     getData("restaurants");
   }, []); // eslint-disable-line
 
-  const next = () => {
-    sliderRef.slickNext();
+  const nextHeroSlide = () => {
+    sliderHeroRef.slickNext();
   };
 
-  const prev = () => {
-    sliderRef.slickPrev();
+  const prevHeroSlide = () => {
+    sliderHeroRef.slickPrev();
+  };
+
+  const nextPlacesSlide = () => {
+    sliderPlacesRef.slickNext();
+  };
+
+  const prevPlacesSlide = () => {
+    sliderPlacesRef.slickPrev();
   };
 
   const sliderSettings = {
@@ -48,23 +57,26 @@ export const EatOutPage = () => {
     <>
       <BreadCrumbs />
       <h1 className={styles.sliderTitle}>Hungry? Find the best place!</h1>
-      <Slider ref={setSliderRef} {...sliderSettings}>
+      <Slider ref={setSliderHeroRef} {...sliderSettings}>
         {data.restaurants?.map((restaurant) => (
           <Slide
             key={restaurant.name}
             restaurant={restaurant}
-            next={next}
-            prev={prev}
+            next={nextHeroSlide}
+            prev={prevHeroSlide}
           />
         ))}
       </Slider>
 
       <div className={styles.newPlacesTop}>
         <h2 className={styles.newPlacesTopTitle}>New places</h2>
-        <SliderNavigationButtons next={next} prev={prev} />
+        <SliderNavigationButtons
+          next={nextPlacesSlide}
+          prev={prevPlacesSlide}
+        />
       </div>
       <div className={styles.newPlacesSlidesContainer}>
-        <Slider ref={setSliderRef} {...sliderSettingsNewPlaces}>
+        <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
           {data.restaurants?.map((restaurant, index) => (
             <NewPlacesCard key={restaurant.name} restaurant={restaurant} />
           ))}
