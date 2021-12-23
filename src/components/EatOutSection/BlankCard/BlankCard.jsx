@@ -4,15 +4,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 export const BlankCard = ({ children, className }) => {
-  return (
-    <section
-      className={cx(className, {
-        [styles.card]: true,
-      })}
-    >
-      {children}
-    </section>
-  );
+  return <section className={cx(className, styles.card)}>{children}</section>;
 };
 
 BlankCard.propTypes = {

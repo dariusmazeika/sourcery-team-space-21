@@ -18,12 +18,7 @@ export const NewPlacesCard = ({ restaurant }) => {
     <br />
   );
 
-  let description;
-  if (restaurant.description.length > 100) {
-    description = restaurant.description.split(" ").splice(0, 17).join(" ");
-  } else {
-    description = restaurant.description;
-  }
+  const description = restaurant.description;
 
   return (
     <BlankCard className={styles.cardContainer}>
@@ -73,8 +68,9 @@ export const NewPlacesCard = ({ restaurant }) => {
           {restaurant.location.address}
         </div>
         <p className={styles.bottomTextDescription}>
-          {description}
-          {description.length > 100 && <span>&#8230;</span>}
+          {description.length < 50
+            ? `${description} `
+            : `${description.substr(0, 120)}\u2026 `}
         </p>
         <div className={styles.linkContainer}>
           <Link to={restaurant.id} className={styles.linkContainerLink}>
