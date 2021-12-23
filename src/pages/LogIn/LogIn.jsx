@@ -105,7 +105,9 @@ export const LogIn = () => {
             Login
           </Button>
           <span>
-            <span>{"Don't have an account ? "}</span>
+            <span className={styles.formFooterHelperText}>
+              {"Don't have an account? "}
+            </span>
             <Link
               to="/register"
               className={cx(styles.formFooterNavigationLink, "heading4-alt")}

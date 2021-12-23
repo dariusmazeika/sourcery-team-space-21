@@ -3,12 +3,6 @@
 .heroContainer {
     margin-bottom: $margin-bottom-xxxl;
     margin-top: 0.8rem;
-    max-width: 134.4rem;
-
-    &Title {
-        font-size: $font-size-xl;
-        margin-bottom: $margin-bottom-xxxl;
-    }
 }
 
 .cardContainer {
@@ -20,27 +14,28 @@
     max-width: 101.8rem;
     position: relative;
 
+    &::after {
+        background: linear-gradient(
+            270deg,
+            #fff -0.71%,
+            rgba(255, 255, 255, 0) 99.41%
+        );
+        border-bottom-left-radius: $border-xl;
+        border-top-left-radius: $border-xl;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
     &Image {
         border-bottom-left-radius: $border-xl;
         border-top-left-radius: $border-xl;
         height: 100%;
         object-fit: cover;
         width: 100%;
-
-        &Layer {
-            background: linear-gradient(
-                270deg,
-                #fff -0.71%,
-                rgba(255, 255, 255, 0) 99.41%
-            );
-            border-bottom-left-radius: $border-xl;
-            border-top-left-radius: $border-xl;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-        }
     }
 }
 
@@ -58,23 +53,26 @@
     &Intro {
         color: $color-wild-watermelon;
         font-size: $font-size-small;
-        margin-top: $margin-top-m;
+        margin-top: 1.2rem;
         text-transform: uppercase;
     }
 
     &Title {
+        font-size: $font-size-l;
         font-weight: $font-size-m;
-        margin-bottom: $margin-bottom-m;
-        margin-top: 0.2rem;
+        margin-bottom: 1.2rem;
+        max-height: 5.2rem;
+        overflow: hidden;
+        word-break: break-word;
     }
 
     &Description {
-        // todo add ellipsis
         color: $color-slate-gray;
         font-weight: $font-weight-regular;
-        margin-bottom: $margin-bottom-m;
-        max-height: 10rem;
+        height: 10rem;
+        margin-bottom: 1.8rem;
         overflow: hidden;
+        word-break: break-word;
     }
 
     &Link {
@@ -91,4 +89,8 @@
             background-color: $color-wild-watermelon-secondary;
         }
     }
+}
+
+.ellipsis::before {
+    content: '\2026\0020';
 }
