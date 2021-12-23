@@ -9,8 +9,8 @@ import styles from "./eat-out.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./_slide.scss";
-import { SliderNavigationButtons } from "components/EatOutSection/SliderNavigationButton/SliderNavigationButtons";
 import { NewPlacesCard } from "components/EatOutSection/NewPlacesCard/NewPlacesCard";
+import { SliderArrows } from "components/SliderArrows/SliderArrows";
 
 export const EatOutPage = () => {
   const [data, getData] = useAPI();
@@ -70,10 +70,7 @@ export const EatOutPage = () => {
 
       <div className={styles.newPlacesTop}>
         <h2 className={styles.newPlacesTopTitle}>New places</h2>
-        <SliderNavigationButtons
-          next={nextPlacesSlide}
-          prev={prevPlacesSlide}
-        />
+        <SliderArrows next={nextPlacesSlide} prev={prevPlacesSlide} />
       </div>
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
