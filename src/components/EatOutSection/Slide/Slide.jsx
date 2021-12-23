@@ -1,15 +1,15 @@
 import React from "react";
-import { BlankCard } from "components/EatOutSection/index";
-import styles from "./hero-slider.module.scss";
+import { BlankCard } from "components/EatOutSection";
+import styles from "./slide.module.scss";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { SliderArrows } from "components/SliderArrows";
 
-export const EatOutHeroSlider = ({ restaurant }) => {
+export const Slide = ({ restaurant, next, prev }) => {
+  const description = restaurant.description;
+
   return (
     <div className={styles.heroContainer}>
-      <h1 className={styles.heroContainerTitle}>
-        Hungry? Find the best place!
-      </h1>
       <BlankCard>
         <div className={styles.cardContainer}>
           <div className={styles.imageContainer}>
@@ -18,17 +18,17 @@ export const EatOutHeroSlider = ({ restaurant }) => {
               src={restaurant.image}
               alt=""
             />
-            <div className={styles.imageContainerImageLayer}></div>
           </div>
           <div className={styles.cardInfo}>
             <div className={styles.cardInfoNavigation}>
-              {/*<button onClick={sliderRef?.slickPrev}>prev</button>*/}
-              {/*<button onClick={sliderRef?.slickNext}>next</button>*/}
+              <SliderArrows next={next} prev={prev} />
             </div>
             <p className={styles.cardInfoIntro}>{restaurant.slogan}</p>
             <p className={styles.cardInfoTitle}>{restaurant.name}</p>
             <p className={styles.cardInfoDescription}>
-              {restaurant.description}
+              {description.length < 50
+                ? `${description} `
+                : `${description.substr(0, 120)}\u2026 `}
             </p>
             <Link to={restaurant.id} className={styles.cardInfoLink}>
               Read More
@@ -40,6 +40,8 @@ export const EatOutHeroSlider = ({ restaurant }) => {
   );
 };
 
-EatOutHeroSlider.propTypes = {
+Slide.propTypes = {
   restaurant: PropTypes.object,
+  prev: PropTypes.func,
+  next: PropTypes.func,
 };
