@@ -14,27 +14,28 @@
     max-width: 101.8rem;
     position: relative;
 
+    &::after {
+        background: linear-gradient(
+            270deg,
+            #fff -0.71%,
+            rgba(255, 255, 255, 0) 99.41%
+        );
+        border-bottom-left-radius: $border-xl;
+        border-top-left-radius: $border-xl;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
     &Image {
         border-bottom-left-radius: $border-xl;
         border-top-left-radius: $border-xl;
         height: 100%;
         object-fit: cover;
         width: 100%;
-
-        &Layer {
-            background: linear-gradient(
-                270deg,
-                #fff -0.71%,
-                rgba(255, 255, 255, 0) 99.41%
-            );
-            border-bottom-left-radius: $border-xl;
-            border-top-left-radius: $border-xl;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-        }
     }
 }
 

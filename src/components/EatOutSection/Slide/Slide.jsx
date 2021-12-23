@@ -18,7 +18,6 @@ export const Slide = ({ restaurant, next, prev }) => {
               src={restaurant.image}
               alt=""
             />
-            <div className={styles.imageContainerImageLayer} />
           </div>
           <div className={styles.cardInfo}>
             <div className={styles.cardInfoNavigation}>
