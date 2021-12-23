@@ -1,7 +1,16 @@
 @import './src/styles/base/base';
 
+$description-height: 8rem;
+
+@mixin overflow-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .cardContainer {
     margin: 0 1.2rem;
+    min-width: 25rem;
 }
 
 .cardTopWrapper {
@@ -69,12 +78,10 @@
     min-height: 21rem;
 
     &Title {
+        @include overflow-text;
         color: $color-midnight;
         font-weight: $font-weight-medium;
         letter-spacing: 0.05rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
 
         &Wrapper {
             display: flex;
@@ -89,27 +96,27 @@
     }
 
     &WorkingDays {
+        @include overflow-text;
         color: $color-slate-gray;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 1rem;
         max-width: 80%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
     }
 
     &Website {
         align-items: center;
-        color: $color-fiord;
         display: flex;
         font-size: $font-size-s;
         margin-bottom: 0.5rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
         text-transform: uppercase;
-        white-space: nowrap;
+
+        &Link {
+            @include overflow-text;
+            color: $color-fiord;
+            text-decoration: none;
+        }
     }
 
     &Location {
@@ -118,19 +125,18 @@
         display: flex;
         font-size: $font-size-s;
         margin-bottom: 1rem;
-        text-transform: uppercase;
     }
 
     &Description {
         color: $color-slate-gray;
         font-weight: $font-weight-regular;
-        word-break: break-all;
+        height: $description-height;
     }
 }
 
 .linkContainer {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 
     &Link {
         color: $color-slate-gray;
@@ -145,4 +151,5 @@
 
 .icon {
     margin-right: 0.8rem;
+    min-width: 1.8rem;
 }

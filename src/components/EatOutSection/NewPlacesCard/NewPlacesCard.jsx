@@ -18,77 +18,71 @@ export const NewPlacesCard = ({ restaurant }) => {
     <br />
   );
 
-  let description = restaurant.description.split(" ").splice(0, 17).join(" ");
-  const lastCharacter = description.substr(description.length - 1);
-
-  if (
-    lastCharacter === "." ||
-    lastCharacter === "," ||
-    lastCharacter === "-" ||
-    lastCharacter === "?" ||
-    lastCharacter === "!"
-  ) {
+  let description;
+  if (restaurant.description.length > 100) {
     description = restaurant.description.split(" ").splice(0, 17).join(" ");
+  } else {
+    description = restaurant.description;
   }
 
   return (
-    <div className={styles.cardContainer}>
-      <BlankCard>
-        <div className={styles.cardTopWrapper}>
-          <div className={styles.imageContainer}>
-            <img
-              className={styles.imageContainerImage}
-              src={restaurant.image}
-              alt=""
-            />
-            <div className={styles.imageContainerImageLayer}></div>
+    <BlankCard className={styles.cardContainer}>
+      <div className={styles.cardTopWrapper}>
+        <div className={styles.imageContainer}>
+          <img
+            className={styles.imageContainerImage}
+            src={restaurant.image}
+            alt=""
+          />
+          <div className={styles.imageContainerImageLayer}></div>
+        </div>
+      </div>
+      <div className={styles.categoriesWrapper}>
+        {restaurant.categories &&
+          restaurant.categories.slice(0, 3).map((category, index) => (
+            <p key={`${category}-${index}`} className={styles.categories}>
+              {category}
+            </p>
+          ))}
+      </div>
+      <div className={styles.bottomText}>
+        <div className={styles.bottomTextTitleWrapper}>
+          <h3 className={styles.bottomTextTitle}>{restaurant.name}</h3>
+          <div className={styles.bottomTextFavorite}>
+            <FavoriteButton />
           </div>
         </div>
-        <div className={styles.categoriesWrapper}>
-          {restaurant.categories &&
-            restaurant.categories.slice(0, 3).map((category, index) => (
-              <p key={`${category}-${index}`} className={styles.categories}>
-                {category}
-              </p>
-            ))}
-        </div>
-        <div className={styles.bottomText}>
-          <div className={styles.bottomTextTitleWrapper}>
-            <h3 className={styles.bottomTextTitle}>{restaurant.name}</h3>
-            <div className={styles.bottomTextFavorite}>
-              <FavoriteButton />
-            </div>
-          </div>
-          <div className={styles.bottomTextWorkingDays}>{WorkingDays}</div>
-          <div className={styles.bottomTextWebsite}>
-            <Icon
-              className={styles.icon}
-              name="icon-location-globe"
-              size="medium"
-            />
+        <div className={styles.bottomTextWorkingDays}>{WorkingDays}</div>
+        <div className={styles.bottomTextWebsite}>
+          <Icon
+            className={styles.icon}
+            name="icon-location-globe"
+            size="medium"
+          />
 
+          <a className={styles.bottomTextWebsiteLink} href={restaurant.website}>
             {restaurant.website}
-          </div>
-          <div className={styles.bottomTextLocation}>
-            <Icon
-              className={styles.icon}
-              name="icon-location-map-pin"
-              size="medium"
-            />
-            {restaurant.location.address}
-          </div>
-          <p className={styles.bottomTextDescription}>
-            {description}
-            {description.length > 150 && <span>&#8230;</span>}
-          </p>
-          <div className={styles.linkContainer}>
-            <Link to={restaurant.id} className={styles.linkContainerLink}>
-              READ MORE
-            </Link>
-          </div>
+          </a>
         </div>
-      </BlankCard>
-    </div>
+        <div className={styles.bottomTextLocation}>
+          <Icon
+            className={styles.icon}
+            name="icon-location-map-pin"
+            size="medium"
+          />
+          {restaurant.location.address}
+        </div>
+        <p className={styles.bottomTextDescription}>
+          {description}
+          {description.length > 100 && <span>&#8230;</span>}
+        </p>
+        <div className={styles.linkContainer}>
+          <Link to={restaurant.id} className={styles.linkContainerLink}>
+            READ MORE
+          </Link>
+        </div>
+      </div>
+    </BlankCard>
   );
 };
 
