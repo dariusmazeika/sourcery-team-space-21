@@ -3,16 +3,10 @@ import { BlankCard } from "components/EatOutSection";
 import styles from "./slide.module.scss";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { SliderNavigationButtons } from "../../SliderArrows/SliderNavigationButtons";
+import { SliderArrows } from "components/SliderArrows";
 
 export const Slide = ({ restaurant, next, prev }) => {
-  let description;
-
-  if (restaurant.description.length > 100) {
-    description = restaurant.description.split(" ").splice(0, 19).join(" ");
-  } else {
-    description = restaurant.description.slice(0, -1);
-  }
+  const description = restaurant.description;
 
   return (
     <div className={styles.heroContainer}>
@@ -28,13 +22,14 @@ export const Slide = ({ restaurant, next, prev }) => {
           </div>
           <div className={styles.cardInfo}>
             <div className={styles.cardInfoNavigation}>
-              <SliderNavigationButtons next={next} prev={prev} />
+              <SliderArrows next={next} prev={prev} />
             </div>
             <p className={styles.cardInfoIntro}>{restaurant.slogan}</p>
             <p className={styles.cardInfoTitle}>{restaurant.name}</p>
             <p className={styles.cardInfoDescription}>
-              {description}
-              {description.length > 10 && <span className={styles.ellipsis} />}
+              {description.length < 50
+                ? `${description} `
+                : `${description.substr(0, 120)}\u2026 `}
             </p>
             <Link to={restaurant.id} className={styles.cardInfoLink}>
               Read More

@@ -4,7 +4,7 @@ import styles from "./slider-navigation-button.module.scss";
 import cx from "classnames";
 import { Icon } from "components/iconSprite/Icon";
 
-export const SliderNavigationButtons = ({ type = "button", next, prev }) => {
+export const SliderArrows = ({ type = "button", next, prev }) => {
   return (
     <div>
       <button
@@ -25,7 +25,7 @@ export const SliderNavigationButtons = ({ type = "button", next, prev }) => {
   );
 };
 
-SliderNavigationButtons.propTypes = {
+SliderArrows.propTypes = {
   type: PropTypes.oneOf(["button"]),
   next: PropTypes.func,
   prev: PropTypes.func,
