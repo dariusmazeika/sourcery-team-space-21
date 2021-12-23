@@ -10,7 +10,7 @@ export const NewPlacesCard = ({ restaurant }) => {
   const workingDays = restaurant.openingHours ? (
     restaurant.openingHours.map((item, i) => (
       <div
-        key={i}
+        key={`${item.days}${i}`}
         className={styles.workingDays}
       >{`${item.days}: ${item.hours}`}</div>
     ))
