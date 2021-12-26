@@ -9,20 +9,9 @@ const getBestRated = (restaurants) => {
   return restaurants.slice(0, 2);
 };
 
-const addLiked = (restaurants, likedData = []) => {
-  const liked = new Set(likedData.map((restaurant) => restaurant.id));
-  return restaurants.map((restaurant) => ({
-    ...restaurant,
-    isLiked: liked.has(restaurant.id),
-  }));
-};
-
 export const EatOutSection = ({ data }) => {
   const bestRestaurants = data.restaurants
-    ? addLiked(
-        getBestRated(data.restaurants),
-        data.userData[0]?.liked.restaurants
-      )
+    ? getBestRated(data.restaurants)
     : [];
 
   return (
@@ -30,7 +19,7 @@ export const EatOutSection = ({ data }) => {
       <li className={styles.widgetListBoxItem}>
         <BrowseCard />
       </li>
-      {bestRestaurants.map((restaurantData, index) => (
+      {bestRestaurants.map((restaurantData) => (
         <li key={restaurantData.id} className={styles.widgetListBoxItem}>
           <RestaurantCard data={restaurantData} />
         </li>

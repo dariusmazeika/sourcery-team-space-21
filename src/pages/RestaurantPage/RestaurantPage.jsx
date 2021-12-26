@@ -11,7 +11,7 @@ export const RestaurantPage = () => {
   const { restaurantId } = useParams();
 
   useEffect(() => {
-    fetchContextData("restaurants");
+    fetchContextData("restaurants", "userData");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
