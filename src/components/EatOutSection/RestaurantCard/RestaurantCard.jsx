@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./restaurant-card.module.scss";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { BlankCard } from "components/EatOutSection";
 import { CheckIn } from "components/CheckIn/CheckIn";
 import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
 import { StarRating } from "components/StarRating/StarRating";
 
-// TODO:Take in userData and check if restaurant is liked by the user
 export const RestaurantCard = ({ data }) => {
-  const { categories, image, name, openingHours, checkIns, rating } = data;
+  const { categories, image, name, openingHours, checkIns, rating, id } = data;
+  const restaurantLink = `/eat-out/${id}`;
 
   const WorkingDays = openingHours ? (
     openingHours.map((item, i) => (
@@ -39,7 +40,10 @@ export const RestaurantCard = ({ data }) => {
                 ))}
             </div>
             <div className={styles.titleWrapper}>
-              <h3 className={styles.title}>{name}</h3>
+              <Link to={restaurantLink} className={styles.title}>
+                {name}
+              </Link>
+
               <FavoriteButton isFavorite={data.isLiked} />
             </div>
             <div className={styles.workingDaysWrapper}>{WorkingDays}</div>
