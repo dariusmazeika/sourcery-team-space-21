@@ -8,7 +8,16 @@ import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
 import { StarRating } from "components/StarRating/StarRating";
 
 export const RestaurantCard = ({ data }) => {
-  const { categories, image, name, openingHours, checkIns, rating, id } = data;
+  const {
+    categories,
+    image,
+    name,
+    openingHours,
+    checkIns,
+    rating,
+    id,
+    isLiked,
+  } = data;
   const restaurantLink = `/eat-out/${id}`;
 
   const WorkingDays = openingHours ? (
@@ -44,7 +53,7 @@ export const RestaurantCard = ({ data }) => {
                 {name}
               </Link>
 
-              <FavoriteButton isFavorite={data.isLiked} />
+              <FavoriteButton isFavorite={isLiked} />
             </div>
             <div className={styles.workingDaysWrapper}>{WorkingDays}</div>
           </div>
