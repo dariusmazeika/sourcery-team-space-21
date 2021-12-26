@@ -14,8 +14,13 @@
     justify-content: space-between;
     margin-top: 3.3rem;
 
+    &HelperText {
+        font-weight: $font-weight-regular;
+    }
+
     &NavigationLink {
         color: $color-electric-violet;
+        font-weight: $font-weight-regular;
         text-decoration: none;
 
         &:hover {
