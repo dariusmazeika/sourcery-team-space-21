@@ -1,6 +1,10 @@
 import React, { useState, createContext, useContext } from "react";
 import PropTypes from "prop-types";
 import fetchData from "features/data/fetchData";
+import {
+  addLikedRestaurants,
+  addRestaurantRatings,
+} from "features/data/restaurantDataPreProcessing";
 
 const APIContext = createContext();
 
@@ -9,7 +13,10 @@ export const APIContextProvider = ({ children }) => {
 
   function fetchDataToState() {
     const args = Array.from(arguments);
-    fetchData(args).then((data) => setApiData({ ...apiData, ...data }));
+    fetchData(args)
+      .then((data) => addRestaurantRatings(data))
+      .then((data) => addLikedRestaurants(data))
+      .then((data) => setApiData({ ...apiData, ...data }));
   }
 
   return (

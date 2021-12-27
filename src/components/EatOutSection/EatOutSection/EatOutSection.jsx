@@ -10,19 +10,20 @@ const getBestRated = (restaurants) => {
 };
 
 export const EatOutSection = ({ data }) => {
-  const bestRestaurants = data.restaurants ? getBestRated(data.restaurants) : 0;
+  const bestRestaurants = data.restaurants
+    ? getBestRated(data.restaurants)
+    : [];
 
   return (
     <ul className={styles.widgetListBox}>
       <li className={styles.widgetListBoxItem}>
         <BrowseCard />
       </li>
-      {bestRestaurants &&
-        bestRestaurants.map((data, index) => (
-          <li key={data.id} className={styles.widgetListBoxItem}>
-            <RestaurantCard data={data} />
-          </li>
-        ))}
+      {bestRestaurants.map((restaurantData) => (
+        <li key={restaurantData.id} className={styles.widgetListBoxItem}>
+          <RestaurantCard data={restaurantData} />
+        </li>
+      ))}
     </ul>
   );
 };
