@@ -1,4 +1,10 @@
 @import './src/styles/base/base';
+@import './src/styles/mixins/mixins';
+
+.restaurantPageSection {
+    @include layout-section-base;
+    flex-wrap: wrap;
+}
 
 .infoAndLocationItem {
     max-width: 89rem;
