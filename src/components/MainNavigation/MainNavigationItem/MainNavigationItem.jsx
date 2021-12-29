@@ -5,9 +5,7 @@ import cx from "classnames";
 import styles from "./main-navigation-item.module.scss";
 import { Icon } from "components/iconSprite/Icon";
 
-export const MainNavigationItem = ({ title, iconId }) => {
-  const path = title.toLowerCase();
-
+export const MainNavigationItem = ({ title, iconId, path }) => {
   return (
     <>
       <Link to={path} className={cx(styles.navigationLink, "heading4")}>
@@ -26,4 +24,5 @@ MainNavigationItem.propTypes = {
   title: PropTypes.string,
   children: PropTypes.any,
   iconId: PropTypes.string,
+  path: PropTypes.string,
 };

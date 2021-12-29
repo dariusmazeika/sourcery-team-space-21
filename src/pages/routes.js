@@ -7,36 +7,59 @@ import { Devices } from "./Devices";
 import { EatOutPage } from "./EatOut";
 import { RestaurantPage } from "./RestaurantPage";
 import { NotFound } from "./NotFound";
-
-const reservationsBreadCrumbs = ["dashboard", "reservations"];
-const eatOutBreadCrumbs = ["dashboard", "eat-out"];
+import { Home } from "./Home/Home";
+import { LogIn } from "pages/LogIn";
+import { Register } from "pages/Register";
 
 export const routes = [
-  { path: "/", element: <DashboardPage /> },
   {
-    path: "/dashboard",
-    element: <DashboardPage />,
+    path: "/",
+    element: <Home />,
+    name: "dashboard",
+    children: [
+      { index: true, element: <DashboardPage />, name: "dashboard" },
+      {
+        path: "/reservations",
+        name: "reservations",
+
+        children: [
+          { path: "", element: <ReservationsPage /> },
+          {
+            path: "meeting-rooms",
+            name: "meeting-rooms",
+            element: <MeetingRooms />,
+          },
+          {
+            path: "books",
+            name: "books",
+            element: <Books />,
+          },
+          {
+            path: "devices",
+            name: "devices",
+            element: <Devices />,
+          },
+        ],
+      },
+
+      {
+        path: "/eat-out",
+        name: "eat-out",
+        children: [
+          { path: "", element: <EatOutPage /> },
+          {
+            path: ":restaurantId",
+            element: <RestaurantPage />,
+          },
+        ],
+      },
+    ],
   },
-  {
-    path: "/reservations",
-    element: <ReservationsPage />,
-  },
-  {
-    path: "/reservations/meeting-rooms",
-    name: [...reservationsBreadCrumbs, "meeting-rooms"],
-    element: <MeetingRooms />,
-  },
-  {
-    path: "/reservations/books",
-    name: [...reservationsBreadCrumbs, "books"],
-    element: <Books />,
-  },
-  {
-    path: "/reservations/devices",
-    name: [...reservationsBreadCrumbs, "devices"],
-    element: <Devices />,
-  },
-  { path: "/eat-out", name: eatOutBreadCrumbs, element: <EatOutPage /> },
-  { path: "/eat-out/:restaurantId", element: <RestaurantPage /> },
+
   { path: "/*", element: <NotFound /> },
+];
+
+export const loginRoutes = [
+  { path: "/login", element: <LogIn /> },
+  { path: "/register", element: <Register /> },
 ];
