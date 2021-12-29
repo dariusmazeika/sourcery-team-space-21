@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useAPI } from "features/context/APIContext";
 import { RestaurantBanner } from "components/RestaurantBanner";
+import { ReviewsSection } from "components/EatOutSection";
 import { useParams } from "react-router-dom";
 import Location from "components/EatOutSection/EatOutRestaurantPage/InfoAndLocation/Location";
 import { Information } from "components/EatOutSection/EatOutRestaurantPage/InfoAndLocation/Information";
@@ -31,14 +32,17 @@ export const RestaurantPage = () => {
     <>
       <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
       <RestaurantBanner data={filteredRestaurant} />
-      <div className={styles.infoAndLocationItem}>
-        <Information
-          address={filteredRestaurant.location.address}
-          website={filteredRestaurant.website}
-          phone={filteredRestaurant.phone}
-          openingHours={filteredRestaurant.openingHours}
-        />
-        <Location coordinates={filteredRestaurant.location.coordinates} />
+      <div className={styles.restaurantPageSection}>
+        <div className={styles.infoAndLocationItem}>
+          <Information
+            address={filteredRestaurant.location.address}
+            website={filteredRestaurant.website}
+            phone={filteredRestaurant.phone}
+            openingHours={filteredRestaurant.openingHours}
+          />
+          <Location coordinates={filteredRestaurant.location.coordinates} />
+        </div>
+        <ReviewsSection reviews={filteredRestaurant.reviews} />
       </div>
     </>
   ) : (
