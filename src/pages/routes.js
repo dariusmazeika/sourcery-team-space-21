@@ -8,8 +8,6 @@ import { EatOutPage } from "./EatOut";
 import { RestaurantPage } from "./RestaurantPage";
 import { NotFound } from "./NotFound";
 import { Home } from "./Home/Home";
-import { LogIn } from "pages/LogIn";
-import { Register } from "pages/Register";
 
 export const routes = [
   {
@@ -21,12 +19,11 @@ export const routes = [
       {
         path: "/reservations",
         name: "reservations",
-
         children: [
           { path: "", element: <ReservationsPage /> },
           {
             path: "meeting-rooms",
-            name: "meeting-rooms",
+            name: "meeting rooms",
             element: <MeetingRooms />,
           },
           {
@@ -55,11 +52,5 @@ export const routes = [
       },
     ],
   },
-
   { path: "/*", element: <NotFound /> },
-];
-
-export const loginRoutes = [
-  { path: "/login", element: <LogIn /> },
-  { path: "/register", element: <Register /> },
 ];

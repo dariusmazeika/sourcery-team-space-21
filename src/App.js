@@ -1,14 +1,15 @@
 import React, { useContext, useEffect } from "react";
-import { useNavigate, useRoutes } from "react-router-dom";
+import { useNavigate, useRoutes, Routes, Route } from "react-router-dom";
 import { APIContextProvider } from "features/context/APIContext";
 import { UserContext } from "features/context";
-import { routes, loginRoutes } from "pages/routes";
+import { routes } from "pages/routes";
+import { LogIn } from "pages/LogIn";
+import { Register } from "pages/Register";
 
 function App() {
   const { userData } = useContext(UserContext);
   const navigate = useNavigate();
   const appRoutesElement = useRoutes(routes);
-  const loginRoutesElement = useRoutes(loginRoutes);
 
   useEffect(() => {
     if (!userData.isLoggedIn) {
@@ -19,7 +20,14 @@ function App() {
 
   return (
     <APIContextProvider>
-      {userData.isLoggedIn ? appRoutesElement : loginRoutesElement}
+      {userData.isLoggedIn ? (
+        appRoutesElement
+      ) : (
+        <Routes>
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      )}
     </APIContextProvider>
   );
 }
