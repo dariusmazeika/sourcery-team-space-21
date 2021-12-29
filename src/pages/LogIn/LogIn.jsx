@@ -16,7 +16,6 @@ export const LogIn = () => {
     register,
     handleSubmit,
     reset,
-    clearErrors,
     formState: { errors },
   } = useForm();
   const [users, setUsers] = useState([]);
@@ -52,19 +51,6 @@ export const LogIn = () => {
     }
   };
 
-  const resetError = (e) => {
-    setUserExists(false);
-    switch (e.target.name) {
-      case "email":
-        clearErrors("email");
-        break;
-      case "password":
-        clearErrors("password");
-        break;
-      default:
-    }
-  };
-
   return (
     <LoginRegistrationLayout>
       <FormHeader title={"login"} subtitle={"welcome back, please login."} />
@@ -76,7 +62,6 @@ export const LogIn = () => {
             type={"email"}
             labelText="email"
             placeHolder={"Enter your email"}
-            onChange={resetError}
             register={register}
             required={true}
             errorMessage={errors.email?.type}
@@ -90,7 +75,6 @@ export const LogIn = () => {
             labelText="password"
             placeHolder={"Enter your password"}
             register={register}
-            onChange={resetError}
             required={true}
             errorMessage={errors.password?.type}
           />

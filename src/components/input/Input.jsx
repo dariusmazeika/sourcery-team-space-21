@@ -11,7 +11,6 @@ export const Input = ({
   isError,
   disabled,
   value,
-  onChange,
   errorMessage,
   name,
   register,
@@ -34,7 +33,6 @@ export const Input = ({
         disabled={disabled}
         value={value}
         {...register(labelText, { required })}
-        onChange={onChange}
       />
       {errorMessage === "required" && (
         <div className={styles.errorMessage}>{errorMessage}</div>
@@ -63,7 +61,6 @@ Input.propTypes = {
   isError: PropTypes.bool,
   disabled: PropTypes.bool,
   value: PropTypes.string,
-  onChange: PropTypes.func,
   errorMessage: PropTypes.string,
   register: PropTypes.func,
   required: PropTypes.bool,
