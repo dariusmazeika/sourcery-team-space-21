@@ -4,23 +4,3 @@
     font-size: $font-size-xl;
     margin-bottom: $margin-bottom-xxxl;
 }
-
-.newPlacesTop {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    width: 100%;
-
-    &Title {
-        display: inline-block;
-    }
-}
-
-.newPlacesSlidesContainer {
-    margin: 0 -1.2rem;
-}
-
-.margin {
-    margin: 0 1.2rem;
-}

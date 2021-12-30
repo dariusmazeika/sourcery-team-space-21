@@ -47,7 +47,6 @@ Icon.propTypes = {
     "icon-other-phone",
     "icon-symbol-x",
     "icon-notification",
-    "icon-slider-direction-right",
     "icon-action-star-filled",
     "icon-action-star",
     "icon-location-globe",

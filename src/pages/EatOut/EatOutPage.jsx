@@ -9,13 +9,11 @@ import styles from "./eat-out.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./_slide.scss";
-import { SliderArrows } from "components/SliderArrows/SliderArrows";
-import { RestaurantCard } from "components/EatOutSection/RestaurantCard/RestaurantCard";
+import { NewPlacesSection } from "components/EatOutSection/NewPlacesSection/NewPlacesSection";
 
 export const EatOutPage = () => {
   const [data, getData] = useAPI();
   const [sliderHeroRef, setSliderHeroRef] = useState(null);
-  const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
 
   useEffect(() => {
     getData("restaurants");
@@ -29,28 +27,12 @@ export const EatOutPage = () => {
     sliderHeroRef.slickPrev();
   };
 
-  const nextPlacesSlide = () => {
-    sliderPlacesRef.slickNext();
-  };
-
-  const prevPlacesSlide = () => {
-    sliderPlacesRef.slickPrev();
-  };
-
   const sliderSettings = {
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
     dots: false,
-  };
-
-  const sliderSettingsNewPlaces = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    infinite: true,
-    dots: false,
-    arrows: false,
   };
 
   return (
@@ -68,22 +50,7 @@ export const EatOutPage = () => {
         ))}
       </Slider>
 
-      <div className={styles.newPlacesTop}>
-        <h2 className={styles.newPlacesTopTitle}>New places</h2>
-        <SliderArrows next={nextPlacesSlide} prev={prevPlacesSlide} />
-      </div>
-      <div className={styles.newPlacesSlidesContainer}>
-        <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
-          {data.restaurants?.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.name}
-              data={restaurant}
-              renderMoreInfo={true}
-              className={styles.margin}
-            />
-          ))}
-        </Slider>
-      </div>
+      <NewPlacesSection data={data} />
     </>
   );
 };
