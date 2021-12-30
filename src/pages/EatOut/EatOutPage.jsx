@@ -9,8 +9,8 @@ import styles from "./eat-out.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./_slide.scss";
-import { NewPlacesCard } from "components/EatOutSection/NewPlacesCard/NewPlacesCard";
 import { SliderArrows } from "components/SliderArrows/SliderArrows";
+import { RestaurantCard } from "components/EatOutSection/RestaurantCard/RestaurantCard";
 
 export const EatOutPage = () => {
   const [data, getData] = useAPI();
@@ -75,7 +75,12 @@ export const EatOutPage = () => {
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
           {data.restaurants?.map((restaurant) => (
-            <NewPlacesCard key={restaurant.name} restaurant={restaurant} />
+            <RestaurantCard
+              key={restaurant.name}
+              data={restaurant}
+              renderMoreInfo={true}
+              className={styles.margin}
+            />
           ))}
         </Slider>
       </div>
