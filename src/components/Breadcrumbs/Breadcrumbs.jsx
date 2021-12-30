@@ -2,15 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, matchRoutes, useLocation } from "react-router-dom";
 import styles from "./bread-crumbs.module.scss";
-import { routes } from "pages/routes";
+import { getRoutes } from "pages/routes";
 
 export const BreadCrumbs = ({ changeMatchedRoutes }) => {
   const location = useLocation();
-  let routeMatches = matchRoutes(routes, location).filter((matchedRoute) =>
-    matchedRoute.route.name ? true : false
-  );
+  let routeMatches = matchRoutes(
+    getRoutes(true),
+    location
+  ).filter((matchedRoute) => (matchedRoute.route.name ? true : false));
 
-  if (typeof changeMatchedRoutes === "function") {
+  if (changeMatchedRoutes) {
     routeMatches = changeMatchedRoutes(routeMatches);
   }
 

@@ -28,24 +28,26 @@ export const RestaurantPage = () => {
     (restaurant) => restaurant.id === restaurantId
   );
 
-  return filteredRestaurant ? (
+  return (
     <>
-      <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
-      <RestaurantBanner data={filteredRestaurant} />
-      <div className={styles.restaurantPageSection}>
-        <div className={styles.infoAndLocationItem}>
-          <Information
-            address={filteredRestaurant.location.address}
-            website={filteredRestaurant.website}
-            phone={filteredRestaurant.phone}
-            openingHours={filteredRestaurant.openingHours}
-          />
-          <Location coordinates={filteredRestaurant.location.coordinates} />
-        </div>
-        <ReviewsSection reviews={filteredRestaurant.reviews} />
-      </div>
+      {filteredRestaurant && (
+        <>
+          <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
+          <RestaurantBanner data={filteredRestaurant} />
+          <div className={styles.restaurantPageSection}>
+            <div className={styles.infoAndLocationItem}>
+              <Information
+                address={filteredRestaurant.location.address}
+                website={filteredRestaurant.website}
+                phone={filteredRestaurant.phone}
+                openingHours={filteredRestaurant.openingHours}
+              />
+              <Location coordinates={filteredRestaurant.location.coordinates} />
+            </div>
+            <ReviewsSection reviews={filteredRestaurant.reviews} />
+          </div>
+        </>
+      )}
     </>
-  ) : (
-    <></>
   );
 };
