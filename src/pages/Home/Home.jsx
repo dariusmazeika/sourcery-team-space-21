@@ -1,10 +1,11 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { MainLayout } from "components/MainLayout";
-import { useRoutes } from "react-router-dom";
-import { routes } from "pages/routes";
 
 export const Home = () => {
-  const RoutesElement = useRoutes(routes);
-
-  return <MainLayout className="app">{RoutesElement}</MainLayout>;
+  return (
+    <MainLayout className="app">
+      <Outlet />
+    </MainLayout>
+  );
 };
