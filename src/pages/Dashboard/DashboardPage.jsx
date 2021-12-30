@@ -4,6 +4,7 @@ import { HelloWidget } from "components/HelloWidget/HelloWidget";
 import { ReservationsWidget } from "components/reservationsWidget/ReservationsWidget";
 import { EatOutSection } from "components/EatOutSection/EatOutSection/EatOutSection";
 import { useAPI } from "features/context/APIContext";
+import { PageContainer } from "components/PageContainer/PageContainer";
 
 export const DashboardPage = () => {
   const [data, getData] = useAPI();
@@ -14,7 +15,7 @@ export const DashboardPage = () => {
   }, []); // eslint-disable-line
 
   return (
-    <>
+    <PageContainer>
       <section className={styles.dashboardSection}>
         <HelloWidget />
       </section>
@@ -24,6 +25,6 @@ export const DashboardPage = () => {
       <section className={styles.dashboardSection}>
         <EatOutSection data={data} />
       </section>
-    </>
+    </PageContainer>
   );
 };

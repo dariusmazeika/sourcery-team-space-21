@@ -1,1 +1,1 @@
-export * from "pages/RestaurantPage/RestaurantPage";
+export * from "./RestaurantPage";
