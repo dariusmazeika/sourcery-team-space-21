@@ -15,6 +15,7 @@ export const Input = ({
   name,
   register,
   required,
+  onChange,
 }) => {
   return (
     <div className={styles.container}>
@@ -32,7 +33,7 @@ export const Input = ({
         placeholder={placeHolder}
         disabled={disabled}
         value={value}
-        {...register(labelText, { required })}
+        {...register(labelText, { required, onChange: onChange })}
       />
       {errorMessage === "required" && (
         <div className={styles.errorMessage}>{errorMessage}</div>
@@ -61,6 +62,7 @@ Input.propTypes = {
   isError: PropTypes.bool,
   disabled: PropTypes.bool,
   value: PropTypes.string,
+  onChange: PropTypes.func,
   errorMessage: PropTypes.string,
   register: PropTypes.func,
   required: PropTypes.bool,
