@@ -3,10 +3,13 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import styles from "./pageContainer.module.scss";
 
-export const PageContainer = ({ children, isFullWidth = false }) => {
+export const PageContainer = ({ children, className, isFullWidth = false }) => {
   return (
     <div
-      className={cx(isFullWidth ? styles.containerFullWidth : styles.container)}
+      className={cx(
+        className,
+        isFullWidth ? styles.containerFullWidth : styles.container
+      )}
     >
       {children}
     </div>
@@ -16,4 +19,5 @@ export const PageContainer = ({ children, isFullWidth = false }) => {
 PageContainer.propTypes = {
   isFullWidth: PropTypes.bool,
   children: PropTypes.any,
+  className: PropTypes.string,
 };

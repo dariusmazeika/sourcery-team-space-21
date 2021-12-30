@@ -4,10 +4,11 @@ import styles from "./star-rating.module.scss";
 import { Icon } from "components/iconSprite/Icon";
 
 export const StarRating = ({ rating }) => {
+  const ratingNumber = rating ? rating : "-";
   return (
     <div className={styles.rating}>
       <Icon className={styles.ratingIcon} name="icon-action-star-filled" />
-      {rating && <p className={styles.ratingNumber}>{rating}</p>}
+      <p className={styles.ratingNumber}>{ratingNumber}</p>
     </div>
   );
 };

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAPI } from "features/context";
 import { BreadCrumbs } from "components/Breadcrumbs";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Slide } from "components/EatOutSection";
+import { PageContainer } from "components/PageContainer";
+import Slider from "react-slick";
 import styles from "./eat-out.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -35,7 +34,7 @@ export const EatOutPage = () => {
   };
 
   return (
-    <>
+    <PageContainer>
       <BreadCrumbs />
       <h1 className={styles.sliderTitle}>Hungry? Find the best place!</h1>
       <Slider ref={setSliderRef} {...sliderSettings}>
@@ -48,6 +47,6 @@ export const EatOutPage = () => {
           />
         ))}
       </Slider>
-    </>
+    </PageContainer>
   );
 };
