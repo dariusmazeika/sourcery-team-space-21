@@ -5,4 +5,3 @@ export * from "./EatOutSection/EatOutSection";
 export * from "./RestaurantCard/RestaurantCard";
 export * from "./ReviewsSection";
 export * from "./Slide/Slide";
-export * from "./NewPlacesCard/NewPlacesCard";

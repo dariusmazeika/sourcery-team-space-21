@@ -64,7 +64,6 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
               <Link to={restaurantLink} className={styles.title}>
                 {name}
               </Link>
-
               <FavoriteButton isFavorite={isLiked} />
             </div>
             <div className={styles.workingDaysWrapper}>{WorkingDays}</div>
