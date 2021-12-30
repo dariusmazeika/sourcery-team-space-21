@@ -6,10 +6,10 @@ import styles from "./ActionBar.module.scss";
 
 // TODO add StarComponent and CheckIn later when they are done
 
-export const ActionBar = ({ checkIns }) => (
+export const ActionBar = ({ checkIns, isLiked }) => (
   <div className={styles.box}>
     <div className={styles.actionGroup}>
-      <FavoriteButton />
+      <FavoriteButton isFavorite={isLiked} />
     </div>
     <p className="caption">
       {checkIns > 0
@@ -22,4 +22,5 @@ export const ActionBar = ({ checkIns }) => (
 
 ActionBar.propTypes = {
   checkIns: PropTypes.number,
+  isLiked: PropTypes.bool,
 };

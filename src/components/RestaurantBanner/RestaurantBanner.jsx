@@ -4,7 +4,7 @@ import { ActionBar } from "components/RestaurantBanner/ActionBar";
 import styles from "./RestaurantBanner.module.scss";
 
 export const RestaurantBanner = ({
-  data: { name, categories, image, checkIns },
+  data: { name, categories, image, checkIns, isLiked },
 }) => {
   const imgStyle = {
     backgroundImage: `linear-gradient(89.13deg, #F6F7F8 0.75%, rgba(246, 247, 248, 0) 51.08%, #F6F7F8 99.25%), url(${image})`,
@@ -20,7 +20,7 @@ export const RestaurantBanner = ({
         ))}
       </div>
       <h1 className={styles.title}>{name}</h1>
-      <ActionBar checkIns={checkIns} />
+      <ActionBar checkIns={checkIns} isLiked={isLiked} />
     </div>
   );
 };

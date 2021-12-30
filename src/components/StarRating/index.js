@@ -1,1 +1,1 @@
-export * from "components/StarRating/StarRating";
+export * from "./StarRating";
