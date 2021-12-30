@@ -8,6 +8,5 @@ export * from "./CheckIn";
 export * from "./iconSprite";
 export * from "./reservationsWidget";
 export * from "./Breadcrumbs";
-export * from "./SliderNavigationButton";
 export * from "./RestaurantBanner";
 export * from "./StarRating";

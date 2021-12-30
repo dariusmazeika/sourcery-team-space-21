@@ -6,8 +6,10 @@ import { BlankCard } from "components/EatOutSection";
 import { CheckIn } from "components/CheckIn/CheckIn";
 import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
 import { StarRating } from "components/StarRating/StarRating";
+import cx from "classnames";
+import { Icon } from "components/iconSprite/Icon";
 
-export const RestaurantCard = ({ data }) => {
+export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
   const {
     categories,
     image,
@@ -31,13 +33,23 @@ export const RestaurantCard = ({ data }) => {
     <br />
   );
 
+  const description = data.description;
+
   return (
-    <BlankCard>
+    <BlankCard className={cx(className, styles.blankCard)}>
       <div className={styles.card} style={{ backgroundImage: `url(${image})` }}>
-        <div className={styles.cardTopWrapper}>
-          <CheckIn count={checkIns} />
-          <StarRating rating={rating} />
-        </div>
+        {!renderMoreInfo && (
+          <div className={styles.cardTopWrapper}>
+            <CheckIn count={checkIns} />
+            <StarRating rating={rating} />
+          </div>
+        )}
+        {renderMoreInfo && (
+          <div className={styles.cardTopWrapperNewPlaces}>
+            <StarRating rating={rating} />
+          </div>
+        )}
+
         <div className={styles.lowerWrapper}>
           <div className={styles.details}>
             <div className={styles.topTextWrapper}>
@@ -60,10 +72,44 @@ export const RestaurantCard = ({ data }) => {
           <div className={styles.wishlist}></div>
         </div>
       </div>
+      {renderMoreInfo && (
+        <div className={styles.bottomText}>
+          <div className={styles.bottomTextWebsite}>
+            <Icon
+              className={styles.icon}
+              name="icon-location-globe"
+              size="medium"
+            />
+            <a className={styles.bottomTextWebsiteLink} href={data.website}>
+              {data.website}
+            </a>
+          </div>
+          <div className={styles.bottomTextLocation}>
+            <Icon
+              className={styles.icon}
+              name="icon-location-map-pin"
+              size="medium"
+            />
+            {data.location.address}
+          </div>
+          <p className={styles.bottomTextDescription}>
+            {description.length < 50
+              ? `${description} `
+              : `${description.substr(0, 110)}\u2026 `}
+          </p>
+          <div className={styles.readMore}>
+            <Link to={data.id} className={styles.readMoreLink}>
+              READ MORE
+            </Link>
+          </div>
+        </div>
+      )}
     </BlankCard>
   );
 };
 
 RestaurantCard.propTypes = {
   data: PropTypes.object,
+  className: PropTypes.string,
+  renderMoreInfo: PropTypes.bool,
 };
