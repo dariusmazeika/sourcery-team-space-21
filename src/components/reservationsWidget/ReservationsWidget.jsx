@@ -5,6 +5,7 @@ import bookImage from "assets/book.png";
 import deviceImage from "assets/device.png";
 import doorImage from "assets/door.png";
 import { ReservationsItem } from "components/reservationsWidget";
+import { Link } from "react-router-dom";
 
 const itemsConfig = [
   {
@@ -12,6 +13,7 @@ const itemsConfig = [
       title: "Meeting rooms",
       img: doorImage,
       alt: "meeting rooms reservation",
+      path: "reservations/meeting-rooms",
     },
     dataKey: "rooms",
   },
@@ -20,6 +22,7 @@ const itemsConfig = [
       title: "Devices",
       img: deviceImage,
       alt: "device reservation",
+      path: "reservations/devices",
     },
     dataKey: "devices",
   },
@@ -28,6 +31,7 @@ const itemsConfig = [
       title: "Books",
       img: bookImage,
       alt: "books reservation",
+      path: "reservations/books",
     },
     dataKey: "books",
   },
@@ -52,7 +56,9 @@ export const ReservationsWidget = ({ data }) => {
             key={`${item.title}-${index}`}
             className={styles.widgetListBoxItem}
           >
-            <ReservationsItem item={item} />
+            <Link to={item.path} className={styles.widgetLink}>
+              <ReservationsItem item={item} />
+            </Link>
           </li>
         ))}
       </ul>
