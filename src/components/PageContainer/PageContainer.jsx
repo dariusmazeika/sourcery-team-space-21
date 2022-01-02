@@ -7,8 +7,8 @@ export const PageContainer = ({ children, className, isFullWidth = false }) => {
   return (
     <div
       className={cx(
-        className,
-        isFullWidth ? styles.containerFullWidth : styles.container
+        isFullWidth ? styles.containerFullWidth : styles.container,
+        className
       )}
     >
       {children}
