@@ -8,21 +8,22 @@ import styles from "./eat-out.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./_slide.scss";
+import { NewPlacesSection } from "components/EatOutSection/NewPlacesSection/NewPlacesSection";
 
 export const EatOutPage = () => {
   const [data, getData] = useAPI();
-  const [sliderRef, setSliderRef] = useState(null);
+  const [sliderHeroRef, setSliderHeroRef] = useState(null);
 
   useEffect(() => {
     getData("restaurants");
   }, []); // eslint-disable-line
 
-  const next = () => {
-    sliderRef.slickNext();
+  const nextHeroSlide = () => {
+    sliderHeroRef.slickNext();
   };
 
-  const prev = () => {
-    sliderRef.slickPrev();
+  const prevHeroSlide = () => {
+    sliderHeroRef.slickPrev();
   };
 
   const sliderSettings = {
@@ -37,16 +38,17 @@ export const EatOutPage = () => {
     <PageContainer>
       <BreadCrumbs />
       <h1 className={styles.sliderTitle}>Hungry? Find the best place!</h1>
-      <Slider ref={setSliderRef} {...sliderSettings}>
+      <Slider ref={setSliderHeroRef} {...sliderSettings}>
         {data.restaurants?.map((restaurant) => (
           <Slide
             key={restaurant.name}
             restaurant={restaurant}
-            next={next}
-            prev={prev}
+            next={nextHeroSlide}
+            prev={prevHeroSlide}
           />
         ))}
       </Slider>
+      <NewPlacesSection data={data} />
     </PageContainer>
   );
 };
