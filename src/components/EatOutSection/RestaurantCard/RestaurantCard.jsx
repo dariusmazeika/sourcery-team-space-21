@@ -98,7 +98,7 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
           </p>
           <div className={styles.readMore}>
             <Link to={data.id} className={styles.readMoreLink}>
-              READ MORE
+              Read More
             </Link>
           </div>
         </div>
