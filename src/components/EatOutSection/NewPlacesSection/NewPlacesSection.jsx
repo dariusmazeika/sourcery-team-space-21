@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { SliderArrows } from "components/SliderArrows/SliderArrows";
 import { RestaurantCard } from "../RestaurantCard/RestaurantCard";
+import PropTypes from "prop-types";
 
-export const NewPlacesSection = (data) => {
+export const NewPlacesSection = ({ data }) => {
   const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
 
   const nextPlacesSlide = () => {
@@ -33,9 +34,9 @@ export const NewPlacesSection = (data) => {
       </div>
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
-          {data.data.restaurants?.map((restaurant) => (
+          {data.restaurants?.map((restaurant) => (
             <RestaurantCard
-              key={restaurant.name}
+              key={restaurant.id}
               data={restaurant}
               renderMoreInfo={true}
               className={styles.restaurantCard}
@@ -45,4 +46,8 @@ export const NewPlacesSection = (data) => {
       </div>
     </>
   );
+};
+
+NewPlacesSection.propTypes = {
+  data: PropTypes.object,
 };
