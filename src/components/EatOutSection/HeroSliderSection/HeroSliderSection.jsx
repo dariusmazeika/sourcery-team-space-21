@@ -4,8 +4,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Slide } from "components/EatOutSection";
 import styles from "./hero-slider.module.scss";
+import PropTypes from "prop-types";
 
-export const HeroSliderSection = (data) => {
+export const HeroSliderSection = ({ data }) => {
   const [sliderHeroRef, setSliderHeroRef] = useState(null);
 
   const nextHeroSlide = () => {
@@ -28,9 +29,9 @@ export const HeroSliderSection = (data) => {
     <>
       <h1 className={styles.sliderTitle}>Hungry? Find the best place!</h1>
       <Slider ref={setSliderHeroRef} {...sliderSettings}>
-        {data.data.restaurants?.map((restaurant) => (
+        {data.restaurants?.map((restaurant) => (
           <Slide
-            key={restaurant.name}
+            key={restaurant.id}
             restaurant={restaurant}
             next={nextHeroSlide}
             prev={prevHeroSlide}
@@ -39,4 +40,8 @@ export const HeroSliderSection = (data) => {
       </Slider>
     </>
   );
+};
+
+HeroSliderSection.propTypes = {
+  data: PropTypes.object,
 };
