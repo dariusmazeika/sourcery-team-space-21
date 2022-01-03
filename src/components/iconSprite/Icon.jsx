@@ -49,6 +49,8 @@ Icon.propTypes = {
     "icon-notification",
     "icon-action-star-filled",
     "icon-action-star",
+    "icon-location-globe",
+    "icon-location-map-pin",
     "icon-left-arrow",
     "icon-right-arrow",
   ]),
