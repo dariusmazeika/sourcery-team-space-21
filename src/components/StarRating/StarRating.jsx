@@ -6,11 +6,7 @@ import cx from "classnames";
 
 export const StarRating = ({ rating, className }) => {
   return (
-    <div
-      className={cx(className, {
-        [styles.rating]: true,
-      })}
-    >
+    <div className={cx(className, styles.rating)}>
       <Icon className={styles.ratingIcon} name="icon-action-star-filled" />
       {rating && <p className={styles.ratingNumber}>{rating}</p>}
     </div>
