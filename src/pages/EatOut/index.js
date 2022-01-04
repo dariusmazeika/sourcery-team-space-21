@@ -1,1 +1,1 @@
-export * from "pages/EatOut/EatOutPage";
+export * from "./EatOutPage";

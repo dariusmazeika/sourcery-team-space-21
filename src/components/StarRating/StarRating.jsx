@@ -5,10 +5,11 @@ import { Icon } from "components/iconSprite/Icon";
 import cx from "classnames";
 
 export const StarRating = ({ rating, className }) => {
+  const ratingNumber = rating ? rating : "-";
   return (
     <div className={cx(className, styles.rating)}>
       <Icon className={styles.ratingIcon} name="icon-action-star-filled" />
-      {rating && <p className={styles.ratingNumber}>{rating}</p>}
+      <p className={styles.ratingNumber}>{ratingNumber}</p>
     </div>
   );
 };
