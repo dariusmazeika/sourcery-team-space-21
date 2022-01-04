@@ -7,6 +7,7 @@ import Location from "components/EatOutSection/EatOutRestaurantPage/InfoAndLocat
 import { Information } from "components/EatOutSection/EatOutRestaurantPage/InfoAndLocation/Information";
 import styles from "./restaurant-page.module.scss";
 import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
+import { PageContainer } from "components/PageContainer/PageContainer";
 
 export const RestaurantPage = () => {
   const [contextData, fetchContextData] = useAPI();
@@ -32,20 +33,26 @@ export const RestaurantPage = () => {
     <>
       {filteredRestaurant && (
         <>
-          <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
+          <PageContainer>
+            <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
+          </PageContainer>
           <RestaurantBanner data={filteredRestaurant} />
-          <div className={styles.restaurantPageSection}>
-            <div className={styles.infoAndLocationItem}>
-              <Information
-                address={filteredRestaurant.location.address}
-                website={filteredRestaurant.website}
-                phone={filteredRestaurant.phone}
-                openingHours={filteredRestaurant.openingHours}
-              />
-              <Location coordinates={filteredRestaurant.location.coordinates} />
+          <PageContainer>
+            <div className={styles.restaurantPageSection}>
+              <div className={styles.infoAndLocationItem}>
+                <Information
+                  address={filteredRestaurant.location.address}
+                  website={filteredRestaurant.website}
+                  phone={filteredRestaurant.phone}
+                  openingHours={filteredRestaurant.openingHours}
+                />
+                <Location
+                  coordinates={filteredRestaurant.location.coordinates}
+                />
+              </div>
+              <ReviewsSection reviews={filteredRestaurant.reviews} />
             </div>
-            <ReviewsSection reviews={filteredRestaurant.reviews} />
-          </div>
+          </PageContainer>
         </>
       )}
     </>

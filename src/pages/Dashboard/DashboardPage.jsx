@@ -5,6 +5,7 @@ import { ReservationsWidget } from "components/reservationsWidget/ReservationsWi
 import { EatOutSection } from "components/EatOutSection/EatOutSection/EatOutSection";
 import { useAPI } from "features/context/APIContext";
 import { BirthdayCard } from "components/BirthdayCard/BirthdayCard";
+import { PageContainer } from "components/PageContainer/PageContainer";
 
 export const DashboardPage = () => {
   const [data, getData] = useAPI();
@@ -15,19 +16,17 @@ export const DashboardPage = () => {
   }, []); // eslint-disable-line
 
   return (
-    data && (
-      <>
-        <section className={styles.dashboardSection}>
-          <HelloWidget />
-        </section>
-        <section className={styles.dashboardSection}>
-          <ReservationsWidget data={{ userData: data.userData }} />
-        </section>
-        <section className={styles.dashboardSection}>
-          <EatOutSection data={data} />
-        </section>
-        <BirthdayCard data={data.stories} />
-      </>
-    )
+    <PageContainer>
+      <section className={styles.dashboardSection}>
+        <HelloWidget />
+      </section>
+      <section className={styles.dashboardSection}>
+        <ReservationsWidget data={{ userData: data.userData }} />
+      </section>
+      <section className={styles.dashboardSection}>
+        <EatOutSection data={data} />
+      </section>
+      <BirthdayCard data={data.stories} />
+    </PageContainer>
   );
 };

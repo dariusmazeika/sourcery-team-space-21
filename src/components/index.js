@@ -10,3 +10,8 @@ export * from "./reservationsWidget";
 export * from "./Breadcrumbs";
 export * from "./RestaurantBanner";
 export * from "./StarRating";
+export * from "./PageContainer";
+export * from "./input";
+export * from "./loginRegistrationLayout";
+export * from "./SliderArrows";
+export * from "./UserProfileWidget";

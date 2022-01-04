@@ -1,20 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { FavoriteButton } from "components/favoriteButton";
 import styles from "./ActionBar.module.scss";
+import { StarRating } from "components/StarRating/StarRating";
 
-// TODO add StarComponent and CheckIn later when they are done
+// TODO: add CheckIn later when they are done
 
-export const ActionBar = ({ checkIns, isLiked }) => (
+export const ActionBar = ({ checkIns, isLiked, rating }) => (
   <div className={styles.box}>
     <div className={styles.actionGroup}>
+      <StarRating rating={rating} />
       <FavoriteButton isFavorite={isLiked} />
     </div>
     <p className="caption">
       {checkIns > 0
-        ? `${checkIns} people have already checked-in!`
-        : "no one has checked-in yet!"}
+        ? `${checkIns} people already checked-in!`
+        : "no one checked-in yet!"}
     </p>
     <div className={styles.actionGroup}></div>
   </div>
@@ -23,4 +24,5 @@ export const ActionBar = ({ checkIns, isLiked }) => (
 ActionBar.propTypes = {
   checkIns: PropTypes.number,
   isLiked: PropTypes.bool,
+  rating: PropTypes.number,
 };

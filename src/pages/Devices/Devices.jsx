@@ -1,6 +1,11 @@
 import React from "react";
-import { BreadCrumbs } from "../../components/Breadcrumbs";
+import { PageContainer } from "components/PageContainer";
+import { BreadCrumbs } from "components/Breadcrumbs";
 
 export const Devices = () => {
-  return <BreadCrumbs />;
+  return (
+    <PageContainer>
+      <BreadCrumbs />
+    </PageContainer>
+  );
 };
