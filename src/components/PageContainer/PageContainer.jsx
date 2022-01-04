@@ -6,7 +6,8 @@ import styles from "./pageContainer.module.scss";
 export const PageContainer = ({ children, className, isFullWidth = false }) => (
   <div
     className={cx(
-      isFullWidth ? styles.containerFullWidth : styles.container,
+      styles.container,
+      { [styles.containerIsFullWidth]: isFullWidth },
       className
     )}
   >
