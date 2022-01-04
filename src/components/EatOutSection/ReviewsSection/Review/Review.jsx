@@ -10,7 +10,7 @@ import styles from "./Review.module.scss";
 export const Review = ({ data }) => (
   <div className={styles.review}>
     <div className={styles.reviewRatingWrapper}>
-      <StarRating rating={data.rating} />
+      <StarRating rating={data.rating} className={styles.reviewStarRating} />
     </div>
     <p className={styles.reviewUsername}>{data.userName}</p>
     <p className={styles.reviewComment}>{data.comment}</p>
