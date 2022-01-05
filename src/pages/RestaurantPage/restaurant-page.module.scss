@@ -4,6 +4,7 @@
 .restaurantPageSection {
     @include layout-section-base;
     column-gap: $flex-column-gap;
+    margin-top: 2.8rem;
 }
 
 .infoAndLocationItem {
