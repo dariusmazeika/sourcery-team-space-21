@@ -3,13 +3,18 @@ import styles from "./birthday-card.module.scss";
 import PropTypes from "prop-types";
 import { BlankCard } from "components/EatOutSection/BlankCard/BlankCard";
 import { Icon } from "components/iconSprite/Icon";
+import confettiImage from "assets/birthday-card-confetti.png";
 
 export const BirthdayCard = ({ data }) => {
   return (
     <BlankCard className={styles.blankCard}>
       <div className={styles.birthdayCard}>
         <div
-          className={styles.birthdayCardImage}
+          className={styles.birthdayCardBackgroundImage}
+          style={{ backgroundImage: `url(${confettiImage})` }}
+        ></div>
+        <div
+          className={styles.birthdayCardProfileImage}
           style={{ backgroundImage: `url(${data.userImage})` }}
         ></div>
         <div className={styles.birthdayCardUserName}>{data.userName}</div>
