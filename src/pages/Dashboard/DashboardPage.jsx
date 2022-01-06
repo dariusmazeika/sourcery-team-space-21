@@ -26,7 +26,7 @@ export const DashboardPage = () => {
       <section className={styles.dashboardSection}>
         <EatOutSection data={data} />
       </section>
-      <BirthdayCard data={data.stories} />
+      {data.stories && <BirthdayCard data={data.stories[0]} />}
     </PageContainer>
   );
 };
