@@ -37,3 +37,6 @@ export const addRestaurantRatings = (data) => {
     return data;
   }
 };
+
+export const processRestaurantData = (data) =>
+  addLikedRestaurants(addRestaurantRatings(data));
