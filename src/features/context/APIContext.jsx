@@ -1,26 +1,30 @@
 import React, { useState, createContext, useContext } from "react";
 import PropTypes from "prop-types";
 import fetchData from "features/data/fetchData";
-import {
-  addLikedRestaurants,
-  addRestaurantRatings,
-} from "features/data/restaurantDataPreProcessing";
 
 const APIContext = createContext();
 
 export const APIContextProvider = ({ children }) => {
   const [apiData, setApiData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   function fetchDataToState() {
     const args = Array.from(arguments);
-    fetchData(args)
-      .then((data) => addRestaurantRatings(data))
-      .then((data) => addLikedRestaurants(data))
-      .then((data) => setApiData({ ...apiData, ...data }));
+    setIsLoading(true);
+    setHasError(false);
+
+    fetchData(args).then((data) => {
+      setApiData({ ...apiData, ...data.data });
+      setHasError(data.hasError);
+      setIsLoading(false);
+    });
   }
 
   return (
-    <APIContext.Provider value={[apiData, fetchDataToState]}>
+    <APIContext.Provider
+      value={[apiData, fetchDataToState, isLoading, hasError]}
+    >
       {children}
     </APIContext.Provider>
   );
