@@ -8,16 +8,21 @@ import { PageContainer } from "components/PageContainer/PageContainer";
 import { Spinner } from "components/Spinner/Spinner";
 
 export const DashboardPage = () => {
-  const [data, getData, dataIsLoading] = useAPI();
+  const [data, getData, isLoading, resetIsLoading] = useAPI();
 
   useEffect(() => {
     getData("userData", "restaurants");
-  }, []); // eslint-disable-line
+
+    return function cleanup() {
+      resetIsLoading();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <PageContainer>
-      {dataIsLoading && <Spinner />}
-      {!dataIsLoading && (
+      {isLoading && <Spinner />}
+      {!isLoading && (
         <>
           <section className={styles.dashboardSection}>
             <HelloWidget />

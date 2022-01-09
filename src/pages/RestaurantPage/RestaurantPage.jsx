@@ -11,7 +11,7 @@ import { PageContainer } from "components/PageContainer/PageContainer";
 import { Spinner } from "components/Spinner/Spinner";
 
 export const RestaurantPage = () => {
-  const [contextData, fetchContextData, isLoading] = useAPI();
+  const [data, getData, isLoading, resetIsLoading] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
@@ -22,11 +22,15 @@ export const RestaurantPage = () => {
   };
 
   useEffect(() => {
-    fetchContextData("restaurants", "userData");
+    getData("restaurants", "userData");
+
+    return function cleanup() {
+      resetIsLoading();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const filteredRestaurant = contextData?.restaurants?.find(
+  const filteredRestaurant = data?.restaurants?.find(
     (restaurant) => restaurant.id === restaurantId
   );
 

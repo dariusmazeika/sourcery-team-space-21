@@ -7,11 +7,16 @@ import { PageContainer } from "components/PageContainer/PageContainer";
 import { Spinner } from "components/Spinner/Spinner";
 
 export const EatOutPage = () => {
-  const [data, getData, isLoading] = useAPI();
+  const [data, getData, isLoading, resetIsLoading] = useAPI();
 
   useEffect(() => {
     getData("restaurants");
-  }, []); // eslint-disable-line
+
+    return function cleanup() {
+      resetIsLoading();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <PageContainer>

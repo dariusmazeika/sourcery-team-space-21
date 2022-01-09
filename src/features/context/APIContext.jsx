@@ -6,8 +6,10 @@ const APIContext = createContext();
 
 export const APIContextProvider = ({ children }) => {
   const [apiData, setApiData] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+
+  const resetIsLoading = () => setIsLoading(true);
 
   function fetchDataToState() {
     const args = Array.from(arguments);
@@ -17,13 +19,13 @@ export const APIContextProvider = ({ children }) => {
     fetchData(args).then((data) => {
       setApiData({ ...apiData, ...data.data });
       setHasError(data.hasError);
-      setIsLoading(false);
+      setTimeout(() => setIsLoading(false), 500);
     });
   }
 
   return (
     <APIContext.Provider
-      value={[apiData, fetchDataToState, isLoading, hasError]}
+      value={[apiData, fetchDataToState, isLoading, resetIsLoading, hasError]}
     >
       {children}
     </APIContext.Provider>
