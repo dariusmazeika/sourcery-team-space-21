@@ -8,9 +8,10 @@ import { Information } from "components/EatOutSection/EatOutRestaurantPage/InfoA
 import styles from "./restaurant-page.module.scss";
 import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
 import { PageContainer } from "components/PageContainer/PageContainer";
+import { Spinner } from "components/Spinner/Spinner";
 
 export const RestaurantPage = () => {
-  const [contextData, fetchContextData] = useAPI();
+  const [contextData, fetchContextData, isLoading] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
@@ -31,7 +32,8 @@ export const RestaurantPage = () => {
 
   return (
     <>
-      {filteredRestaurant && (
+      {filteredRestaurant && isLoading && <Spinner />}
+      {filteredRestaurant && !isLoading && (
         <>
           <PageContainer isFullWidth={true}>
             <PageContainer>

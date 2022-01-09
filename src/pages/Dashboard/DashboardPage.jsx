@@ -5,26 +5,31 @@ import { ReservationsWidget } from "components/reservationsWidget/ReservationsWi
 import { EatOutSection } from "components/EatOutSection/EatOutSection/EatOutSection";
 import { useAPI } from "features/context/APIContext";
 import { PageContainer } from "components/PageContainer/PageContainer";
+import { Spinner } from "components/Spinner/Spinner";
 
 export const DashboardPage = () => {
-  const [data, getData] = useAPI();
+  const [data, getData, dataIsLoading] = useAPI();
 
-  //TODO: add useEffect dependencies
   useEffect(() => {
     getData("userData", "restaurants");
   }, []); // eslint-disable-line
 
   return (
     <PageContainer>
-      <section className={styles.dashboardSection}>
-        <HelloWidget />
-      </section>
-      <section className={styles.dashboardSection}>
-        <ReservationsWidget data={{ userData: data.userData }} />
-      </section>
-      <section className={styles.dashboardSection}>
-        <EatOutSection data={data} />
-      </section>
+      {dataIsLoading && <Spinner />}
+      {!dataIsLoading && (
+        <>
+          <section className={styles.dashboardSection}>
+            <HelloWidget />
+          </section>
+          <section className={styles.dashboardSection}>
+            <ReservationsWidget data={{ userData: data.userData }} />
+          </section>
+          <section className={styles.dashboardSection}>
+            <EatOutSection data={data} />
+          </section>
+        </>
+      )}
     </PageContainer>
   );
 };
