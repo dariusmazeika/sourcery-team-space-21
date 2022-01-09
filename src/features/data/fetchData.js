@@ -1,5 +1,5 @@
 import { endpoints } from "./endpoints";
-import { processRestaurantData } from "features/data/restaurantDataPreProcessing";
+import { processRestaurantData } from "features/data/processRestaurantData";
 
 async function fetchData(endpointNames) {
   const promises = endpointNames.map((e) =>
