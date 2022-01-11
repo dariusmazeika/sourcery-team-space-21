@@ -1,6 +1,6 @@
 @import './src/styles/base/base';
 
-.blankCard {
+.birthDayCardContainer {
     max-width: 41.6rem;
 }
 
@@ -47,16 +47,22 @@
         text-transform: uppercase;
     }
 
-    &BirthdayDate {
+    &Birthday {
+        display: flex;
         font-weight: $font-weight-regular;
+        justify-content: center;
         margin-top: 0.4rem;
+
+        &Date {
+            font-weight: $font-weight-medium;
+        }
     }
 
     &Wish {
         margin-top: 0.4rem;
     }
 
-    &Line {
+    &Divider {
         background-color: $color-geyser;
         border: 0;
         height: 1px;
@@ -67,16 +73,16 @@
         align-items: center;
         color: $pale-sky;
         display: flex;
-        flex-direction: start;
+        flex-direction: flex-start;
         margin: 1.6rem;
         margin-top: 0;
 
-        div:nth-child(2) {
+        &Wishes {
             margin-left: 0.5rem;
             margin-right: 0.8rem;
         }
 
-        div:nth-child(4) {
+        &Comments {
             margin-left: 0.5rem;
         }
     }

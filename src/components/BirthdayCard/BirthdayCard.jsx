@@ -5,76 +5,55 @@ import { BlankCard } from "components/EatOutSection/BlankCard/BlankCard";
 import { Icon } from "components/iconSprite/Icon";
 import confettiImage from "assets/birthday-card-confetti.png";
 
-export const BirthdayCard = ({ data }) => {
-  let month = data.birthdayDate.substring(5, 7);
-  let day = data.birthdayDate.substring(8);
+export const BirthdayCard = ({
+  data: { userName, birthdayDate, userImage, wishes, comments },
+}) => {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
-  switch (month) {
-    case "1":
-      month = "Jan";
-      break;
-    case "2":
-      month = "Feb";
-      break;
-    case "3":
-      month = "Mar";
-      break;
-    case "4":
-      month = "Apr";
-      break;
-    case "5":
-      month = "May";
-      break;
-    case "6":
-      month = "Jun";
-      break;
-    case "7":
-      month = "Jul";
-      break;
-    case "8":
-      month = "Aug";
-      break;
-    case "9":
-      month = "Sep";
-      break;
-    case "10":
-      month = "Oct";
-      break;
-    case "11":
-      month = "Nov";
-      break;
-    case "12":
-      month = "Dec";
-      break;
-    default:
-      month = "";
-  }
+  const bDayDate = new Date(birthdayDate);
+  const Month = months[bDayDate.getMonth()];
+  const Day = bDayDate.getDate();
 
   return (
-    <BlankCard className={styles.blankCard}>
+    <BlankCard className={styles.birthDayCardContainer}>
       <div className={styles.birthdayCard}>
         <div
           className={styles.birthdayCardBackgroundImage}
           style={{ backgroundImage: `url(${confettiImage})` }}
-        ></div>
+        />
         <div
           className={styles.birthdayCardProfileImage}
-          style={{ backgroundImage: `url(${data.userImage})` }}
+          style={{ backgroundImage: `url(${userImage})` }}
         ></div>
-        <div className={styles.birthdayCardUserName}>{data.userName}</div>
-        <div className={styles.birthdayCardBirthdayDate}>
+        <div className={styles.birthdayCardUserName}>{userName}</div>
+        <div className={styles.birthdayCardBirthday}>
           Celebrated a birthday on&nbsp;
-          <b>
-            {month} {day}
-          </b>
+          <div className={styles.birthdayCardBirthdayDate}>
+            {Month} {Day}
+          </div>
         </div>
         <div className={styles.birthdayCardWish}>Send a wish!</div>
-        <hr className={styles.birthdayCardLine}></hr>
+        <hr className={styles.birthdayCardDivider}></hr>
         <div className={styles.birthdayCardBottom}>
           <Icon name="icon-other-gift" size="large" />
-          <div>{data.wishes}</div>
+          <div className={styles.birthdayCardBottomWishes}>{wishes}</div>
           <Icon name="icon-message-box-circle" size="large" />
-          <div>{data.comments.length}</div>
+          <div className={styles.birthdayCardBottomComments}>
+            {comments.length}
+          </div>
         </div>
       </div>
     </BlankCard>
