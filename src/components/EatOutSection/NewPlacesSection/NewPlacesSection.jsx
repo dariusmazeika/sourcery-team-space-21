@@ -26,6 +26,13 @@ export const NewPlacesSection = ({ data }) => {
     arrows: false,
   };
 
+  const sortRestaurantsByDate = (restaurants) =>
+    restaurants.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1));
+
+  const sortedRestaurants = data.restaurants
+    ? sortRestaurantsByDate(data.restaurants)
+    : [];
+
   return (
     <>
       <div className={styles.newPlacesTop}>
@@ -34,7 +41,7 @@ export const NewPlacesSection = ({ data }) => {
       </div>
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
-          {data.restaurants?.map((restaurant) => (
+          {sortedRestaurants.map((restaurant) => (
             <RestaurantCard
               key={restaurant.id}
               data={restaurant}
