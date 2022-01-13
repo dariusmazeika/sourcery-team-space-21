@@ -9,7 +9,7 @@ import {
 const APIContext = createContext();
 
 export const APIContextProvider = ({ children }) => {
-  const [apiData, setApiData] = useState({});
+  let [apiData, setApiData] = useState({});
 
   function fetchDataToState() {
     const args = Array.from(arguments);
@@ -19,8 +19,14 @@ export const APIContextProvider = ({ children }) => {
       .then((data) => setApiData({ ...apiData, ...data }));
   }
 
+  const updateComment = (data, id) => {
+    let storyData = apiData.stories.find((story) => story.id === id);
+    storyData.comments.push(data);
+    setApiData({ ...apiData, stories: apiData.stories });
+  };
+
   return (
-    <APIContext.Provider value={[apiData, fetchDataToState]}>
+    <APIContext.Provider value={[apiData, fetchDataToState, updateComment]}>
       {children}
     </APIContext.Provider>
   );

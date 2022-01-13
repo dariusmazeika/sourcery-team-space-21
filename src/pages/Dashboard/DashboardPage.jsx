@@ -11,7 +11,7 @@ export const DashboardPage = () => {
 
   //TODO: add useEffect dependencies
   useEffect(() => {
-    getData("userData", "restaurants");
+    getData("userData", "restaurants", "stories");
   }, []); // eslint-disable-line
 
   return (
