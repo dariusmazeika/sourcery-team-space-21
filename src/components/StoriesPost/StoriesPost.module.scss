@@ -1,0 +1,57 @@
+@import './src/styles/base/base';
+
+.post {
+    color: $color-midnight;
+    font-size: $font-size-s;
+    max-width: 41.6rem;
+
+    &Header {
+        align-items: center;
+        display: flex;
+        height: 4.8rem;
+        justify-content: space-between;
+        padding: 1.2rem 1.6rem;
+        text-transform: uppercase;
+    }
+
+    &Author {
+        font-size: $font-size-s;
+
+        &Image {
+            border-radius: 50%;
+            height: 2.4rem;
+            margin-right: 1.2rem;
+            object-fit: cover;
+            width: 2.4rem;
+        }
+
+        &Wrapper {
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &Date {
+        margin-left: 0.8rem;
+    }
+
+    &LocationDate {
+        color: $color-slate-gray;
+        display: flex;
+    }
+
+    &Content {
+        height: 40.5rem;
+
+        &Image {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+
+.reactPlayer video {
+    object-fit: cover;
+    width: 100%;
+}
