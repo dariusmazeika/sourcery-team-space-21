@@ -26,11 +26,8 @@ export const NewPlacesSection = ({ data }) => {
     arrows: false,
   };
 
-  const sortRestaurantsByDate = (restaurants) =>
-    restaurants.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1));
-
-  const sortedRestaurants = data.restaurants
-    ? sortRestaurantsByDate(data.restaurants)
+  const sortedRestaurants = data?.restaurants
+    ? data.restaurants.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1))
     : [];
 
   return (
