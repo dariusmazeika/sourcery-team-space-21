@@ -53,6 +53,8 @@ Icon.propTypes = {
     "icon-location-map-pin",
     "icon-left-arrow",
     "icon-right-arrow",
+    "icon-other-gift",
+    "icon-message-box-circle",
   ]),
   size: PropTypes.oneOf(Object.values(Size)),
   className: PropTypes.string,
