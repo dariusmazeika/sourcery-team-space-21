@@ -40,7 +40,7 @@ export const CommentForm = ({ id }) => {
       />
 
       <button className={styles.commentButton} type={"submit"}>
-        post
+        Post
       </button>
     </form>
   );

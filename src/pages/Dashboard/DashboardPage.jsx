@@ -5,7 +5,7 @@ import { ReservationsWidget } from "components/reservationsWidget/ReservationsWi
 import { EatOutSection } from "components/EatOutSection/EatOutSection/EatOutSection";
 import { useAPI } from "features/context/APIContext";
 import { PageContainer } from "components/PageContainer/PageContainer";
-import { StoriesPost } from "../../components";
+import { StoriesPost } from "components/StoriesPost";
 
 export const DashboardPage = () => {
   const [data, getData] = useAPI();
