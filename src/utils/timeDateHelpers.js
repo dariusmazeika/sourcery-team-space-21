@@ -31,6 +31,13 @@ export const timeDifference = (time) => {
   return Math.round(elapsed / msPerYear) + "Y";
 };
 
+export const getFormattedDate = () => {
+  const dateObj = new Date();
+  const weekday = dateObj.toLocaleString("default", { weekday: "long" });
+  const month = dateObj.toLocaleString("default", { month: "long" });
+  return `${weekday}, ${dateObj.getDate()} ${month}`;
+};
+
 export const formatDate = (dateToFormat) => {
   const date = new Date(`${dateToFormat}`).toLocaleDateString();
   return date;

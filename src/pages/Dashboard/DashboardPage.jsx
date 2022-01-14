@@ -1,24 +1,39 @@
 import React, { useEffect } from "react";
-import styles from "./DashboardPage.module.scss";
-import { HelloWidget } from "components/HelloWidget/HelloWidget";
-import { ReservationsWidget } from "components/reservationsWidget/ReservationsWidget";
-import { EatOutSection } from "components/EatOutSection/EatOutSection/EatOutSection";
+
+import {
+  HelloWidget,
+  ReservationsWidget,
+  EatOutSection,
+  PageContainer,
+  WeatherWidget,
+  StoriesPost,
+} from "components";
+
 import { useAPI } from "features/context/APIContext";
-import { PageContainer } from "components/PageContainer/PageContainer";
-import { StoriesPost } from "components/StoriesPost";
+
+import styles from "./DashboardPage.module.scss";
 
 export const DashboardPage = () => {
   const [data, getData] = useAPI();
 
   //TODO: add useEffect dependencies
   useEffect(() => {
-    getData("userData", "restaurants", "stories");
+    getData("userData", "restaurants", "weather", "stories");
   }, []); // eslint-disable-line
+
+  const weekDayFull = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+  }).format(new Date().getDay());
+
+  const weatherToday = data.weather?.find(
+    (weatherObj) => weatherObj.weekDay === weekDayFull
+  );
 
   return (
     <PageContainer>
       <section className={styles.dashboardSection}>
         <HelloWidget />
+        {data.weather && <WeatherWidget data={weatherToday} />}
       </section>
       <section className={styles.dashboardSection}>
         <ReservationsWidget data={{ userData: data.userData }} />
