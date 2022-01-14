@@ -29,8 +29,8 @@ export const DashboardPage = () => {
       <section>
         <h3>News and Stories</h3>
         <div className={styles.storiesPostContainer}>
-          {data?.stories?.map((el) => (
-            <StoriesPost data={el} key={el.id} />
+          {data?.stories?.map((story) => (
+            <StoriesPost data={story} key={story.id} />
           ))}
         </div>
       </section>
