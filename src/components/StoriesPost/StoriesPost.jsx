@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import PropTypes from "prop-types";
 
 import { BlankCard } from "components";
+import { CommentsSection } from "./CommentSection/CommentSection";
 
 import { timeDifference } from "utils";
 
@@ -29,7 +30,7 @@ export const StoriesPost = ({
         <p className={styles.postAuthor}>{userName}</p>
       </div>
       <div className={styles.postLocationDate}>
-        <div clasName={styles.postLocation}>{postLocation}</div>
+        <div>{postLocation}</div>
         <div className={styles.postDate}>{timeDifference(postDate)}</div>
       </div>
     </div>
@@ -51,6 +52,7 @@ export const StoriesPost = ({
         />
       )}
     </div>
+    <CommentsSection id={id} commentsData={comments} />
   </BlankCard>
 );
 
