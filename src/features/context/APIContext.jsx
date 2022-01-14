@@ -19,8 +19,15 @@ export const APIContextProvider = ({ children }) => {
       .then((data) => setApiData({ ...apiData, ...data }));
   }
 
+  const updateComment = (data, id) => {
+    let updatedStory = apiData.stories.find((story) => story.id === id);
+    updatedStory.comments.unshift(data);
+
+    setApiData({ ...apiData, stories: apiData.stories });
+  };
+
   return (
-    <APIContext.Provider value={[apiData, fetchDataToState]}>
+    <APIContext.Provider value={[apiData, fetchDataToState, updateComment]}>
       {children}
     </APIContext.Provider>
   );

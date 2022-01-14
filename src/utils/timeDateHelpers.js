@@ -30,3 +30,19 @@ export const timeDifference = (time) => {
 
   return Math.round(elapsed / msPerYear) + "Y";
 };
+
+export const formatDate = (dateToFormat) => {
+  const date = new Date(`${dateToFormat}`).toLocaleDateString();
+  return date;
+};
+
+export const formatTime = (timeToFormat) => {
+  const time = new Date(`${timeToFormat}`)
+    .toLocaleTimeString("en-US")
+    .split(" ");
+  const formatTime = time[0].split(":").splice(0, 2).join(":");
+  const dayTime = time[1];
+  const formattedTime = `${formatTime} ${dayTime}`;
+
+  return formattedTime;
+};
