@@ -23,9 +23,9 @@ export const BirthdayCard = ({
     "Dec",
   ];
 
-  const bDayDate = new Date(birthdayDate);
-  const Month = months[bDayDate.getMonth()];
-  const Day = bDayDate.getDate();
+  const bDDate = new Date(birthdayDate);
+  const bDMonth = months[bDDate.getMonth()];
+  const bDDay = bDDate.getDate();
 
   return (
     <BlankCard className={styles.birthDayCardContainer}>
@@ -33,20 +33,21 @@ export const BirthdayCard = ({
         <div
           className={styles.birthdayCardBackgroundImage}
           style={{ backgroundImage: `url(${confettiImage})` }}
-        />
-        <div
-          className={styles.birthdayCardProfileImage}
-          style={{ backgroundImage: `url(${userImage})` }}
-        ></div>
-        <div className={styles.birthdayCardUserName}>{userName}</div>
-        <div className={styles.birthdayCardBirthday}>
-          Celebrated a birthday on&nbsp;
-          <div className={styles.birthdayCardBirthdayDate}>
-            {Month} {Day}
+        >
+          <div
+            className={styles.birthdayCardProfileImage}
+            style={{ backgroundImage: `url(${userImage})` }}
+          />
+          <div className={styles.birthdayCardUserName}>{userName}</div>
+          <div className={styles.birthdayCardBirthday}>
+            Celebrated a birthday on&nbsp;
+            <div className={styles.birthdayCardBirthdayDate}>
+              {bDMonth} {bDDay}
+            </div>
           </div>
+          <div className={styles.birthdayCardWish}>Send a wish!</div>
         </div>
-        <div className={styles.birthdayCardWish}>Send a wish!</div>
-        <hr className={styles.birthdayCardDivider}></hr>
+        <hr className={styles.birthdayCardDivider} />
         <div className={styles.birthdayCardBottom}>
           <Icon name="icon-other-gift" size="large" />
           <div className={styles.birthdayCardBottomWishes}>{wishes}</div>
