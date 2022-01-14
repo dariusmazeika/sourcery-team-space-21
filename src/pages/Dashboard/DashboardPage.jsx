@@ -4,7 +4,6 @@ import { HelloWidget } from "components/HelloWidget/HelloWidget";
 import { ReservationsWidget } from "components/reservationsWidget/ReservationsWidget";
 import { EatOutSection } from "components/EatOutSection/EatOutSection/EatOutSection";
 import { useAPI } from "features/context/APIContext";
-import { BirthdayCard } from "components/BirthdayCard/BirthdayCard";
 import { PageContainer } from "components/PageContainer/PageContainer";
 
 export const DashboardPage = () => {
@@ -26,7 +25,6 @@ export const DashboardPage = () => {
       <section className={styles.dashboardSection}>
         <EatOutSection data={data} />
       </section>
-      {data.stories && <BirthdayCard data={data.stories[0]} />}
     </PageContainer>
   );
 };
