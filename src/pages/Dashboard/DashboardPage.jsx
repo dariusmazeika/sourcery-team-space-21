@@ -5,7 +5,7 @@ import { ReservationsWidget } from "components/reservationsWidget/ReservationsWi
 import { EatOutSection } from "components/EatOutSection/EatOutSection/EatOutSection";
 import { useAPI } from "features/context/APIContext";
 import { PageContainer } from "components/PageContainer/PageContainer";
-import { StoriesPost } from "components/StoriesPost";
+import { NewsAndStoriesSections } from "components/NewsAndStoriesSection";
 
 export const DashboardPage = () => {
   const [data, getData] = useAPI();
@@ -27,12 +27,7 @@ export const DashboardPage = () => {
         <EatOutSection data={data} />
       </section>
       <section>
-        <h3>News and Stories</h3>
-        <div className={styles.storiesPostContainer}>
-          {data?.stories?.map((story) => (
-            <StoriesPost data={story} key={story.id} />
-          ))}
-        </div>
+        <NewsAndStoriesSections stories={data.stories} />
       </section>
     </PageContainer>
   );
