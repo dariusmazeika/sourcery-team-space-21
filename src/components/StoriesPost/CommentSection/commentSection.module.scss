@@ -3,10 +3,11 @@
 .commentSection {
     margin: 0.8rem 0;
     max-height: 9.5rem;
+    min-height: 9.5rem;
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     overflow-y: scroll;
     padding: 0 1.6rem;
-    scrollbar-width: 0; /* for Firefox */
+    scrollbar-width: none; /* for Firefox */
 
     &::-webkit-scrollbar {
         display: none;
@@ -39,4 +40,8 @@
     background: $color-tiara;
     height: 0.1rem;
     margin: 0 1.6rem;
+}
+
+.separationLine:nth-child(1) {
+    margin-top: 0.8rem;
 }

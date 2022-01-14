@@ -1,48 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
+import { formatTime, formatDate } from "utils";
 
 import { CommentForm } from "./CommentForm";
 import styles from "./commentSection.module.scss";
 
 export const CommentsSection = ({ commentsData = [], id = "" }) => {
-  let [comments, setComments] = useState(commentsData);
-
-  useEffect(() => {
-    comments.forEach((comment) => {
-      formatDateAndTime(comment);
-    });
-  }, []); // eslint-disable-line
-
-  const updateCommentsUI = (comment) => {
-    formatDateAndTime(comment);
-    setComments((oldData) => [comment, ...oldData]);
-  };
-
-  const formatDateAndTime = (comment) => {
-    const formattedDates = {
-      date: "",
-      time: "",
-    };
-    const date = new Date(`${comment.date}`).toLocaleDateString();
-    const time = new Date(`${comment.date}`)
-      .toLocaleTimeString("en-US")
-      .split(" ");
-
-    const timeToFormat = time[0].split(":").splice(0, 2).join(":");
-    const formatTime = timeToFormat.concat(` ${time[1]}`);
-
-    formattedDates.date = date;
-    formattedDates.time = formatTime;
-
-    comment.date = formattedDates;
-  };
-
   return (
     <div>
-      {comments.length > 0 && <div className={styles.separationLine} />}
-      {comments && (
+      {commentsData.length > 0 && <div className={styles.separationLine} />}
+      {commentsData && (
         <section className={styles.commentSection}>
-          {comments.map((comment, index) => (
+          {commentsData.map((comment, index) => (
             <div
               key={`${comment.userName} ${index}`}
               className={styles.commentContainer}
@@ -53,9 +22,9 @@ export const CommentsSection = ({ commentsData = [], id = "" }) => {
                     {comment.userName}
                   </div>
                   <div>
-                    <span>{comment.date.date}</span>
+                    <span>{formatDate(comment.date)}</span>
                     <span className={styles.commentDateTime}>
-                      {comment.date.time}
+                      {formatTime(comment.date)}
                     </span>
                   </div>
                 </div>
@@ -65,8 +34,8 @@ export const CommentsSection = ({ commentsData = [], id = "" }) => {
           ))}
         </section>
       )}
-      {comments.length > 0 && <div className={styles.separationLine} />}
-      <CommentForm id={id} updateCommentsUI={updateCommentsUI} />
+      {commentsData.length > 0 && <div className={styles.separationLine} />}
+      <CommentForm id={id} />
     </div>
   );
 };

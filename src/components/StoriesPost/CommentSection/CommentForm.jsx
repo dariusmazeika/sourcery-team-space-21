@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 
 import styles from "./commentForm.module.scss";
 
-export const CommentForm = ({ id, updateCommentsUI }) => {
+export const CommentForm = ({ id }) => {
   const { userData } = useContext(UserContext);
   let userImgSrc = userData.userImage ? userData.userImage : "";
   const { register, handleSubmit, reset } = useForm();
@@ -19,7 +19,6 @@ export const CommentForm = ({ id, updateCommentsUI }) => {
       date: new Date(),
       userName: userData.userName,
     };
-    updateCommentsUI(commentData);
     updateComment(commentData, id);
     reset();
   };
@@ -32,8 +31,8 @@ export const CommentForm = ({ id, updateCommentsUI }) => {
           alt="user profile"
         />
       </div>
-      <label htmlFor="comment" aria-label="comment" hidden />
       <input
+        aria-label="comment"
         placeholder={"Leave a comment"}
         type="text"
         {...register("comment", { required: true })}
@@ -49,5 +48,4 @@ export const CommentForm = ({ id, updateCommentsUI }) => {
 
 CommentForm.propTypes = {
   id: PropTypes.string,
-  updateCommentsUI: PropTypes.func,
 };

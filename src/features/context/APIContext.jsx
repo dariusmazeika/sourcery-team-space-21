@@ -20,8 +20,9 @@ export const APIContextProvider = ({ children }) => {
   }
 
   const updateComment = (data, id) => {
-    let storyData = apiData.stories.find((story) => story.id === id);
-    storyData.comments.push(data);
+    let updatedStory = apiData.stories.find((story) => story.id === id);
+    updatedStory.comments.unshift(data);
+
     setApiData({ ...apiData, stories: apiData.stories });
   };
 
