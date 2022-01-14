@@ -9,7 +9,7 @@ import {
 const APIContext = createContext();
 
 export const APIContextProvider = ({ children }) => {
-  let [apiData, setApiData] = useState({});
+  const [apiData, setApiData] = useState({});
 
   function fetchDataToState() {
     const args = Array.from(arguments);
