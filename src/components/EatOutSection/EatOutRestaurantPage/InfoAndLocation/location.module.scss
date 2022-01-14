@@ -4,8 +4,7 @@
     margin-top: $margin-top-m;
 
     &Header {
-        font-weight: $font-weight-bold;
-        padding-bottom: 1rem;
+        padding-bottom: $section-header-bottom-space;
     }
 
     &Map {

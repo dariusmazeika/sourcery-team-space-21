@@ -26,6 +26,10 @@ export const NewPlacesSection = ({ data }) => {
     arrows: false,
   };
 
+  const sortedRestaurants = data?.restaurants
+    ? data.restaurants.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1))
+    : [];
+
   return (
     <>
       <div className={styles.newPlacesTop}>
@@ -34,7 +38,7 @@ export const NewPlacesSection = ({ data }) => {
       </div>
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
-          {data.restaurants?.map((restaurant) => (
+          {sortedRestaurants.map((restaurant) => (
             <RestaurantCard
               key={restaurant.id}
               data={restaurant}

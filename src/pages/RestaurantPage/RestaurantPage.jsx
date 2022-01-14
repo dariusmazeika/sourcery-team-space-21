@@ -33,25 +33,23 @@ export const RestaurantPage = () => {
     <>
       {filteredRestaurant && (
         <>
-          <PageContainer>
-            <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
+          <PageContainer isFullWidth={true}>
+            <PageContainer>
+              <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
+            </PageContainer>
+            <RestaurantBanner data={filteredRestaurant} />
           </PageContainer>
-          <RestaurantBanner data={filteredRestaurant} />
-          <PageContainer>
-            <div className={styles.restaurantPageSection}>
-              <div className={styles.infoAndLocationItem}>
-                <Information
-                  address={filteredRestaurant.location.address}
-                  website={filteredRestaurant.website}
-                  phone={filteredRestaurant.phone}
-                  openingHours={filteredRestaurant.openingHours}
-                />
-                <Location
-                  coordinates={filteredRestaurant.location.coordinates}
-                />
-              </div>
-              <ReviewsSection reviews={filteredRestaurant.reviews} />
+          <PageContainer className={styles.restaurantPageSection}>
+            <div className={styles.infoAndLocationItem}>
+              <Information
+                address={filteredRestaurant.location.address}
+                website={filteredRestaurant.website}
+                phone={filteredRestaurant.phone}
+                openingHours={filteredRestaurant.openingHours}
+              />
+              <Location coordinates={filteredRestaurant.location.coordinates} />
             </div>
+            <ReviewsSection reviews={filteredRestaurant.reviews} />
           </PageContainer>
         </>
       )}

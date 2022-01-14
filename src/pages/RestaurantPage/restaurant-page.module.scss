@@ -3,9 +3,11 @@
 
 .restaurantPageSection {
     @include layout-section-base;
-    flex-wrap: wrap;
+    column-gap: $flex-column-gap;
+    margin-top: 2.8rem;
 }
 
 .infoAndLocationItem {
     max-width: 89rem;
+    min-width: 70rem;
 }
