@@ -16,23 +16,21 @@ export const NewsAndStoriesSections = ({ stories }) => {
   return (
     <>
       <h3>News and Stories</h3>
-      <div>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className={styles.masonryGrid}
-          columnClassName={styles.masonryGridColumn}
-        >
-          {stories?.map((story) => (
-            <div key={story.id}>
-              {story.type === "birthday" ? (
-                <BirthdayCard data={story} />
-              ) : (
-                <StoriesPost data={story} />
-              )}
-            </div>
-          ))}
-        </Masonry>
-      </div>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className={styles.masonryGrid}
+        columnClassName={styles.masonryGridColumn}
+      >
+        {stories?.map((story) => (
+          <div key={story.id}>
+            {story.type === "birthday" ? (
+              <BirthdayCard data={story} />
+            ) : (
+              <StoriesPost data={story} />
+            )}
+          </div>
+        ))}
+      </Masonry>
     </>
   );
 };
