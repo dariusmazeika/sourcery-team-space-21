@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import {
   HelloWidget,
   ReservationsWidget,
@@ -7,20 +6,16 @@ import {
   PageContainer,
   WeatherWidget,
   StoriesPost,
+  Spinner,
 } from "components";
-
-import { Spinner } from "components/Spinner";
 import { useAPI } from "features/context/APIContext";
 import styles from "./DashboardPage.module.scss";
 
 export const DashboardPage = () => {
-  const [data, getData, , isLoading, resetIsLoading] = useAPI();
+  const [data, getData, , isLoading] = useAPI();
 
   useEffect(() => {
     getData("userData", "restaurants", "weather", "stories");
-    return function cleanup() {
-      resetIsLoading();
-    };
   }, []); // eslint-disable-line
 
   const weekDayFull = new Intl.DateTimeFormat("en-US", {

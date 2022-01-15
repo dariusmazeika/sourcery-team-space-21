@@ -6,10 +6,8 @@ const APIContext = createContext();
 
 export const APIContextProvider = ({ children }) => {
   const [apiData, setApiData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-
-  const resetIsLoading = () => setIsLoading(true);
 
   function fetchDataToState() {
     const args = Array.from(arguments);
@@ -19,27 +17,21 @@ export const APIContextProvider = ({ children }) => {
     fetchData(args).then((data) => {
       setApiData({ ...apiData, ...data.data });
       setHasError(data.hasError);
-      setTimeout(() => setIsLoading(false), 500);
+      setTimeout(() => setIsLoading(false), 100);
     });
   }
 
-  const updateComment = (data, id) => {
-    let updatedStory = apiData.stories.find((story) => story.id === id);
-    updatedStory.comments.unshift(data);
+  const updateComment = (comment, id) => {
+    const stories = [...apiData.stories];
+    const updatedStory = stories.find((story) => story.id === id);
+    updatedStory.comments.unshift(comment);
 
-    setApiData({ ...apiData, stories: apiData.stories });
+    setApiData({ ...apiData, stories: [...stories] });
   };
 
   return (
     <APIContext.Provider
-      value={[
-        apiData,
-        fetchDataToState,
-        updateComment,
-        isLoading,
-        resetIsLoading,
-        hasError,
-      ]}
+      value={[apiData, fetchDataToState, updateComment, isLoading, hasError]}
     >
       {children}
     </APIContext.Provider>
