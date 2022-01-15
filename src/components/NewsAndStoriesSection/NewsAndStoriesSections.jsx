@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { BirthdayCard } from "../BirthdayCard";
 import { StoriesPost } from "../StoriesPost";
 import Masonry from "react-masonry-css";
-import "./mansonry.css";
+import styles from "./_mansonry.module.scss";
 
 export const NewsAndStoriesSections = ({ stories }) => {
   const breakpointColumnsObj = {
@@ -19,17 +19,17 @@ export const NewsAndStoriesSections = ({ stories }) => {
       <div>
         <Masonry
           breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
+          className={styles.masonryGrid}
+          columnClassName={styles.masonryGridColumn}
         >
           {stories?.map((story) => (
-            <span key={story.id}>
+            <div key={story.id}>
               {story.type === "birthday" ? (
                 <BirthdayCard data={story} />
               ) : (
                 <StoriesPost data={story} />
               )}
-            </span>
+            </div>
           ))}
         </Masonry>
       </div>
