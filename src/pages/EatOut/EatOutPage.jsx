@@ -7,7 +7,7 @@ import { PageContainer } from "components/PageContainer/PageContainer";
 import { Spinner } from "components/Spinner/Spinner";
 
 export const EatOutPage = () => {
-  const [data, getData, isLoading, resetIsLoading] = useAPI();
+  const [data, getData, , isLoading, resetIsLoading] = useAPI();
 
   useEffect(() => {
     getData("restaurants");

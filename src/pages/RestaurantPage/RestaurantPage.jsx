@@ -11,7 +11,7 @@ import { PageContainer } from "components/PageContainer/PageContainer";
 import { Spinner } from "components/Spinner/Spinner";
 
 export const RestaurantPage = () => {
-  const [data, getData, isLoading, resetIsLoading] = useAPI();
+  const [data, getData, , isLoading, resetIsLoading] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
