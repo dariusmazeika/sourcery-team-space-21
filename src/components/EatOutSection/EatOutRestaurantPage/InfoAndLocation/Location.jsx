@@ -7,7 +7,7 @@ import { Spinner } from "components/Spinner/Spinner";
 
 function Location({ coordinates }) {
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyD1nocQYWn8zgzb_GZig6NRZ_CAVomFCfM",
+    googleMapsApiKey: process.env.REACT_APP_LOCATION_API_KEY,
   });
 
   const renderMap = () => {
