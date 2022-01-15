@@ -17,3 +17,4 @@ export * from "./SliderArrows";
 export * from "./UserProfileWidget";
 export * from "./StoriesPost";
 export * from "./EatOutSection/";
+export * from "./WeatherWidget";

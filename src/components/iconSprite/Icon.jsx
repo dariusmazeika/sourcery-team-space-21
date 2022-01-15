@@ -53,6 +53,8 @@ Icon.propTypes = {
     "icon-location-map-pin",
     "icon-left-arrow",
     "icon-right-arrow",
+    "icon-weather-wind",
+    "icon-weather-droplet",
     "icon-other-gift",
     "icon-message-box-circle",
   ]),
