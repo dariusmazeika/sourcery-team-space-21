@@ -8,10 +8,9 @@ import { Information } from "components/EatOutSection/EatOutRestaurantPage/InfoA
 import styles from "./restaurant-page.module.scss";
 import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
 import { PageContainer } from "components/PageContainer/PageContainer";
-import { Spinner } from "components/Spinner/Spinner";
 
 export const RestaurantPage = () => {
-  const [data, getData, , isLoading, resetIsLoading] = useAPI();
+  const [data, getData] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
@@ -23,10 +22,6 @@ export const RestaurantPage = () => {
 
   useEffect(() => {
     getData("restaurants", "userData");
-
-    return function cleanup() {
-      resetIsLoading();
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -36,8 +31,7 @@ export const RestaurantPage = () => {
 
   return (
     <>
-      {filteredRestaurant && isLoading && <Spinner />}
-      {filteredRestaurant && !isLoading && (
+      {filteredRestaurant && (
         <>
           <PageContainer isFullWidth={true}>
             <PageContainer>
