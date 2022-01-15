@@ -4,7 +4,7 @@ import styles from "./spinner.module.scss";
 export const Spinner = () => {
   return (
     <div className={styles.loader}>
-      <p className={styles.elementIsHidden}>Content is loading...</p>
+      <p className="elementIsHidden">Content is loading...</p>
     </div>
   );
 };

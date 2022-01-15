@@ -18,10 +18,9 @@ $spinner-static-color: $color-ghost;
         left: 50%;
         opacity: inherit;
         position: absolute;
-        transform: translate3d(-50%, -50%, 0);
+        transform: translate(-50%, -50%, 0);
         transform-origin: center;
         width: 40px;
-        will-change: transform;
     }
 }
 
@@ -33,15 +32,4 @@ $spinner-static-color: $color-ghost;
     100% {
         transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
-}
-
-.elementIsHidden {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
 }
