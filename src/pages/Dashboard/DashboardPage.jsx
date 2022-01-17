@@ -1,22 +1,19 @@
 import React, { useEffect } from "react";
-
 import {
   HelloWidget,
   ReservationsWidget,
   EatOutSection,
   PageContainer,
   WeatherWidget,
-  StoriesPost,
+  Spinner,
+  NewsAndStoriesSections,
 } from "components";
-
 import { useAPI } from "features/context/APIContext";
-
 import styles from "./DashboardPage.module.scss";
 
 export const DashboardPage = () => {
-  const [data, getData] = useAPI();
+  const [data, getData, , isLoading] = useAPI();
 
-  //TODO: add useEffect dependencies
   useEffect(() => {
     getData("userData", "restaurants", "weather", "stories");
   }, []); // eslint-disable-line
@@ -31,24 +28,24 @@ export const DashboardPage = () => {
 
   return (
     <PageContainer>
-      <section className={styles.dashboardSection}>
-        <HelloWidget />
-        {data.weather && <WeatherWidget data={weatherToday} />}
-      </section>
-      <section className={styles.dashboardSection}>
-        <ReservationsWidget data={{ userData: data.userData }} />
-      </section>
-      <section className={styles.dashboardSection}>
-        <EatOutSection data={data} />
-      </section>
-      <section>
-        <h3>News and Stories</h3>
-        <div className={styles.storiesPostContainer}>
-          {data?.stories?.map((story) => (
-            <StoriesPost data={story} key={story.id} />
-          ))}
-        </div>
-      </section>
+      {isLoading && <Spinner />}
+      {!isLoading && (
+        <>
+          <section className={styles.dashboardSection}>
+            <HelloWidget />
+            {data.weather && <WeatherWidget data={weatherToday} />}
+          </section>
+          <section className={styles.dashboardSection}>
+            <ReservationsWidget data={{ userData: data.userData }} />
+          </section>
+          <section className={styles.dashboardSection}>
+            <EatOutSection data={data} />
+          </section>
+          <section>
+            <NewsAndStoriesSections stories={data.stories} />
+          </section>
+        </>
+      )}
     </PageContainer>
   );
 };

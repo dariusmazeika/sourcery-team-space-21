@@ -10,7 +10,7 @@ import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
 import { PageContainer } from "components/PageContainer/PageContainer";
 
 export const RestaurantPage = () => {
-  const [contextData, fetchContextData] = useAPI();
+  const [data, getData] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
@@ -21,11 +21,11 @@ export const RestaurantPage = () => {
   };
 
   useEffect(() => {
-    fetchContextData("restaurants", "userData");
+    getData("restaurants", "userData");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const filteredRestaurant = contextData?.restaurants?.find(
+  const filteredRestaurant = data?.restaurants?.find(
     (restaurant) => restaurant.id === restaurantId
   );
 
