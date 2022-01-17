@@ -13,6 +13,7 @@
     &List {
         display: flex;
         flex-direction: row;
+        font-size: $font-size-s;
         list-style: none;
 
         &Item:not(:last-child)::after {

@@ -1,16 +1,32 @@
 import { endpoints } from "./endpoints";
+import { processRestaurantData } from "features/data/processRestaurantData";
+import { toast } from "react-toastify";
 
 async function fetchData(endpointNames) {
+  const promises = endpointNames.map((e) =>
+    fetch(endpoints[e]).then((response) => response.json())
+  );
+
   const requestData = await Promise.all(
-    endpointNames.map((e) =>
-      fetch(endpoints[e]).then((response) => response.json())
+    promises.map((p) =>
+      p.catch((e) => {
+        toast.error(`${e}`, { theme: "colored" });
+        return e;
+      })
     )
   );
+  const validData = requestData.filter((data) => !(data instanceof Error));
+
+  const hasError = validData.length < requestData.length;
+
   const formattedData = {};
+
   requestData.forEach((i) => {
     Object.assign(formattedData, i);
   });
-  return formattedData;
+
+  const processedData = processRestaurantData(formattedData);
+  return { data: processedData, hasError: hasError };
 }
 
 export default fetchData;

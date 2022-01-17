@@ -4,19 +4,26 @@ import { BreadCrumbs } from "components/Breadcrumbs";
 import { HeroSliderSection } from "components/EatOutSection/HeroSliderSection/HeroSliderSection";
 import { NewPlacesSection } from "components/EatOutSection/NewPlacesSection/NewPlacesSection";
 import { PageContainer } from "components/PageContainer/PageContainer";
+import { Spinner } from "components/Spinner/Spinner";
 
 export const EatOutPage = () => {
-  const [data, getData] = useAPI();
+  const [data, getData, , isLoading] = useAPI();
 
   useEffect(() => {
     getData("restaurants");
-  }, []); // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <PageContainer>
       <BreadCrumbs />
-      <HeroSliderSection data={data} />
-      <NewPlacesSection data={data} />
+      {isLoading && <Spinner />}
+      {!isLoading && (
+        <>
+          <HeroSliderSection data={data} />
+          <NewPlacesSection data={data} />
+        </>
+      )}
     </PageContainer>
   );
 };

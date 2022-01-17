@@ -7,6 +7,14 @@ import { SliderArrows } from "components/SliderArrows/SliderArrows";
 import { RestaurantCard } from "../RestaurantCard/RestaurantCard";
 import PropTypes from "prop-types";
 
+const sliderSettingsNewPlaces = {
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  infinite: true,
+  dots: false,
+  arrows: false,
+};
+
 export const NewPlacesSection = ({ data }) => {
   const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
 
@@ -18,13 +26,11 @@ export const NewPlacesSection = ({ data }) => {
     sliderPlacesRef.slickPrev();
   };
 
-  const sliderSettingsNewPlaces = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    infinite: true,
-    dots: false,
-    arrows: false,
-  };
+  const sortedRestaurants = data?.restaurants
+    ? [...data.restaurants].sort((a, b) =>
+        a.createdDate > b.createdDate ? -1 : 1
+      )
+    : [];
 
   return (
     <>
@@ -34,7 +40,7 @@ export const NewPlacesSection = ({ data }) => {
       </div>
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
-          {data.restaurants?.map((restaurant) => (
+          {sortedRestaurants.map((restaurant) => (
             <RestaurantCard
               key={restaurant.id}
               data={restaurant}

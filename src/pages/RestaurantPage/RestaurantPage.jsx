@@ -8,10 +8,9 @@ import { Information } from "components/EatOutSection/EatOutRestaurantPage/InfoA
 import styles from "./restaurant-page.module.scss";
 import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
 import { PageContainer } from "components/PageContainer/PageContainer";
-import { SimilarPlacesSection } from "components/EatOutSection/SimilarPlacesSection/SimilarPlacesSection";
 
 export const RestaurantPage = () => {
-  const [contextData, fetchContextData] = useAPI();
+  const [data, getData] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
@@ -22,72 +21,35 @@ export const RestaurantPage = () => {
   };
 
   useEffect(() => {
-    fetchContextData("restaurants", "userData");
+    getData("restaurants", "userData");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const filteredRestaurant = contextData?.restaurants?.find(
+  const filteredRestaurant = data?.restaurants?.find(
     (restaurant) => restaurant.id === restaurantId
   );
-
-  const restaurantsList = contextData?.restaurants
-    ? contextData.restaurants
-    : [];
-
-  const currentRestaurantCategories = filteredRestaurant?.categories
-    ? filteredRestaurant.categories
-    : [];
-
-  const sortedRestaurantByCount = [];
-  const matchedRestaurants = restaurantsList.filter((restaurant) => {
-    const matchedCategories = restaurant.categories.filter((category) =>
-      currentRestaurantCategories.includes(category)
-    );
-    if (matchedCategories.length > 0) {
-      sortedRestaurantByCount.push({
-        restaurant,
-        matchedCategoriesCount: matchedCategories.length,
-      });
-    }
-    return matchedCategories.length > 0;
-  });
-
-  sortedRestaurantByCount
-    .sort((a, b) =>
-      a.matchedCategoriesCount > b.matchedCategoriesCount
-        ? -1
-        : b.matchedCategoriesCount > a.matchedCategoriesCount
-        ? 1
-        : 0
-    )
-    .map((item) => {
-      return { ...item.restaurant };
-    });
 
   return (
     <>
       {filteredRestaurant && (
         <>
-          <PageContainer>
-            <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
+          <PageContainer isFullWidth={true}>
+            <PageContainer>
+              <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
+            </PageContainer>
+            <RestaurantBanner data={filteredRestaurant} />
           </PageContainer>
-          <RestaurantBanner data={filteredRestaurant} />
-          <PageContainer>
-            <div className={styles.restaurantPageSection}>
-              <div className={styles.infoAndLocationItem}>
-                <Information
-                  address={filteredRestaurant.location.address}
-                  website={filteredRestaurant.website}
-                  phone={filteredRestaurant.phone}
-                  openingHours={filteredRestaurant.openingHours}
-                />
-                <Location
-                  coordinates={filteredRestaurant.location.coordinates}
-                />
-              </div>
-              <ReviewsSection reviews={filteredRestaurant.reviews} />
+          <PageContainer className={styles.restaurantPageSection}>
+            <div className={styles.infoAndLocationItem}>
+              <Information
+                address={filteredRestaurant.location.address}
+                website={filteredRestaurant.website}
+                phone={filteredRestaurant.phone}
+                openingHours={filteredRestaurant.openingHours}
+              />
+              <Location coordinates={filteredRestaurant.location.coordinates} />
             </div>
-            <SimilarPlacesSection data={{ restaurants: matchedRestaurants }} />
+            <ReviewsSection reviews={filteredRestaurant.reviews} />
           </PageContainer>
         </>
       )}

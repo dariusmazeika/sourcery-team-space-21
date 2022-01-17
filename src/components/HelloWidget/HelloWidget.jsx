@@ -1,9 +1,15 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useContext } from "react";
 import propTypes from "prop-types";
 import styles from "components/HelloWidget/hello-widget.module.scss";
 
-export const HelloWidget = ({ username = "Jonas", partofday }) => {
+import { UserContext } from "features";
+
+export const HelloWidget = ({ partofday }) => {
   const [clockState, setClockState] = useState();
+
+  const { userData } = useContext(UserContext);
+
+  const [firstName] = userData.userName.split(" ");
 
   const date = new Date();
   const curHr = date.getHours();
@@ -38,7 +44,7 @@ export const HelloWidget = ({ username = "Jonas", partofday }) => {
       <div className={styles.container}>
         <div className={styles.clock}>{clockState}</div>
         <div className={styles.text}>
-          Good {partofday}, {username}!
+          Good {partofday}, {firstName}!
         </div>
       </div>
     </>
