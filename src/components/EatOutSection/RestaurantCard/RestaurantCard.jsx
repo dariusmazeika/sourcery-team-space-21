@@ -8,8 +8,10 @@ import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
 import { StarRating } from "components/StarRating/StarRating";
 import cx from "classnames";
 import { Icon } from "components/iconSprite/Icon";
+import { useAPI } from "features/context/APIContext";
 
 export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
+  const [, , dispatch] = useAPI();
   const {
     categories,
     image,
@@ -64,7 +66,15 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
               <Link to={restaurantLink} className={styles.title}>
                 {name}
               </Link>
-              <FavoriteButton isFavorite={isLiked} />
+              <FavoriteButton
+                isFavorite={isLiked}
+                onClick={() =>
+                  dispatch({
+                    type: "likeRestaurant",
+                    payload: { id: id },
+                  })
+                }
+              />
             </div>
             <div className={styles.workingDaysWrapper}>{WorkingDays}</div>
           </div>

@@ -20,13 +20,6 @@ export const RestaurantPage = () => {
     ];
   };
 
-  const handleFavoriteButtonClick = () => {
-    dispatch({
-      type: "likeRestaurant",
-      payload: { id: filteredRestaurant.id },
-    });
-  };
-
   useEffect(() => {
     getData("restaurants", "userData");
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -44,10 +37,7 @@ export const RestaurantPage = () => {
             <PageContainer>
               <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
             </PageContainer>
-            <RestaurantBanner
-              data={filteredRestaurant}
-              handleFavoriteButtonClick={handleFavoriteButtonClick}
-            />
+            <RestaurantBanner data={filteredRestaurant} dispatch={dispatch} />
           </PageContainer>
           <PageContainer className={styles.restaurantPageSection}>
             <div className={styles.infoAndLocationItem}>

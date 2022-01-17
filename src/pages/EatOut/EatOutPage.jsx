@@ -10,7 +10,7 @@ export const EatOutPage = () => {
   const [{ data, isLoading }, getData] = useAPI();
 
   useEffect(() => {
-    getData("restaurants");
+    getData("restaurants", "userData");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
