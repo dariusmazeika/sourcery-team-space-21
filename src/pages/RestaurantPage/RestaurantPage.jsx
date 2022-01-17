@@ -8,6 +8,7 @@ import { Information } from "components/EatOutSection/EatOutRestaurantPage/InfoA
 import styles from "./restaurant-page.module.scss";
 import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
 import { PageContainer } from "components/PageContainer/PageContainer";
+import { SimilarPlacesSection } from "components/EatOutSection/SimilarPlacesSection/SimilarPlacesSection";
 
 export const RestaurantPage = () => {
   const [contextData, fetchContextData] = useAPI();
@@ -28,6 +29,40 @@ export const RestaurantPage = () => {
   const filteredRestaurant = contextData?.restaurants?.find(
     (restaurant) => restaurant.id === restaurantId
   );
+
+  const restaurantsList = contextData?.restaurants
+    ? contextData.restaurants
+    : [];
+
+  const currentRestaurantCategories = filteredRestaurant?.categories
+    ? filteredRestaurant.categories
+    : [];
+
+  const sortedRestaurantByCount = [];
+  const matchedRestaurants = restaurantsList.filter((restaurant) => {
+    const matchedCategories = restaurant.categories.filter((category) =>
+      currentRestaurantCategories.includes(category)
+    );
+    if (matchedCategories.length > 0) {
+      sortedRestaurantByCount.push({
+        restaurant,
+        matchedCategoriesCount: matchedCategories.length,
+      });
+    }
+    return matchedCategories.length > 0;
+  });
+
+  sortedRestaurantByCount
+    .sort((a, b) =>
+      a.matchedCategoriesCount > b.matchedCategoriesCount
+        ? -1
+        : b.matchedCategoriesCount > a.matchedCategoriesCount
+        ? 1
+        : 0
+    )
+    .map((item) => {
+      return { ...item.restaurant };
+    });
 
   return (
     <>
@@ -52,6 +87,7 @@ export const RestaurantPage = () => {
               </div>
               <ReviewsSection reviews={filteredRestaurant.reviews} />
             </div>
+            <SimilarPlacesSection data={{ restaurants: matchedRestaurants }} />
           </PageContainer>
         </>
       )}

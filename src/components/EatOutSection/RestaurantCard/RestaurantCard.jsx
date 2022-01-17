@@ -80,7 +80,7 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
               size="medium"
             />
             <a className={styles.bottomTextWebsiteLink} href={data.website}>
-              {data.website}
+              {data.website.split("/")[2]}
             </a>
           </div>
           <div className={styles.bottomTextLocation}>

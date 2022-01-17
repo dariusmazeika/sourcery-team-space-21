@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+import styles from "./similar-places-section.module.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { SliderArrows } from "components/SliderArrows/SliderArrows";
+import { RestaurantCard } from "../RestaurantCard/RestaurantCard";
+import PropTypes from "prop-types";
+
+export const SimilarPlacesSection = ({ data }) => {
+  const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
+
+  const nextPlacesSlide = () => {
+    sliderPlacesRef.slickNext();
+  };
+
+  const prevPlacesSlide = () => {
+    sliderPlacesRef.slickPrev();
+  };
+
+  const sliderSettingsNewPlaces = {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    infinite: true,
+    dots: false,
+    arrows: false,
+  };
+
+  return (
+    <>
+      <div className={styles.newPlacesTop}>
+        <h2 className={styles.newPlacesTopTitle}>Similar places</h2>
+        <SliderArrows next={nextPlacesSlide} prev={prevPlacesSlide} />
+      </div>
+      <div className={styles.newPlacesSlidesContainer}>
+        <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
+          {data.restaurants?.map((restaurant) => (
+            <RestaurantCard
+              key={restaurant.id}
+              data={restaurant}
+              renderMoreInfo={true}
+              className={styles.restaurantCard}
+            />
+          ))}
+        </Slider>
+      </div>
+    </>
+  );
+};
+
+SimilarPlacesSection.propTypes = {
+  data: PropTypes.object,
+};
