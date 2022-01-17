@@ -1,4 +1,4 @@
-const addLikedRestaurants = (data) => {
+export const addLikedRestaurants = (data) => {
   if (data && data.userData && data.restaurants) {
     const likedIDs = data.userData[0].liked.restaurants;
     const liked = new Set(likedIDs.map((restaurant) => restaurant.id));

@@ -1,5 +1,5 @@
 import { endpoints } from "./endpoints";
-import { processRestaurantData } from "features/data/processRestaurantData";
+import { processRestaurantData } from "utils";
 import { toast } from "react-toastify";
 
 async function fetchData(endpointNames) {
