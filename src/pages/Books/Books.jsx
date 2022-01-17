@@ -14,7 +14,7 @@ import styles from "./Books.module.scss";
 export const Books = () => {
   const [searchResults, setSearchResults] = useState([]);
 
-  const [data, getData] = useAPI();
+  const [{ data }, getData] = useAPI();
 
   useEffect(() => {
     getData("books");

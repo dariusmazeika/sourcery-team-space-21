@@ -14,7 +14,7 @@ import styles from "./Devices.module.scss";
 export const Devices = () => {
   const [searchResults, setSearchResults] = useState([]);
 
-  const [data, getData] = useAPI();
+  const [{ data }, getData] = useAPI();
 
   useEffect(() => {
     getData("devices");
