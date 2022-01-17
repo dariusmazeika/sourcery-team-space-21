@@ -57,6 +57,8 @@ Icon.propTypes = {
     "icon-weather-droplet",
     "icon-other-gift",
     "icon-message-box-circle",
+    "icon-search",
+    "icon-search-light",
   ]),
   size: PropTypes.oneOf(Object.values(Size)),
   className: PropTypes.string,
