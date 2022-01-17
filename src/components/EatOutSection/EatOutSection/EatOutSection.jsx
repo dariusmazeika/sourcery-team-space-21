@@ -4,14 +4,11 @@ import styles from "./eatOutSection.module.scss";
 import { BrowseCard } from "components/EatOutSection";
 import { RestaurantCard } from "components/EatOutSection";
 
-const getBestRated = (restaurants) => {
-  restaurants.sort((a, b) => (a.rating < b.rating ? 1 : -1));
-  return restaurants.slice(0, 2);
-};
-
 export const EatOutSection = ({ data }) => {
-  const bestRestaurants = data.restaurants
-    ? getBestRated(data.restaurants)
+  const bestTwoRestaurants = data?.restaurants
+    ? [...data.restaurants]
+        .sort((a, b) => (a.rating < b.rating ? 1 : -1))
+        .slice(0, 2)
     : [];
 
   return (
@@ -19,7 +16,7 @@ export const EatOutSection = ({ data }) => {
       <li className={styles.widgetListBoxItem}>
         <BrowseCard />
       </li>
-      {bestRestaurants.map((restaurantData) => (
+      {bestTwoRestaurants.map((restaurantData) => (
         <li key={restaurantData.id} className={styles.widgetListBoxItem}>
           <RestaurantCard data={restaurantData} />
         </li>
