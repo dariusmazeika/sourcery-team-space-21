@@ -5,8 +5,8 @@ import {
   EatOutSection,
   PageContainer,
   WeatherWidget,
-  StoriesPost,
   Spinner,
+  NewsAndStoriesSections,
 } from "components";
 import { useAPI } from "features/context/APIContext";
 import styles from "./DashboardPage.module.scss";
@@ -42,12 +42,7 @@ export const DashboardPage = () => {
             <EatOutSection data={data} />
           </section>
           <section>
-            <h3>News and Stories</h3>
-            <div className={styles.storiesPostContainer}>
-              {data?.stories?.map((story) => (
-                <StoriesPost data={story} key={story.id} />
-              ))}
-            </div>
+            <NewsAndStoriesSections stories={data.stories} />
           </section>
         </>
       )}

@@ -19,3 +19,4 @@ export * from "./StoriesPost";
 export * from "./EatOutSection/";
 export * from "./WeatherWidget";
 export * from "./Spinner";
+export * from "./NewsAndStoriesSection";
