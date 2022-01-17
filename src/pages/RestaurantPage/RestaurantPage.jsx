@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { useAPI } from "features/context/APIContext";
+import { useParams } from "react-router-dom";
+
+import styles from "./restaurant-page.module.scss";
+import Location from "components/EatOutSection/EatOutRestaurantPage/InfoAndLocation/Location";
+
 import { RestaurantBanner } from "components/RestaurantBanner";
 import { ReviewsSection } from "components/EatOutSection";
-import { useParams } from "react-router-dom";
-import Location from "components/EatOutSection/EatOutRestaurantPage/InfoAndLocation/Location";
 import { Information } from "components/EatOutSection/EatOutRestaurantPage/InfoAndLocation/Information";
-import styles from "./restaurant-page.module.scss";
 import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
 import { PageContainer } from "components/PageContainer/PageContainer";
+import { SimilarPlacesSection } from "components/EatOutSection";
 
 export const RestaurantPage = () => {
   const [data, getData] = useAPI();
@@ -50,6 +53,12 @@ export const RestaurantPage = () => {
               <Location coordinates={filteredRestaurant.location.coordinates} />
             </div>
             <ReviewsSection reviews={filteredRestaurant.reviews} />
+          </PageContainer>
+          <PageContainer>
+            <SimilarPlacesSection
+              data={data}
+              currentRestaurant={filteredRestaurant}
+            />
           </PageContainer>
         </>
       )}

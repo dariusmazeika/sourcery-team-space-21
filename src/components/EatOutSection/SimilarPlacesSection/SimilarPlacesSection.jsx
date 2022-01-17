@@ -1,14 +1,42 @@
 import React, { useState } from "react";
-import styles from "./similar-places-section.module.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { SliderArrows } from "components/SliderArrows/SliderArrows";
-import { RestaurantCard } from "../RestaurantCard/RestaurantCard";
 import PropTypes from "prop-types";
 
-export const SimilarPlacesSection = ({ data }) => {
+import { SliderArrows } from "components/SliderArrows/SliderArrows";
+import { RestaurantCard } from "../RestaurantCard/RestaurantCard";
+
+import styles from "./similar-places-section.module.scss";
+import Slider from "react-slick";
+
+export const SimilarPlacesSection = ({ data, currentRestaurant }) => {
   const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
+  let helperRestaurantsArray = [];
+  let filteredRestaurantsByCategories = [];
+
+  const filterRestaurantsByCategories = () => {
+    data.restaurants.forEach((restaurant) => {
+      const intersection = restaurant.categories.filter((element) => {
+        return currentRestaurant.categories.includes(element);
+      });
+
+      helperRestaurantsArray.push({
+        ...restaurant,
+        matchCount: intersection.length,
+      });
+
+      filteredRestaurantsByCategories = helperRestaurantsArray
+        .filter((restaurant) => restaurant.matchCount > 0)
+        .sort((firstEl, secondEl) =>
+          firstEl.matchCount > secondEl.matchCount
+            ? -1
+            : secondEl.matchCount > firstEl.matchCount
+            ? 1
+            : 0
+        )
+        .filter((restaurant) => restaurant.id !== currentRestaurant.id);
+    });
+  };
+
+  filterRestaurantsByCategories();
 
   const nextPlacesSlide = () => {
     sliderPlacesRef.slickNext();
@@ -21,7 +49,7 @@ export const SimilarPlacesSection = ({ data }) => {
   const sliderSettingsNewPlaces = {
     slidesToShow: 3,
     slidesToScroll: 3,
-    infinite: true,
+    infinite: filteredRestaurantsByCategories.length > 1,
     dots: false,
     arrows: false,
   };
@@ -29,12 +57,14 @@ export const SimilarPlacesSection = ({ data }) => {
   return (
     <>
       <div className={styles.newPlacesTop}>
-        <h2 className={styles.newPlacesTopTitle}>Similar places</h2>
-        <SliderArrows next={nextPlacesSlide} prev={prevPlacesSlide} />
+        <h2 className={"heading2-alt"}>Also you could like</h2>
+        {filteredRestaurantsByCategories.length > 1 && (
+          <SliderArrows next={nextPlacesSlide} prev={prevPlacesSlide} />
+        )}
       </div>
       <div className={styles.newPlacesSlidesContainer}>
         <Slider ref={setSliderPlacesRef} {...sliderSettingsNewPlaces}>
-          {data.restaurants?.map((restaurant) => (
+          {filteredRestaurantsByCategories?.map((restaurant) => (
             <RestaurantCard
               key={restaurant.id}
               data={restaurant}
@@ -50,4 +80,5 @@ export const SimilarPlacesSection = ({ data }) => {
 
 SimilarPlacesSection.propTypes = {
   data: PropTypes.object,
+  currentRestaurant: PropTypes.object,
 };
