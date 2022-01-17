@@ -32,6 +32,7 @@ export const Button = ({
   kind = "primary",
   size,
   color,
+  onClick,
 }) => {
   return (
     <button
@@ -45,6 +46,7 @@ export const Button = ({
         [styles.large]: size === Size.LARGE,
         [styles.small]: size === Size.SMALL,
       })}
+      onClick={onClick}
     >
       {children}
     </button>
@@ -60,4 +62,5 @@ Button.propTypes = {
   size: PropTypes.oneOf(Object.values(Size)),
   color: PropTypes.oneOf(Object.values(Color)),
   type: PropTypes.oneOf(Object.values(Type)),
+  onClick: PropTypes.func,
 };
