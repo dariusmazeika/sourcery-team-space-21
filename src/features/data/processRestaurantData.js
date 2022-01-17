@@ -1,4 +1,4 @@
-export const addLikedRestaurants = (data) => {
+const addLikedRestaurants = (data) => {
   if (data && data.userData && data.restaurants) {
     const likedIDs = data.userData[0].liked.restaurants;
     const liked = new Set(likedIDs.map((restaurant) => restaurant.id));
@@ -14,7 +14,7 @@ export const addLikedRestaurants = (data) => {
   }
 };
 
-export const addRestaurantRatings = (data) => {
+const addRestaurantRatings = (data) => {
   if (data && data.restaurants) {
     let ratings = [];
     const initRestaurants = data.restaurants;
@@ -37,3 +37,6 @@ export const addRestaurantRatings = (data) => {
     return data;
   }
 };
+
+export const processRestaurantData = (data) =>
+  addLikedRestaurants(addRestaurantRatings(data));

@@ -37,6 +37,7 @@ export const StoriesPost = ({
     <div className={styles.postContent}>
       {postVideo ? (
         <ReactPlayer
+          playing={true}
           className={styles.reactPlayer}
           controls
           light={postCover}
