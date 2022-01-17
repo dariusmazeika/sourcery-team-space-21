@@ -1,24 +1,42 @@
 import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import styles from "./location.module.scss";
 import PropTypes from "prop-types";
+import styles from "./location.module.scss";
 import cx from "classnames";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { Spinner } from "components/Spinner/Spinner";
 
 function Location({ coordinates }) {
+  const { isLoaded, loadError } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_LOCATION_API_KEY,
+  });
+
+  const renderMap = () => {
+    return (
+      <GoogleMap
+        mapContainerClassName={styles.locationContainerMap}
+        center={coordinates}
+        zoom={15}
+      >
+        {<Marker position={coordinates} />}
+      </GoogleMap>
+    );
+  };
+
   return (
     <div className={styles.locationContainer}>
       <h2 className={cx(styles.locationContainerHeader, "heading2-alt")}>
         Location
       </h2>
-      <LoadScript googleMapsApiKey="AIzaSyD1nocQYWn8zgzb_GZig6NRZ_CAVomFCfM">
-        <GoogleMap
-          mapContainerClassName={styles.locationContainerMap}
-          center={coordinates}
-          zoom={15}
-        >
-          {<Marker position={coordinates} />}
-        </GoogleMap>
-      </LoadScript>
+
+      {loadError ? (
+        <div className={cx(styles.locationContainerMap, styles.errorMessage)}>
+          <p>Map cannot be loaded right now, sorry.</p>
+        </div>
+      ) : isLoaded ? (
+        renderMap()
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 }
