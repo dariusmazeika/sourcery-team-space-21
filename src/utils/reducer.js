@@ -1,4 +1,5 @@
 import { addLikedRestaurants } from "./restaurantDataHelpers";
+import { addLikedStories } from "./storiesDataHelpers";
 
 export const reducer = (state, action) => {
   let newState;
@@ -52,6 +53,49 @@ export const reducer = (state, action) => {
               },
             },
           ],
+        });
+
+        newState = { ...state, data: updatedData };
+      }
+      break;
+
+    case "likeStory":
+      {
+        const initLikedStories = state.data.userData[0].liked.stories;
+        let updatedLikedStories = initLikedStories.filter(
+          (story) => story.id !== action.payload.id
+        );
+
+        let addLikes = 0;
+
+        if (updatedLikedStories.length >= initLikedStories.length) {
+          updatedLikedStories = [
+            ...updatedLikedStories,
+            { id: action.payload.id },
+          ];
+          addLikes = 1;
+        } else {
+          addLikes = -1;
+        }
+
+        const updatedStories = state.data.stories.map((story) =>
+          story.id === action.payload.id
+            ? { ...story, likes: story.likes + addLikes }
+            : story
+        );
+
+        const updatedData = addLikedStories({
+          ...state.data,
+          userData: [
+            {
+              ...state.data.userData[0],
+              liked: {
+                ...state.data.userData[0].liked,
+                stories: updatedLikedStories,
+              },
+            },
+          ],
+          stories: [...updatedStories],
         });
 
         newState = { ...state, data: updatedData };

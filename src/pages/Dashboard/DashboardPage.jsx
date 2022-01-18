@@ -12,7 +12,7 @@ import { useAPI } from "features/context/APIContext";
 import styles from "./DashboardPage.module.scss";
 
 export const DashboardPage = () => {
-  const [{ data, isLoading }, getData] = useAPI();
+  const [{ data, isLoading }, getData, dispatch] = useAPI();
 
   useEffect(() => {
     getData("userData", "restaurants", "weather", "stories");
@@ -42,7 +42,10 @@ export const DashboardPage = () => {
             <EatOutSection data={data} />
           </section>
           <section>
-            <NewsAndStoriesSections stories={data.stories} />
+            <NewsAndStoriesSections
+              stories={data.stories}
+              dispatch={dispatch}
+            />
           </section>
         </>
       )}

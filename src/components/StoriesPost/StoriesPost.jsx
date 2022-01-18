@@ -23,7 +23,9 @@ export const StoriesPost = ({
     postCover,
     likes,
     comments,
+    isLiked,
   },
+  dispatch,
 }) => (
   <BlankCard className={styles.post}>
     <div className={styles.postHeader}>
@@ -57,7 +59,15 @@ export const StoriesPost = ({
     </div>
     <div className={styles.postStatistics}>
       <div className={styles.postStatisticsWrapper}>
-        <FavoriteButton />
+        <FavoriteButton
+          isFavorite={isLiked}
+          onClick={() =>
+            dispatch({
+              type: "likeStory",
+              payload: { id: id },
+            })
+          }
+        />
         <p className={styles.postStatisticsWrapperText}>{likes}</p>
       </div>
       <span className={styles.postStatisticsWrapperDivider} />
@@ -76,4 +86,5 @@ export const StoriesPost = ({
 
 StoriesPost.propTypes = {
   data: PropTypes.object,
+  dispatch: PropTypes.func,
 };

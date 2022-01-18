@@ -5,14 +5,14 @@ import { StoriesPost } from "../StoriesPost";
 import Masonry from "react-masonry-css";
 import styles from "./_mansonry.module.scss";
 
-export const NewsAndStoriesSections = ({ stories }) => {
-  const breakpointColumnsObj = {
-    default: 3,
-    1400: 3,
-    1100: 2,
-    900: 1,
-  };
+const breakpointColumnsObj = {
+  default: 3,
+  1400: 3,
+  1100: 2,
+  900: 1,
+};
 
+export const NewsAndStoriesSections = ({ stories, dispatch }) => {
   return (
     <>
       <h3>News and Stories</h3>
@@ -26,7 +26,7 @@ export const NewsAndStoriesSections = ({ stories }) => {
             {story.type === "birthday" ? (
               <BirthdayCard data={story} />
             ) : (
-              <StoriesPost data={story} />
+              <StoriesPost data={story} dispatch={dispatch} />
             )}
           </div>
         ))}
@@ -37,4 +37,5 @@ export const NewsAndStoriesSections = ({ stories }) => {
 
 NewsAndStoriesSections.propTypes = {
   stories: PropTypes.array,
+  dispatch: PropTypes.func,
 };
