@@ -8,6 +8,8 @@ import { CommentsSection } from "./CommentSection/CommentSection";
 import { timeDifference } from "utils";
 
 import styles from "./StoriesPost.module.scss";
+import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
+import { Icon } from "components/iconSprite/Icon";
 
 export const StoriesPost = ({
   data: {
@@ -52,6 +54,17 @@ export const StoriesPost = ({
           alt={`Post by ${userName}`}
         />
       )}
+    </div>
+    <div className={styles.postStatistics}>
+      <div className={styles.postStatistics1}>
+        <FavoriteButton />
+        <p className={styles.postsStatistics1Text}>{likes}</p>
+      </div>
+      <div className={styles.postStatistics2}>
+        <Icon className={styles.postIcon} />
+        <Icon name="icon-message-box-circle" size="large" />
+        <p className={styles.postsStatistics2Text}>{comments.length}</p>
+      </div>
     </div>
     <CommentsSection id={id} commentsData={comments} />
   </BlankCard>

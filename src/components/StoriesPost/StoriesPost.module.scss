@@ -50,6 +50,27 @@
             width: 100%;
         }
     }
+
+    &Statistics {
+        align-items: center;
+        display: flex;
+        margin-left: 1.5rem;
+        margin-top: 0.8rem;
+
+        &1,
+        &2 {
+            align-items: center;
+            color: $pale-sky;
+            display: flex;
+        }
+    }
+}
+
+.postsStatistics1Text,
+.postsStatistics2Text {
+    color: $pale-sky;
+    font-size: $font-size-s;
+    margin-left: 0.5rem;
 }
 
 .reactPlayer video {
