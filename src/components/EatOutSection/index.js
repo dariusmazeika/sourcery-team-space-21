@@ -7,3 +7,4 @@ export * from "./ReviewsSection";
 export * from "./Slide/Slide";
 export * from "./HeroSliderSection";
 export * from "./NewPlacesSection";
+export * from "./SimilarPlacesSection";

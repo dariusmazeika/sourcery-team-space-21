@@ -1,14 +1,15 @@
 import React from "react";
-import styles from "./restaurant-card.module.scss";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 import { BlankCard } from "components/EatOutSection";
 import { CheckIn } from "components/CheckIn/CheckIn";
 import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
 import { StarRating } from "components/StarRating/StarRating";
-import cx from "classnames";
 import { Icon } from "components/iconSprite/Icon";
 import { useAPI } from "features/context/APIContext";
+
+import styles from "./restaurant-card.module.scss";
 
 export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
   const [, , dispatch] = useAPI();
@@ -38,7 +39,7 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
   const description = data.description;
 
   return (
-    <BlankCard className={cx(className, styles.blankCard)}>
+    <BlankCard className={className}>
       <div className={styles.card} style={{ backgroundImage: `url(${image})` }}>
         {!renderMoreInfo && (
           <div className={styles.cardTopWrapper}>
@@ -78,7 +79,6 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
             </div>
             <div className={styles.workingDaysWrapper}>{WorkingDays}</div>
           </div>
-          <div className={styles.wishlist}></div>
         </div>
       </div>
       {renderMoreInfo && (
@@ -89,8 +89,13 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
               name="icon-location-globe"
               size="medium"
             />
-            <a className={styles.bottomTextWebsiteLink} href={data.website}>
-              {data.website}
+            <a
+              className={styles.bottomTextWebsiteLink}
+              href={data.website}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {data.website.split("/")[2]}
             </a>
           </div>
           <div className={styles.bottomTextLocation}>
@@ -107,9 +112,14 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
               : `${description.substr(0, 110)}\u2026 `}
           </p>
           <div className={styles.readMore}>
-            <Link to={data.id} className={styles.readMoreLink}>
+            <a
+              href={data.website}
+              rel="noopener noreferrer"
+              target="_blank"
+              className={styles.readMoreLink}
+            >
               Read More
-            </Link>
+            </a>
           </div>
         </div>
       )}
