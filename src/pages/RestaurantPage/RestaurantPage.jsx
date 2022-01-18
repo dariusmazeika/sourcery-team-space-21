@@ -55,10 +55,7 @@ export const RestaurantPage = () => {
             <ReviewsSection reviews={filteredRestaurant.reviews} />
           </PageContainer>
           <PageContainer>
-            <SimilarPlacesSection
-              data={data}
-              currentRestaurant={filteredRestaurant}
-            />
+            <SimilarPlacesSection />
           </PageContainer>
         </>
       )}
