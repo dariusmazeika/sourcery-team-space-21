@@ -8,7 +8,6 @@ import { FavoriteButton } from "components/favoriteButton/FavoriteButton";
 import { StarRating } from "components/StarRating/StarRating";
 import { Icon } from "components/iconSprite/Icon";
 
-import cx from "classnames";
 import styles from "./restaurant-card.module.scss";
 
 export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
@@ -38,7 +37,7 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
   const description = data.description;
 
   return (
-    <BlankCard className={cx(className)}>
+    <BlankCard className={className}>
       <div className={styles.card} style={{ backgroundImage: `url(${image})` }}>
         {!renderMoreInfo && (
           <div className={styles.cardTopWrapper}>
@@ -80,7 +79,12 @@ export const RestaurantCard = ({ data, className, renderMoreInfo = false }) => {
               name="icon-location-globe"
               size="medium"
             />
-            <a className={styles.bottomTextWebsiteLink} href={data.website}>
+            <a
+              className={styles.bottomTextWebsiteLink}
+              href={data.website}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               {data.website.split("/")[2]}
             </a>
           </div>

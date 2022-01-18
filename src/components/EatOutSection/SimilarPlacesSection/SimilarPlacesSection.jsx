@@ -9,7 +9,7 @@ import Slider from "react-slick";
 
 export const SimilarPlacesSection = ({ data, currentRestaurant }) => {
   const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
-  let helperRestaurantsArray = [];
+  let restaurantsWithMatchCount = [];
   let filteredRestaurantsByCategories = [];
 
   const filterRestaurantsByCategories = () => {
@@ -18,12 +18,12 @@ export const SimilarPlacesSection = ({ data, currentRestaurant }) => {
         return currentRestaurant.categories.includes(element);
       });
 
-      helperRestaurantsArray.push({
+      restaurantsWithMatchCount.push({
         ...restaurant,
         matchCount: intersection.length,
       });
 
-      filteredRestaurantsByCategories = helperRestaurantsArray
+      filteredRestaurantsByCategories = restaurantsWithMatchCount
         .filter((restaurant) => restaurant.matchCount > 0)
         .sort((firstEl, secondEl) =>
           firstEl.matchCount > secondEl.matchCount
