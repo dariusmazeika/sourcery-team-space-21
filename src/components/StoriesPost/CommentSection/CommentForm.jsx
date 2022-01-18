@@ -11,7 +11,7 @@ export const CommentForm = ({ id }) => {
   const { userData } = useContext(UserContext);
   let userImgSrc = userData.userImage ? userData.userImage : "";
   const { register, handleSubmit, reset } = useForm();
-  const [, , updateComment] = useAPI();
+  const [, , dispatch] = useAPI();
 
   const onSubmit = (data) => {
     const commentData = {
@@ -19,7 +19,10 @@ export const CommentForm = ({ id }) => {
       date: new Date(),
       userName: userData.userName,
     };
-    updateComment(commentData, id);
+    dispatch({
+      type: "updateComment",
+      payload: { comment: commentData, id: id },
+    });
     reset();
   };
   return (

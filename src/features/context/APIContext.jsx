@@ -1,38 +1,32 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import PropTypes from "prop-types";
 import fetchData from "features/data/fetchData";
+import { reducer } from "utils";
 
+const initState = { data: {}, isLoading: false, hasError: false };
 const APIContext = createContext();
 
 export const APIContextProvider = ({ children }) => {
-  const [apiData, setApiData] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initState);
 
   function fetchDataToState() {
     const args = Array.from(arguments);
-    setIsLoading(true);
-    setHasError(false);
+    dispatch({ type: "loading" });
 
-    fetchData(args).then((data) => {
-      setApiData({ ...apiData, ...data.data });
-      setHasError(data.hasError);
-      setTimeout(() => setIsLoading(false), 100);
+    fetchData(args).then((res) => {
+      setTimeout(
+        () =>
+          dispatch({
+            type: "loaded",
+            payload: { data: res.data, hasError: res.hasError },
+          }),
+        100
+      );
     });
   }
 
-  const updateComment = (comment, id) => {
-    const stories = [...apiData.stories];
-    const updatedStory = stories.find((story) => story.id === id);
-    updatedStory.comments.unshift(comment);
-
-    setApiData({ ...apiData, stories: [...stories] });
-  };
-
   return (
-    <APIContext.Provider
-      value={[apiData, fetchDataToState, updateComment, isLoading, hasError]}
-    >
+    <APIContext.Provider value={[state, fetchDataToState, dispatch]}>
       {children}
     </APIContext.Provider>
   );

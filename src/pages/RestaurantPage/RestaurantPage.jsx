@@ -10,7 +10,7 @@ import { BreadCrumbs } from "components/Breadcrumbs/Breadcrumbs";
 import { PageContainer } from "components/PageContainer/PageContainer";
 
 export const RestaurantPage = () => {
-  const [data, getData] = useAPI();
+  const [{ data }, getData, dispatch] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
@@ -37,7 +37,7 @@ export const RestaurantPage = () => {
             <PageContainer>
               <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
             </PageContainer>
-            <RestaurantBanner data={filteredRestaurant} />
+            <RestaurantBanner data={filteredRestaurant} dispatch={dispatch} />
           </PageContainer>
           <PageContainer className={styles.restaurantPageSection}>
             <div className={styles.infoAndLocationItem}>
