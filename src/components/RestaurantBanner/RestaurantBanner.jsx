@@ -5,7 +5,8 @@ import styles from "./RestaurantBanner.module.scss";
 import { PageContainer } from "components/PageContainer/PageContainer";
 
 export const RestaurantBanner = ({
-  data: { name, categories, image, checkIns, isLiked, rating },
+  data: { name, categories, image, checkIns, isLiked, rating, id },
+  dispatch,
 }) => {
   const imgStyle = {
     backgroundImage: `linear-gradient(89.13deg, #F6F7F8 0.75%, rgba(246, 247, 248, 0) 51.08%, #F6F7F8 99.25%), url(${image})`,
@@ -22,7 +23,13 @@ export const RestaurantBanner = ({
           ))}
         </div>
         <h1 className={styles.title}>{name}</h1>
-        <ActionBar checkIns={checkIns} isLiked={isLiked} rating={rating} />
+        <ActionBar
+          checkIns={checkIns}
+          isLiked={isLiked}
+          rating={rating}
+          dispatch={dispatch}
+          id={id}
+        />
       </PageContainer>
     </div>
   );
@@ -31,4 +38,5 @@ export const RestaurantBanner = ({
 RestaurantBanner.propTypes = {
   data: PropTypes.object,
   restaurantId: PropTypes.string,
+  dispatch: PropTypes.func,
 };
