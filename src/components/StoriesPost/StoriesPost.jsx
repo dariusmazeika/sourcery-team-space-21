@@ -60,7 +60,7 @@ export const StoriesPost = ({
         <FavoriteButton />
         <p className={styles.postStatisticsWrapperText}>{likes}</p>
       </div>
-      <span className={styles.postStatisticsWrapperDivider}></span>
+      <span className={styles.postStatisticsWrapperDivider} />
       <div className={styles.postStatisticsWrapper}>
         <Icon
           className={styles.postIcon}
