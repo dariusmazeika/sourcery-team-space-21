@@ -56,14 +56,14 @@ export const StoriesPost = ({
       )}
     </div>
     <div className={styles.postStatistics}>
-      <div className={styles.postStatistics1}>
+      <div className={styles.postStatisticsWrapper}>
         <FavoriteButton />
-        <p className={styles.postsStatistics1Text}>{likes}</p>
+        <p className={styles.postStatisticsWrapperText}>{likes}</p>
       </div>
-      <div className={styles.postStatistics2}>
+      <div className={styles.postStatisticsWrapper}>
         <Icon className={styles.postIcon} />
         <Icon name="icon-message-box-circle" size="large" />
-        <p className={styles.postsStatistics2Text}>{comments.length}</p>
+        <p className={styles.postStatisticsWrapperText}>{comments.length}</p>
       </div>
     </div>
     <CommentsSection id={id} commentsData={comments} />

@@ -57,20 +57,18 @@
         margin-left: 1.5rem;
         margin-top: 0.8rem;
 
-        &1,
-        &2 {
+        &Wrapper {
             align-items: center;
             color: $pale-sky;
             display: flex;
+
+            &Text {
+                color: $pale-sky;
+                font-size: $font-size-s;
+                margin-left: 0.5rem;
+            }
         }
     }
-}
-
-.postsStatistics1Text,
-.postsStatistics2Text {
-    color: $pale-sky;
-    font-size: $font-size-s;
-    margin-left: 0.5rem;
 }
 
 .reactPlayer video {
