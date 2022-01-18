@@ -28,36 +28,39 @@ export const BirthdayCard = ({
   const bDDay = bDDate.getDate();
 
   return (
-    <BlankCard className={styles.birthDayCardContainer}>
-      <div className={styles.birthdayCard}>
-        <div
-          className={styles.birthdayCardBackgroundImage}
-          style={{ backgroundImage: `url(${confettiImage})` }}
-        >
+    <>
+      <div className={styles.bdayCardTop} />
+      <BlankCard className={styles.birthDayCardContainer}>
+        <div className={styles.birthdayCard}>
           <div
-            className={styles.birthdayCardProfileImage}
-            style={{ backgroundImage: `url(${userImage})` }}
-          />
-          <div className={styles.birthdayCardUserName}>{userName}</div>
-          <div className={styles.birthdayCardBirthday}>
-            Celebrated a birthday on&nbsp;
-            <div className={styles.birthdayCardBirthdayDate}>
-              {bDMonth} {bDDay}
+            className={styles.birthdayCardBackgroundImage}
+            style={{ backgroundImage: `url(${confettiImage})` }}
+          >
+            <div
+              className={styles.birthdayCardProfileImage}
+              style={{ backgroundImage: `url(${userImage})` }}
+            />
+            <div className={styles.birthdayCardUserName}>{userName}</div>
+            <div className={styles.birthdayCardBirthday}>
+              Celebrated a birthday on&nbsp;
+              <div className={styles.birthdayCardBirthdayDate}>
+                {bDMonth} {bDDay}
+              </div>
+            </div>
+            <div className={styles.birthdayCardWish}>Send a wish!</div>
+          </div>
+          <hr className={styles.birthdayCardDivider} />
+          <div className={styles.birthdayCardBottom}>
+            <Icon name="icon-other-gift" size="large" />
+            <div className={styles.birthdayCardBottomWishes}>{wishes}</div>
+            <Icon name="icon-message-box-circle" size="large" />
+            <div className={styles.birthdayCardBottomComments}>
+              {comments.length}
             </div>
           </div>
-          <div className={styles.birthdayCardWish}>Send a wish!</div>
         </div>
-        <hr className={styles.birthdayCardDivider} />
-        <div className={styles.birthdayCardBottom}>
-          <Icon name="icon-other-gift" size="large" />
-          <div className={styles.birthdayCardBottomWishes}>{wishes}</div>
-          <Icon name="icon-message-box-circle" size="large" />
-          <div className={styles.birthdayCardBottomComments}>
-            {comments.length}
-          </div>
-        </div>
-      </div>
-    </BlankCard>
+      </BlankCard>
+    </>
   );
 };
 
