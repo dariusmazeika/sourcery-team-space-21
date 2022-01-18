@@ -7,10 +7,12 @@ import { RestaurantCard } from "../RestaurantCard/RestaurantCard";
 import styles from "./similar-places-section.module.scss";
 import Slider from "react-slick";
 
-export const SimilarPlacesSection = ({ restaurants, currentRestaurant }) => {
+export const SimilarPlacesSection = ({
+  restaurants = [],
+  currentRestaurant = {},
+}) => {
   const [sliderPlacesRef, setSliderPlacesRef] = useState(null);
 
-  const filteredRestaurant = currentRestaurant ? currentRestaurant : [];
   let matchedCategoriesRestaurants = [];
 
   const restaurantsList = restaurants
@@ -19,7 +21,7 @@ export const SimilarPlacesSection = ({ restaurants, currentRestaurant }) => {
 
   restaurantsList.forEach((restaurant) => {
     const matchedCategories = restaurant.categories.filter((category) =>
-      filteredRestaurant.categories.includes(category)
+      currentRestaurant.categories.includes(category)
     );
 
     if (matchedCategories.length > 0) {
