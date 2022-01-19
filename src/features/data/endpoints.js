@@ -8,7 +8,7 @@ export const endpoints = {
   books:
     "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/books.json",
   rooms:
-    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/rooms.json",
+    "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/roos.json",
   weather:
     "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/weather.json",
   restaurants:

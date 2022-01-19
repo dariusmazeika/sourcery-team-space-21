@@ -10,7 +10,7 @@ async function fetchData(endpointNames) {
   const requestData = await Promise.all(
     promises.map((p) =>
       p.catch((e) => {
-        toast.error(`${e}`, { theme: "colored" });
+        toast.error("Request failed, page not found", { theme: "colored" });
         return e;
       })
     )

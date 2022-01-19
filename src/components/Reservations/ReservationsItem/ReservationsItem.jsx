@@ -27,7 +27,7 @@ export const ReservationsItem = ({
       </div>
       <div className={styles.reservationFooter}>
         {rating ? (
-          <StarRating rating={rating.score} />
+          <StarRating rating={Math.round(rating.score * 10) / 10} />
         ) : (
           <p className={styles.reservationSubtext}>Quantity: {quantity}</p>
         )}
