@@ -11,9 +11,14 @@ export const APIContextProvider = ({ children }) => {
 
   function fetchDataToState() {
     const args = Array.from(arguments);
+
+    const filteredArgs = args.filter(
+      (arg) => !Object.keys(state.data).includes(arg)
+    );
+
     dispatch({ type: "loading" });
 
-    fetchData(args).then((res) => {
+    fetchData(filteredArgs).then((res) => {
       setTimeout(
         () =>
           dispatch({
