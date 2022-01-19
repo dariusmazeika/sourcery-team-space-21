@@ -8,4 +8,8 @@
         fill: $color-wild-watermelon;
         stroke: $color-wild-watermelon;
     }
+
+    &:hover {
+        cursor: pointer;
+    }
 }

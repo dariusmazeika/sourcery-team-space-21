@@ -5,14 +5,14 @@ import { StoriesPost } from "../StoriesPost";
 import Masonry from "react-masonry-css";
 import styles from "./_mansonry.module.scss";
 
-export const NewsAndStoriesSections = ({ stories }) => {
-  const breakpointColumnsObj = {
-    default: 3,
-    1400: 3,
-    1100: 2,
-    900: 1,
-  };
+const breakpointColumnsObj = {
+  default: 3,
+  1400: 3,
+  1100: 2,
+  900: 1,
+};
 
+export const NewsAndStoriesSections = ({ stories }) => {
   return (
     <>
       <h3>News and Stories</h3>

@@ -3,36 +3,37 @@ import PropTypes from "prop-types";
 import { FavoriteButton } from "components/favoriteButton";
 import styles from "./ActionBar.module.scss";
 import { StarRating } from "components/StarRating/StarRating";
+import { useAPI } from "features/context/APIContext";
 
-// TODO: add CheckIn later when they are done
-
-export const ActionBar = ({ checkIns, isLiked, rating, id, dispatch }) => (
-  <div className={styles.box}>
-    <div className={styles.actionGroup}>
-      <StarRating rating={rating} />
-      <FavoriteButton
-        isFavorite={isLiked}
-        onClick={() =>
-          dispatch({
-            type: "likeRestaurant",
-            payload: { id: id },
-          })
-        }
-      />
+export const ActionBar = ({ checkIns, isLiked, rating, id }) => {
+  const [, , dispatch] = useAPI();
+  return (
+    <div className={styles.box}>
+      <div className={styles.actionGroup}>
+        <StarRating rating={rating} />
+        <FavoriteButton
+          isFavorite={isLiked}
+          onClick={() =>
+            dispatch({
+              type: "likeRestaurant",
+              payload: { id: id },
+            })
+          }
+        />
+      </div>
+      <p className="caption">
+        {checkIns > 0
+          ? `${checkIns} people already checked-in!`
+          : "no one checked-in yet!"}
+      </p>
+      <div className={styles.actionGroup}></div>
     </div>
-    <p className="caption">
-      {checkIns > 0
-        ? `${checkIns} people already checked-in!`
-        : "no one checked-in yet!"}
-    </p>
-    <div className={styles.actionGroup}></div>
-  </div>
-);
+  );
+};
 
 ActionBar.propTypes = {
   checkIns: PropTypes.number,
   isLiked: PropTypes.bool,
   rating: PropTypes.number,
   id: PropTypes.string,
-  dispatch: PropTypes.func,
 };

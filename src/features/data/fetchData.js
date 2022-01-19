@@ -1,6 +1,8 @@
 import { endpoints } from "./endpoints";
-import { processRestaurantData } from "utils";
+import { processRestaurantData, addLikedStories } from "utils";
 import { toast } from "react-toastify";
+
+const processData = (data) => addLikedStories(processRestaurantData(data));
 
 async function fetchData(endpointNames) {
   const promises = endpointNames.map((e) =>
@@ -25,7 +27,7 @@ async function fetchData(endpointNames) {
     Object.assign(formattedData, i);
   });
 
-  const processedData = processRestaurantData(formattedData);
+  const processedData = processData(formattedData);
   return { data: processedData, hasError: hasError };
 }
 
