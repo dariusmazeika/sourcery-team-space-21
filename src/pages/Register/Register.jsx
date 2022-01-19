@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Register = () => {
   return (
     <LoginRegistrationLayout>
-      <FormHeader title={"login"} subtitle={"coming soon"} />
+      <FormHeader title={"register"} subtitle={"coming soon"} />
       <Link to="/login" className={"heading4-alt"}>
         Sign up
       </Link>
