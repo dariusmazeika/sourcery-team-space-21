@@ -13,7 +13,7 @@ import { PageContainer } from "components/PageContainer/PageContainer";
 import { SimilarPlacesSection } from "components/EatOutSection";
 
 export const RestaurantPage = () => {
-  const [{ data }, getData, dispatch] = useAPI();
+  const [{ data }, getData] = useAPI();
   const { restaurantId } = useParams();
 
   const changeMatchedRoutes = (matchedRoutes) => {
@@ -40,7 +40,7 @@ export const RestaurantPage = () => {
             <PageContainer>
               <BreadCrumbs changeMatchedRoutes={changeMatchedRoutes} />
             </PageContainer>
-            <RestaurantBanner data={filteredRestaurant} dispatch={dispatch} />
+            <RestaurantBanner data={filteredRestaurant} />
           </PageContainer>
           <PageContainer className={styles.restaurantPageSection}>
             <div className={styles.infoAndLocationItem}>

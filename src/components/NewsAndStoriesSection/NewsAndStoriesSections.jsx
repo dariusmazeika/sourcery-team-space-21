@@ -12,7 +12,7 @@ const breakpointColumnsObj = {
   900: 1,
 };
 
-export const NewsAndStoriesSections = ({ stories, dispatch }) => {
+export const NewsAndStoriesSections = ({ stories }) => {
   return (
     <>
       <h3>News and Stories</h3>
@@ -26,7 +26,7 @@ export const NewsAndStoriesSections = ({ stories, dispatch }) => {
             {story.type === "birthday" ? (
               <BirthdayCard data={story} />
             ) : (
-              <StoriesPost data={story} dispatch={dispatch} />
+              <StoriesPost data={story} />
             )}
           </div>
         ))}
@@ -37,5 +37,4 @@ export const NewsAndStoriesSections = ({ stories, dispatch }) => {
 
 NewsAndStoriesSections.propTypes = {
   stories: PropTypes.array,
-  dispatch: PropTypes.func,
 };
