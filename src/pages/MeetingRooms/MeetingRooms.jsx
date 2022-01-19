@@ -5,7 +5,7 @@ import { BreadCrumbs } from "components/Breadcrumbs";
 import { useAPI } from "features";
 
 export const MeetingRooms = () => {
-  const [, getData, ,] = useAPI();
+  const [, getData] = useAPI();
 
   useEffect(() => {
     getData("rooms");
