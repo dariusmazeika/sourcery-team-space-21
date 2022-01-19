@@ -1,5 +1,13 @@
 import React from "react";
 
+import { MainLayout, PageContainer } from "components";
+
 export const NotFound = () => {
-  return <h1>Page not found</h1>;
+  return (
+    <MainLayout>
+      <PageContainer>
+        <h1>Page not found</h1>
+      </PageContainer>
+    </MainLayout>
+  );
 };
