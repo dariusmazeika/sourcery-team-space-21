@@ -1,5 +1,3 @@
-🚨 Be sure to update this file according to your team.
-
 ## Run the project
 
 - To run this project you will need [Node](https://nodejs.org/en/). We strongly recommend to use [nvm](https://github.com/nvm-sh/nvm) for installing node.
